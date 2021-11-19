@@ -1,9 +1,11 @@
 import './App.css';
+import Invoices from './Containers/Invoices';
 
 function App() {
   return (
     <div className="App">
-      <p>Bilpay</p>
+        <Invoices />
+        <p>cndkjcbjdhvcg</p>
     </div>
   );
 }

@@ -1,15 +1,15 @@
-import { useContext , useState , useMemo} from "react";
-import Invoices from '../../Assets/invoices-data.json';
+import { createContext, useContext , useState } from "react";
+import InvoicesData from '../../Assets/invoices-data.json';
 import { nanoid } from 'nanoid';
 
-const InvoicesContext =  useContext();
+const InvoicesContext =  createContext();
+export const UseInvoices = () => useContext(InvoicesContext) ;
 
-const InvoicesProvider = ({children}) => {
+const InvoicesProvider = (props) => {
+    const [invoices , setInvoices ] = useState(InvoicesData);
 
-    const [invoices , setInvoices ] = useState(Invoices);
-
-    const filteredPaidInvo = useMemo(invoices.map(invoice => (invoice["invoice-status"] === "paid")) ,[invoices]);
-    const filteredUnPaidInvo = useMemo(invoices.map(invoice => (invoice["invoice-status"] === "unpaid")) ,[invoices]);
+    const filteredPaidInvo = invoices.map(invoice => (invoice["invoice-status"] === "paid"));
+    const filteredUnPaidInvo = invoices.map(invoice => (invoice["invoice-status"] === "unpaid"));
 
     const AddInvoice = (newInvoice) => {
         setInvoices([
@@ -29,7 +29,7 @@ const InvoicesProvider = ({children}) => {
     const GetUnPaidInvoices = () => {
         return {
             number : filteredUnPaidInvo.length,
-            precentage : (100 * arrayN / invoices.length)
+            precentage : (100 * filteredUnPaidInvo.length / invoices.length)
         }
     }
     const GetTotalInvoices = () => {
@@ -40,16 +40,16 @@ const InvoicesProvider = ({children}) => {
     }
     
     return(
-        <InvoicesContext.Provider value={
-            {invoices,
-            AddInvoice,
-            GetPaidInvoices,
-            GetUnPaidInvoices,
-            GetTotalInvoices }}>
-                {children}
+        <InvoicesContext.Provider value = {{
+                invoices,
+                AddInvoice,
+                GetPaidInvoices,
+                GetUnPaidInvoices,
+                GetTotalInvoices 
+            }}>
+           {props.children}
         </InvoicesContext.Provider>
     );
 }
-
 
 export default InvoicesProvider;
