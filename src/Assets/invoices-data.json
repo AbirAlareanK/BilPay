@@ -9,7 +9,7 @@
         "service-details":"programming",
         "due-date":"April 19-2021",
         "subtotal":"$349",
-        "invoice-status": "paid",
+        "status": "paid",
         "discount": false ,
         "dicount-amount" : 0
     },
@@ -23,7 +23,7 @@
         "service-details":"Integration",
         "due-date":"April 19-2021",
         "subtotal":"$520",
-        "invoice-status": "unpaid",
+        "status": "unpaid",
         "discount": true ,
         "dicount-amount" : 10 
     }

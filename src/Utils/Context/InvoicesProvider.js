@@ -8,8 +8,8 @@ export const UseInvoices = () => useContext(InvoicesContext) ;
 const InvoicesProvider = (props) => {
     const [invoices , setInvoices ] = useState(InvoicesData);
 
-    const filteredPaidInvo = invoices.map(invoice => (invoice["invoice-status"] === "paid"));
-    const filteredUnPaidInvo = invoices.map(invoice => (invoice["invoice-status"] === "unpaid"));
+    const filteredPaidInvo = invoices.filter(invoice =>  invoice.status === "paid");
+    const filteredUnPaidInvo = invoices.filter(invoice => invoice.status === "unpaid");
 
     const AddInvoice = (newInvoice) => {
         setInvoices([
