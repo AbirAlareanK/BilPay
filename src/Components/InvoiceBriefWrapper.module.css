@@ -1,12 +1,10 @@
 .InvoBriefWrapper {
-    width: 20%;
-    height: 100px;
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: #fff;
-    padding: 20px;
-    margin: 20px;
+    padding: 18px;
     display: flex;
     justify-content: space-around;
+    margin: 20px 0px;
 }
 
 .InvoBriefWrapperSec{
@@ -17,7 +15,7 @@
 }
 
 span{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
 }
 

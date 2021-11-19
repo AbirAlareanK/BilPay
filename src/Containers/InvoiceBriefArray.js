@@ -6,7 +6,7 @@ const InvoiceBriefArray = () => {
     
     const { GetPaidInvoices , GetUnPaidInvoices , GetTotalInvoices} = UseInvoices();
     const [InvoicesBrief , setInvoiceBrief] = useState([]);
-    
+
     useEffect(()=> {
         setInvoiceBrief([
             {
@@ -17,14 +17,20 @@ const InvoiceBriefArray = () => {
             {
                 ...GetPaidInvoices(),
                 title:"Paid Invoices",
-                color:"yellow"
+                color:"greenyellow"
             },
             {
                 ...GetUnPaidInvoices(),
                 title:"Unpaid Invoices",
                 color:"red"
+            },
+            {
+                number: 20,
+                precentage: 31,
+                title:"Draft Invoices",
+                color:"gray"
             }])
-    } ,[InvoicesBrief , GetPaidInvoices , GetUnPaidInvoices , GetTotalInvoices]);
+    } ,[ GetPaidInvoices , GetUnPaidInvoices , GetTotalInvoices]);
 
     return(
         <>
