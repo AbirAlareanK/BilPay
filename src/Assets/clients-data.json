@@ -1,0 +1,18 @@
+[
+    {
+        "client-id" : "CLI-001",
+        "client-name": "Zaiful Bahri",
+        "company":"Pogo Solutions",
+        "company-address":"Jalan P Ramle",
+        "contact-number":"+60-1234567",
+        "email-address":"zaiful@gmail.com"
+    },
+    {
+        "client-id" : "CLI-002",
+        "client-name": "John Duo",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com"
+    }
+]

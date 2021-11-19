@@ -1,0 +1,30 @@
+[
+    {
+        "invoice-number" : "INV-001",
+        "invoice-date":"March 20,2021",
+        "client":"John Doe",
+        "company-name":"FexGroup",
+        "company-address":"Kota Kemuning",
+        "service-name":"Upgrade System",
+        "service-details":"programming",
+        "due-date":"April 19-2021",
+        "subtotal":"$349",
+        "invoice-status": "paid",
+        "discount": false ,
+        "dicount-amount" : 0
+    },
+    {
+        "invoice-number" : "INV-002",
+        "invoice-date":"March 20,2021",
+        "client":"Zaiful Bahri",
+        "company-name":"Pogo Solutions",
+        "company-address":"Kota Kemuning",
+        "service-name":"Lighting Control",
+        "service-details":"Integration",
+        "due-date":"April 19-2021",
+        "subtotal":"$520",
+        "invoice-status": "unpaid",
+        "discount": true ,
+        "dicount-amount" : 10 
+    }
+]
