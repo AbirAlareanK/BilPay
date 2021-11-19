@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/BilPay/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/BilPay/static/js/main.cc5fdd81.chunk.js",
+    "main.js.map": "/BilPay/static/js/main.cc5fdd81.chunk.js.map",
+    "runtime-main.js": "/BilPay/static/js/runtime-main.d161f3ac.js",
+    "runtime-main.js.map": "/BilPay/static/js/runtime-main.d161f3ac.js.map",
+    "static/js/2.e210d4f7.chunk.js": "/BilPay/static/js/2.e210d4f7.chunk.js",
+    "static/js/2.e210d4f7.chunk.js.map": "/BilPay/static/js/2.e210d4f7.chunk.js.map",
+    "static/js/3.f263dd6e.chunk.js": "/BilPay/static/js/3.f263dd6e.chunk.js",
+    "static/js/3.f263dd6e.chunk.js.map": "/BilPay/static/js/3.f263dd6e.chunk.js.map",
+    "index.html": "/BilPay/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/BilPay/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.e210d4f7.chunk.js.LICENSE.txt": "/BilPay/static/js/2.e210d4f7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d161f3ac.js",
+    "static/js/2.e210d4f7.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.cc5fdd81.chunk.js"
+  ]
+}
