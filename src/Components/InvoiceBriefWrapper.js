@@ -1,16 +1,16 @@
-import { FaFileInvoiceDollar } from 'react-icons/fa'
+import { IoReceiptOutline } from 'react-icons/io5'
 import Classes from './InvoiceBriefWrapper.module.css';
 
 
 const InvoiceBriefWrapper = ({precentage , number , title , color}) => {
     return (
         <div className={Classes.InvoBriefWrapper}>
-            <div>
-                <FaFileInvoiceDollar color={color}/>
-                <span>{number}</span>
+            <div className={Classes.InvoBriefWrapperSec}>
+                <IoReceiptOutline color={color} size="26px"/>
+                <span >{number}</span>
                 <p>{title}</p>
             </div>
-            <div>
+            <div style={{color:color}}>
                 {precentage}
             </div>
         </div>
