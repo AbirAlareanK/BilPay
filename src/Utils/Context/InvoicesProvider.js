@@ -20,6 +20,8 @@ const InvoicesProvider = (props) => {
             }
         ]);
     }
+
+    
     const  GetPaidInvoices = () => {
         return {
             number : filteredPaidInvo.length,

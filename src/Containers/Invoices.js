@@ -1,14 +1,10 @@
-import InvoiceBriefWrapper from "../Components/InvoiceBriefWrapper";
+import InvoiceBriefArray from "./InvoiceBriefArray";
 
 const Invoices = () => {
     
     return(
         <>
-            <InvoiceBriefWrapper
-                title="Total Invoices"
-                number="45"
-                precentage="+25%"
-                color="green" />
+           <InvoiceBriefArray />
         </>
     )
 }

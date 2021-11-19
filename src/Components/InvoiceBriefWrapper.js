@@ -11,7 +11,7 @@ const InvoiceBriefWrapper = ({precentage , number , title , color}) => {
                 <p>{title}</p>
             </div>
             <div style={{color:color}}>
-                {precentage}
+                {precentage} %
             </div>
         </div>
     );
