@@ -20,7 +20,14 @@ const InvoicesTable = ({rows,cols}) => {
 
   return (
     <>
-      <h5>Latest Invoives</h5>
+      <section className={Classes.tableActionButtons}>
+        <h5>Latest Invoives</h5>                  
+        <ul>
+          <li>Monthly</li>
+          <li>Weekly</li>
+          <li>Today</li>
+        </ul>
+      </section>
       <MDBDataTable className={Classes.tableCard}
         responsiveMd
         hover={true}

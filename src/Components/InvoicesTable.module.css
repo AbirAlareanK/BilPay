@@ -11,3 +11,32 @@
 h5{
     margin: 15px;
 }
+
+.tableActionButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tableActionButtons ul {
+    list-style: none;
+    display: inline-flex;
+    padding: 0px;
+    justify-content: space-between;
+    background-color:  #e5e4e4;;
+    border-radius: 30px;
+}
+
+ul li{
+    padding: 8px 10px;
+    border-radius: 30px;
+    font-size: 13px;
+    width: 75px;
+    text-align: center;
+    color:#959595
+}
+
+ul li:hover{
+    background-color : #165816a6;
+    color:#ffffff;
+}
