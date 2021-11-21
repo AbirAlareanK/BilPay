@@ -10,7 +10,6 @@ import { useState } from "react";
 const Invoices = () => {
     
     const { GetTableRows } = UseInvoices();
-
     const [ rows ] = useState(GetTableRows());
 
     return(

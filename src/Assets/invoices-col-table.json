@@ -16,7 +16,7 @@
     {
       "label": "Email" ,
       "field": "email",
-      "width": 160
+      "width": 260
     },
     {
       "label": "Amount" ,
@@ -29,9 +29,9 @@
       "width": 160
     },
     {
-      "label": "Service Status" ,
+      "label": "Status" ,
       "field": "serviceStatus",
-      "width": 160
+      "width": 100
     },
     {
       "label":  " ",

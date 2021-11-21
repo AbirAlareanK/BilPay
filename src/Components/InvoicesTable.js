@@ -19,7 +19,7 @@ const InvoicesTable = ({rows,cols}) => {
   });
 
   return (
-    <>
+    <div className={`${Classes.tableCard} card-wrapper`} >
       <section className={Classes.tableActionButtons}>
         <h5>Latest Invoives</h5>                  
         <ul>
@@ -28,8 +28,11 @@ const InvoicesTable = ({rows,cols}) => {
           <li>Today</li>
         </ul>
       </section>
-      <MDBDataTable className={Classes.tableCard}
+      <MDBDataTable
+        className={Classes.tableData} 
         responsiveMd
+        small
+        btn={true}
         hover={true}
         sortable={false}
         searching={false}
@@ -39,8 +42,9 @@ const InvoicesTable = ({rows,cols}) => {
         pagesAmount={3}
         entries={5}
         infoLabel={["Showing", "to", "of", ""]}
+        
       />
-    </>
+    </div>
     
   );
 }
