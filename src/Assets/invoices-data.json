@@ -12,7 +12,7 @@
         "subtotal":"$349",
         "status": "paid",
         "discount": false ,
-        "dicount-amount" : 0
+        "dicount-amount" : 13
     },
     {
         "invoice-number" : "INV-002",
@@ -57,7 +57,7 @@
         "subtotal":"$349",
         "status": "paid",
         "discount": false ,
-        "dicount-amount" : 0
+        "dicount-amount" : 13
     },
     {
         "invoice-number" : "INV-005",
@@ -87,7 +87,7 @@
         "subtotal":"$349",
         "status": "paid",
         "discount": false ,
-        "dicount-amount" : 0
+        "dicount-amount" : 14
     },
     {
         "invoice-number" : "INV-007",

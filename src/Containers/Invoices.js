@@ -13,11 +13,11 @@ const Invoices = () => {
     const [ rows ] = useState(GetTableRows());
 
     return(
-        <Container>
+        <Container fluid>
             <Row>
-                <Col lg={2}>
+                <Col lg={3}>
                 </Col>
-                <Col lg={10}>
+                <Col lg={9}>
                     <h3>Invoices</h3>
                     <Row>
                         <InvoiceBriefArray />

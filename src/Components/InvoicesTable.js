@@ -13,7 +13,7 @@ const InvoicesTable = ({rows,cols}) => {
     rows : rows.map(row => ({
           ...row,
           clickEvent:(row)=>{
-            ShowDetailPage(row["client"])
+            ShowDetailPage(row["id"])
           }
         }))
   });

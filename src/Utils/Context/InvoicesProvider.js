@@ -13,13 +13,14 @@ const InvoicesProvider = (props) => {
     const filteredUnPaidInvo = invoices.filter(invoice => invoice.status === "unpaid");
     const filteredRows = invoices.map(invoice => (
         {
-             client : invoice['client'],
-             date : invoice['invoice-date'],
-             email: invoice['email'],
-             amount : invoice['subtotal'],
-             serviceType : invoice['service-details'],
-             serviceStatus : invoice['status'],
-             detailsPage : "..."
+            id : invoice['invoice-number'],
+            client : invoice['client'],
+            date : invoice['invoice-date'],
+            email: invoice['email'],
+            amount : invoice['subtotal'],
+            serviceType : invoice['service-details'],
+            serviceStatus : invoice['status'],
+            detailsPage : "..."
          } 
      ))
     const AddInvoice = (newInvoice) => {
@@ -54,6 +55,12 @@ const InvoicesProvider = (props) => {
             precentage : 100
         }
     }
+
+    const GetInvoiceDetails = (id)=>{
+       const invoiceDe =  invoices.filter(invoice => (invoice['invoice-number'] === id))[0];
+    //    console.log(invoiceDe);
+       return invoiceDe;
+    }
     
     return(
         <InvoicesContext.Provider value = {{
@@ -62,7 +69,8 @@ const InvoicesProvider = (props) => {
                 GetPaidInvoices,
                 GetUnPaidInvoices,
                 GetTotalInvoices ,
-                GetTableRows
+                GetTableRows,
+                GetInvoiceDetails
             }}>
            {props.children}
         </InvoicesContext.Provider>
