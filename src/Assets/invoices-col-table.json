@@ -1,0 +1,41 @@
+ [
+    {
+      "label": "Client",
+      "field": "client",
+      "width": 50,
+      "attributes": {
+        "aria-controls": "DataTable",
+        "aria-label": "client"
+      }
+    },
+    {
+      "label": "Date",
+      "field": "date",
+      "width": 170
+    },
+    {
+      "label": "Email" ,
+      "field": "email",
+      "width": 160
+    },
+    {
+      "label": "Amount" ,
+      "field": "amount",
+      "width": 160
+    },
+    {
+      "label": "Service Type" ,
+      "field": "serviceType",
+      "width": 160
+    },
+    {
+      "label": "Service Status" ,
+      "field": "serviceStatus",
+      "width": 160
+    },
+    {
+      "label":  " ",
+      "field": "detailsPage",
+      "width": 60
+    }
+]

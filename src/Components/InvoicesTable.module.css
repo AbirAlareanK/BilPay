@@ -1,0 +1,13 @@
+.tableCard
+{
+    width: 100%;
+    padding: 18px;
+    margin: 0px 15px;
+    border-radius: 15px;
+    box-shadow: none;
+    background-color:#ffffff;
+}
+
+h5{
+    margin: 15px;
+}
