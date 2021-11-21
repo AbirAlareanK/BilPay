@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/BilPay/static/css/main.f48cd1ca.chunk.css",
-    "main.js": "/BilPay/static/js/main.7f1209e7.chunk.js",
-    "main.js.map": "/BilPay/static/js/main.7f1209e7.chunk.js.map",
+    "main.css": "/BilPay/static/css/main.a08ec5d6.chunk.css",
+    "main.js": "/BilPay/static/js/main.9f5f9db1.chunk.js",
+    "main.js.map": "/BilPay/static/js/main.9f5f9db1.chunk.js.map",
     "runtime-main.js": "/BilPay/static/js/runtime-main.c4f503a4.js",
     "runtime-main.js.map": "/BilPay/static/js/runtime-main.c4f503a4.js.map",
-    "static/css/2.59442513.chunk.css": "/BilPay/static/css/2.59442513.chunk.css",
-    "static/js/2.db113719.chunk.js": "/BilPay/static/js/2.db113719.chunk.js",
-    "static/js/2.db113719.chunk.js.map": "/BilPay/static/js/2.db113719.chunk.js.map",
+    "static/css/2.ce999395.chunk.css": "/BilPay/static/css/2.ce999395.chunk.css",
+    "static/js/2.aecc5ea4.chunk.js": "/BilPay/static/js/2.aecc5ea4.chunk.js",
+    "static/js/2.aecc5ea4.chunk.js.map": "/BilPay/static/js/2.aecc5ea4.chunk.js.map",
     "index.html": "/BilPay/index.html",
-    "static/css/2.59442513.chunk.css.map": "/BilPay/static/css/2.59442513.chunk.css.map",
-    "static/css/main.f48cd1ca.chunk.css.map": "/BilPay/static/css/main.f48cd1ca.chunk.css.map",
-    "static/js/2.db113719.chunk.js.LICENSE.txt": "/BilPay/static/js/2.db113719.chunk.js.LICENSE.txt",
+    "static/css/2.ce999395.chunk.css.map": "/BilPay/static/css/2.ce999395.chunk.css.map",
+    "static/css/main.a08ec5d6.chunk.css.map": "/BilPay/static/css/main.a08ec5d6.chunk.css.map",
+    "static/js/2.aecc5ea4.chunk.js.LICENSE.txt": "/BilPay/static/js/2.aecc5ea4.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/BilPay/static/media/arrow_right.f7c6ac6d.svg",
     "static/media/all.min.css": "/BilPay/static/media/fa-solid-900.eeccf4f6.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.c4f503a4.js",
-    "static/css/2.59442513.chunk.css",
-    "static/js/2.db113719.chunk.js",
-    "static/css/main.f48cd1ca.chunk.css",
-    "static/js/main.7f1209e7.chunk.js"
+    "static/css/2.ce999395.chunk.css",
+    "static/js/2.aecc5ea4.chunk.js",
+    "static/css/main.a08ec5d6.chunk.css",
+    "static/js/main.9f5f9db1.chunk.js"
   ]
 }
