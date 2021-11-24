@@ -1,11 +1,12 @@
 import InvoiceBriefArray from "./InvoiceBriefArray";
-import InvoicesTable from '../Components/InvoicesTable';
+import InvoicesTable from '../../Components/Invoices/invoice-table/InvoicesTable';
 import Container  from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import { Col } from "react-bootstrap";
-import colData from '../Assets/invoices-col-table.json';
-import { UseInvoices } from "../Utils/Context/InvoicesProvider";
+import colData from '../../Assets/JSON/invoices-col-table.json';
+import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 import { useState } from "react";
+// import Classes from './Invoices.module.scss';
 
 const Invoices = () => {
     
@@ -13,7 +14,7 @@ const Invoices = () => {
     const [ rows ] = useState(GetTableRows());
 
     return(
-        <Container fluid>
+        <Container fluid className="full-view">
             <Row>
                 <Col lg={3}>
                 </Col>

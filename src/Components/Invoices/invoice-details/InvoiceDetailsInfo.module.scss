@@ -1,0 +1,81 @@
+@import '../../../Assets/Scss/colors';
+
+.invoiceDetailContent{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content:  space-between;
+}
+.invoiceDetailsHead, .invoiceBreakdown{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.invoiceSubtotal{
+    display: flex;
+    justify-content: flex-end;
+    div{
+        width: 25vh;
+    }
+    div:nth-child(2){
+        text-align: end;
+    }
+}
+
+.clientInformation{
+    div{
+        margin-bottom: 18px;
+    }
+}
+
+.paidButton{
+   width:13vh;
+}
+
+
+h6{
+    color: $para-font;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    
+}
+
+p,li{
+    color: $main-font;
+    font-weight: 400 ;
+    font-size: 13px !important;
+}
+
+.invoiceBreakdown{
+    div{
+        width: 50%;
+    }
+
+    div:nth-child(2){
+        text-align: end;   
+    }
+
+    h6{
+        border-bottom: 1px solid $para-font;
+        padding-bottom: 5px;
+    }
+}
+
+.info{
+    display: flex;
+    align-items: center;
+
+    span{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #cfcfcf;
+        margin-right: 13px;    
+    }
+}
+
+.totalAmount{
+    font-weight: 600;
+}

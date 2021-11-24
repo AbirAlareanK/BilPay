@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import InvoiceBriefWrapper from "../Components/InvoiceBriefWrapper";
-import { UseInvoices } from "../Utils/Context/InvoicesProvider";
+import InvoiceBriefWrapper from "../../Components/Invoices/invoice-wrapper/InvoiceBriefWrapper";
+import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 
 const InvoiceBriefArray = () => {
     

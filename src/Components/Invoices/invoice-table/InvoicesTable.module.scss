@@ -1,3 +1,5 @@
+@import '../../../Assets/Scss/colors'; 
+
 .tableCard
 {
     width: 100%;
@@ -5,8 +7,9 @@
     margin: 0px 15px;
     border-radius: 15px;
     box-shadow: none;
-    background-color:#ffffff;
+    background-color:$card-bg;
     cursor: pointer
+
 }
 
 h5{
@@ -25,7 +28,7 @@ h5{
     display: inline-flex;
     padding: 0px;
     justify-content: space-between;
-    background-color:  #e5e4e4;
+    background-color:  $card-bg-dark;
     border-radius: 30px;
 }
 
@@ -35,17 +38,17 @@ h5{
     font-size: 13px;
     width: 75px;
     text-align: center;
-    color:#959595;
+    color:$para-font;
     cursor: pointer;
 }
 
 .tableActionButtons ul li:hover{
-    background-color : #165816a6;
-    color:#ffffff;
+    background-color : $main-icon;
+    color:$hover-font;
 }
 
 thead{
-    color : #959595;
+    color : $para-font;
     font-size: 13px;
 }
 
@@ -54,7 +57,7 @@ thead:nth-child(3){
 }
 
 tbody tr td:nth-child(5){
-    color : #959595;
+    color : $para-font;
 }
 
 /* tbody tr td:nth-child(6){
@@ -70,8 +73,8 @@ ul[data-test="pagination"]{
 }
 
 ul[data-test="pagination"] a{
-    background-color : #165816a6;
-    color:#ffffff;
+    background-color : $main-theme;
+    color:$hover-font;
 }
 
 li[data-test="page-item"]{
@@ -92,12 +95,19 @@ div[data-test="dataTables_paginate"]{
 div[data-test="datatable-info"]{
     display: flex;
     align-items: flex-start;
-    color: gray;
-    font-size:15px;   
+    color: $para-font;
+    font-size:15px; 
+
 }
 
+
 tbody tr td:nth-child(7){
-    color : #959595;
+    color : $para-font;
     font-weight:800;
     font-size:20px;
+}
+
+td{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
 }

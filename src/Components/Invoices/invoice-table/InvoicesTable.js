@@ -1,6 +1,6 @@
 import React , {  useState} from 'react';
 import { MDBDataTable } from 'mdbreact';
-import Classes from './InvoicesTable.module.css';
+import Classes from './InvoicesTable.module.scss';
 
 const InvoicesTable = ({rows,cols}) => {
   

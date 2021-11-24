@@ -1,5 +1,5 @@
 import { IoReceiptOutline } from 'react-icons/io5'
-import Classes from './InvoiceBriefWrapper.module.css';
+import Classes from './InvoiceBriefWrapper.module.scss';
 import Col from 'react-bootstrap/Col'
 
 const InvoiceBriefWrapper = ({precentage , number , title , color}) => {

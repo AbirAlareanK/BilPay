@@ -1,0 +1,11 @@
+@import '../../Assets/Scss/colors';
+
+.themeButton{
+    padding: 2px 10px;
+    background-color: $main-theme-tran;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: $main-theme;
+}

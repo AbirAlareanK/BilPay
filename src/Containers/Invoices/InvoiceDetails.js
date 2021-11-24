@@ -1,8 +1,8 @@
 import {  useState } from "react";
 import { Col , Row , Container } from "react-bootstrap";
-import { UseInvoices } from "../Utils/Context/InvoicesProvider";
+import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 import { AiFillWarning , AiFillCheckCircle } from 'react-icons/ai'
-import InvoiceDetailsInfo from "../Components/invoice-details/InvoiceDetailsInfo";
+import InvoiceDetailsInfo from "../../Components/Invoices/invoice-details/InvoiceDetailsInfo";
 const InvoiceDetails = () => {
 
    const { GetInvoiceDetails } =  UseInvoices();
@@ -41,9 +41,9 @@ const InvoiceDetails = () => {
                 </Col>
                 <Col lg={9}>
                     <h3>Invoice Details</h3>
-                    <span>invoice</span>/ <p>#{invoiceDetails['invoice-number']}</p>
+                     <p><span>invoice</span>/ #{invoiceDetails['invoice-number']}</p>
                     <Row>
-                       <Col lg={9}>
+                       <Col lg={8} md={7} xs={12}>
                             <InvoiceDetailsInfo 
                                 discount={discount}
                                 subTotal={SubTotal}
@@ -51,7 +51,7 @@ const InvoiceDetails = () => {
                                 icon={statusIcon}
                                 services={services}/>
                        </Col>
-                       <Col lg={3}>
+                       <Col lg={4} md={5} xs={12}>
                         <section className="card-wrapper">
                             
                         </section>

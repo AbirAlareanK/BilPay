@@ -1,5 +1,5 @@
 import { createContext, useContext , useState } from "react";
-import InvoicesData from '../../Assets/invoices-data.json';
+import InvoicesData from '../../Assets/JSON/invoices-data.json';
 import { nanoid } from 'nanoid';
 
 

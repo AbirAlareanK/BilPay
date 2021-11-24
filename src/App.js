@@ -1,6 +1,6 @@
-import './App.css';
-import InvoiceDetails from './Containers/InvoiceDetails';
-// import Invoices from './Containers/Invoices';
+import './App.scss';
+import InvoiceDetails from './Containers/Invoices/InvoiceDetails';
+// import Invoices from './Containers/Invoices/Invoices';
 import InvoicesProvider from './Utils/Context/InvoicesProvider';
 
 
