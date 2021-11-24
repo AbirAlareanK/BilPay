@@ -1,0 +1,24 @@
+@import '../../../Assets/Scss/colors';
+
+
+.firstSectionContent{
+    margin-bottom: 20px;
+}
+
+.firstSectionContent , .secondSectionContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.sectionContent p {
+    text-transform: capitalize;
+}
+
+.CardImage{
+    width: 34px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: $main-theme;
+}

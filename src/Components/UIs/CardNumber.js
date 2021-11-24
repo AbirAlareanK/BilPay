@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Classes from './CardNumber.module.scss'
 
 const CardNumber = (props) => {
 
@@ -7,7 +8,7 @@ const CardNumber = (props) => {
     useEffect(() => {
         const hided = props.str.replace(
             /\b(?:\d{4}[ -]?){3}(?=\d{4}\b)/gm ,
-            '#### #### #### '
+            '.... .... .... '
         )
         setCardNum(hided)
     },[props.str])
@@ -15,7 +16,7 @@ const CardNumber = (props) => {
     
     return (
         <>
-            <span>{CradNum}</span>
+            <span className={Classes.cardNumber}>{CradNum}</span>
         </>
     );
 }

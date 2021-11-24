@@ -1,9 +1,16 @@
 import {  useState } from "react";
 import { Col , Row , Container } from "react-bootstrap";
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
+import Classes from './InvoiceDetails.module.scss'
 import { AiFillWarning , AiFillCheckCircle } from 'react-icons/ai'
 import InvoiceDetailsInfo from "../../Components/Invoices/invoice-details/InvoiceDetailsInfo";
 import PaymentCard from "../../Components/Invoices/payment-card/PaymentCard";
+import Button from "../../Components/UIs/Button";
+import { BsPrinter , BsCheckCircle , BsDownload} from 'react-icons/bs';
+import  {IoSendOutline} from 'react-icons/io5'
+
+
+
 const InvoiceDetails = () => {
 
    const { GetInvoiceDetails } =  UseInvoices();
@@ -36,28 +43,39 @@ const InvoiceDetails = () => {
    });
 
     return (
-        <Container fluid>
+        <Container fluid >
             <Row>
                 <Col lg={3}>
                 </Col>
                 <Col lg={9}>
-                    <h3>Invoice Details</h3>
-                     <p><span>invoice</span>/ #{invoiceDetails['invoice-number']}</p>
-                    <Row>
-                       <Col lg={8} md={7} xs={12}>
-                            <InvoiceDetailsInfo 
-                                discount={discount}
-                                subTotal={SubTotal}
-                                invoiceDetails={invoiceDetails}
-                                icon={statusIcon}
-                                services={services}/>
-                       </Col>
-                       <Col lg={4} md={5} xs={12}>
-                        <section className="card-wrapper">
-                            <PaymentCard />
-                        </section>
-                       </Col>
-                    </Row>
+                    <Container>
+                    <section className={Classes.sectionHeader}>
+                        <h5>Invoice Details</h5>
+                        <p><span>invoice</span>/ #{invoiceDetails['invoice-number']}</p>
+                    </section>
+                        <Row>
+                            <Col lg={8} md={7} xs={12}>
+                                    <InvoiceDetailsInfo 
+                                        discount={discount}
+                                        subTotal={SubTotal}
+                                        invoiceDetails={invoiceDetails}
+                                        icon={statusIcon}
+                                        services={services}/>
+                            </Col>
+                            <Col lg={4} md={5} xs={12}>
+                                <section className={`card-wrapper ${Classes.paymentCard}`}>
+                                    <PaymentCard />
+                                </section>
+                                <section className={Classes.invoiceDetailsActions}>
+                                    <Button><BsCheckCircle />Mark As Paid</Button>
+                                    <Button><BsDownload />Download</Button>
+                                    <Button><BsPrinter />Print</Button>
+                                    <Button><IoSendOutline />Send</Button>
+                                </section>
+                            </Col>
+                        </Row>
+                     </Container>
+                   
                 </Col>
             </Row>
         </Container>

@@ -16,27 +16,27 @@ const InvoiceDetailsInfo = ({invoiceDetails , subTotal , discount , icon , servi
                 </Button>
             </div>
             <Row className={Classes.clientInformation}>
-                <Col xs={6} className={Classes.info}>
+                <Col sm={6} xs={12} className={Classes.info}>
                     <span />
                     <section>
                         <h6>Client</h6>
                         <p>{invoiceDetails['client']}</p>
                     </section>
                 </Col>
-                <Col xs={6} >
+                <Col sm={6} xs={12} >
                     <h6>Due Date</h6>
                     <p>{invoiceDetails['invoice-date']}</p>
                 </Col>
-                <Col xs={6} >
+                <Col sm={6} xs={12} >
                     <h6>Address</h6>
                     <p>{invoiceDetails['company-address']}</p>
                 </Col>
-                <Col xs={6}>
+                <Col sm={6} xs={12} >
                     <h6>Contact</h6>
                     <p>+60-23145678</p>
                     <p>{invoiceDetails['email']}</p>
                 </Col>
-                <Col xs={6}>
+                <Col sm={6} xs={12} >
                     <h6>Bank Information</h6>
                     <p>National Bank</p>
                     <p>Johe Doe</p>

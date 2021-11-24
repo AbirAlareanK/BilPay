@@ -31,22 +31,24 @@
 }
 
 .paidButton{
-   width:13vh;
+   width:85px;
+   background-color: $main-theme-tran;
 }
 
-
-h6{
-    color: $para-font;
-    font-size: 12px !important;
-    font-weight: 400 !important;
+.invoiceDetailContent{
+    h6{
+        color: $para-font;
+        font-size: 12px !important;
+        font-weight: 400 ;
+    }
     
+    p,li{
+        color: $main-font;
+        font-weight: 400 ;
+        font-size: 13px;
+    }
 }
 
-p,li{
-    color: $main-font;
-    font-weight: 400 ;
-    font-size: 13px !important;
-}
 
 .invoiceBreakdown{
     div{
@@ -68,8 +70,8 @@ p,li{
     align-items: center;
 
     span{
-        width: 25px;
-        height: 25px;
+        width: 35px;
+        height: 35px;
         border-radius: 50%;
         background-color: #cfcfcf;
         margin-right: 13px;    
@@ -77,5 +79,6 @@ p,li{
 }
 
 .totalAmount{
-    font-weight: 600;
+    font-weight: 600 !important;
+    font-size: 14px;
 }
