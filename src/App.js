@@ -1,5 +1,6 @@
 import './App.scss';
-import InvoiceDetails from './Containers/Invoices/InvoiceDetails';
+// import InvoiceDetails from './Containers/Invoices/InvoiceDetails';
+import InvoiceForm from './Containers/Invoices/InvoiceForm';
 // import Invoices from './Containers/Invoices/Invoices';
 import InvoicesProvider from './Utils/Context/InvoicesProvider';
 
@@ -14,7 +15,8 @@ function App() {
     <div className="App">
       <InvoicesProvider>
         {/* <Invoices /> */}
-        <InvoiceDetails/>
+        {/* <InvoiceDetails/> */}
+        <InvoiceForm />
       </InvoicesProvider>
     </div>
   );
