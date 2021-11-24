@@ -3,6 +3,7 @@ import { Col , Row , Container } from "react-bootstrap";
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 import { AiFillWarning , AiFillCheckCircle } from 'react-icons/ai'
 import InvoiceDetailsInfo from "../../Components/Invoices/invoice-details/InvoiceDetailsInfo";
+import PaymentCard from "../../Components/Invoices/payment-card/PaymentCard";
 const InvoiceDetails = () => {
 
    const { GetInvoiceDetails } =  UseInvoices();
@@ -53,7 +54,7 @@ const InvoiceDetails = () => {
                        </Col>
                        <Col lg={4} md={5} xs={12}>
                         <section className="card-wrapper">
-                            
+                            <PaymentCard />
                         </section>
                        </Col>
                     </Row>
