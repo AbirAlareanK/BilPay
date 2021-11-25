@@ -11,11 +11,21 @@
     align-items: center;
     justify-content: space-evenly;
     color: $main-theme;
-    width: 45%;
+    width: 47%;
     margin-bottom: 10px;
 }
+
 
 .themeButton:hover{
     background-color: $main-theme;
     color:$card-bg;
+}
+
+
+
+/* No less than 400px, no greater than 900px */
+@media (min-width:767px) and (max-width:900px){
+ .themeButton{
+        width: 100%;
+    }
 }

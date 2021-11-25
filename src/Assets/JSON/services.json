@@ -1,0 +1,22 @@
+[
+    {
+        "serviceId" : "SER-001",
+        "serviceName" : "Web Development"
+    },
+    {
+        "serviceId" : "SER-002",
+        "serviceName" : "Web Design"
+    },
+    {
+        "serviceId" : "SER-003",
+        "serviceName" : "Programming"
+    },
+    {
+        "serviceId" : "SER-004",
+        "serviceName" : "Lighting Control"
+    },
+    {
+        "serviceId" : "SER-005",
+        "serviceName" : "System Integration"
+    }
+]

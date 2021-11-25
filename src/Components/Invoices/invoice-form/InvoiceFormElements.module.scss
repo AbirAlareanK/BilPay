@@ -11,27 +11,27 @@ form{
         font-size: 13px;
     }
 
-    input, textarea{
+    input, textarea, select{
         border: 1px solid $para-font;
         border-radius: 3px;
-        padding-left: 10px;
         margin-bottom: 0.5rem;
-        padding: 0;
+        padding: 5px;
         font-size: 13px;
     }
 
     input:focus,
-    textarea:focus{
+    textarea:focus,
+    select:focus{
         background-color: $second-theme;
         color: $para-font;
         outline: none;
     }
 
     input::placeholder,
-    textarea::placeholder {
+    textarea::placeholder,
+    select::placeholder {
         color: $para-font;
         outline: none;
-        padding-left: 10px;
         font-size: 13px;
     }
 }
@@ -48,15 +48,18 @@ form{
 
 
 .invalid input,
-.invalid textarea {
-  border: 1px solid $danger-bg;
-  background-color: $para-font;
+.invalid textarea,
+.invalid select {
+  border: 1px solid $danger-theme;
+  background-color: $danger-bg;
 }
 
 
 .invalid input:focus,
-.invalid textarea:focus {
+.invalid textarea:focus,
+.invalid select:focus{
   border-color: $danger-theme;
   background-color: $danger-bg;
 }
+
 

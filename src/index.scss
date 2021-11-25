@@ -31,6 +31,12 @@ code {
   background-color: $card-bg;
 }
 
+@media (max-width:767px){
+  .card-wrapper{
+    margin-bottom: 15px;
+  }
+}
+
 .full-view {
   height: 100vh;
 }

@@ -1,11 +1,12 @@
 
 import Button from '../../Components/UIs/Button';
 import { Col , Row , Container } from "react-bootstrap";
-import InvoiceFormElements from "../../Components/Invoices/invoice-form/InvooiceFormElements";
+import InvoiceFormElements from "../../Components/Invoices/invoice-form/InvoiceFormElements";
 import Classes from './InvoiceForm.module.scss'
 import { AiOutlineSave , AiOutlineEye} from 'react-icons/ai';
 import { BsPrinter , BsDownload} from 'react-icons/bs';
 import  {IoSendOutline} from 'react-icons/io5'
+import services from '../../Assets/JSON/services.json'
 
 const InvoiceForm = () => {
 
@@ -21,10 +22,10 @@ const InvoiceForm = () => {
                         <h5>Create Invoice</h5>
                     </section>
                         <Row>
-                            <Col lg={8} md={7} xs={12}>
-                                <InvoiceFormElements />
+                            <Col lg={8} md={9} xs={12}>
+                                <InvoiceFormElements services={services}/>
                             </Col>
-                            <Col lg={4} md={5} xs={12}>
+                            <Col lg={4} md={3} xs={12}>
                                 <section className={Classes.createInvoiceActions}>
                                     <Button><AiOutlineSave />Save</Button>
                                     <Button><AiOutlineEye />Preview</Button>
