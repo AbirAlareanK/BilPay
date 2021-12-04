@@ -8,3 +8,11 @@
         justify-content: space-around;
     }
 }
+
+.saveInvoiceButton{
+    cursor: pointer;
+}
+
+.saveInvoiceButtonDisabled{
+  cursor: not-allowed;
+}

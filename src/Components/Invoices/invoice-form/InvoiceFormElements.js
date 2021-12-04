@@ -1,17 +1,16 @@
-import Classes from './InvoiceFormElements.module.scss';
+
 import { Row  } from "react-bootstrap";
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import useInput from '../../../Utils/Hooks/use-input';
 
 
-const InvoiceFormElements = (props) => {
+const InvoiceFormElements = ({ services , onSetFormValid, onSetFormSubmitted , onSaveInvoice}) => {
 
     const isNotEmpty = (value) => value.trim() !== '';
     const isEmail = (value) => value.includes('@');
 
     const [ dateToday , setDateToday] = useState();
-    const [formSubmitted , setFormSubmitted] = useState(false);
-    const [formValid , setFormValid] = useState(false);
+    
 
     const {
         value: invoiceNumberValue,
@@ -94,6 +93,34 @@ const InvoiceFormElements = (props) => {
         reset: resetSubTotal,
     } = useInput(isNotEmpty);
 
+    const FormCompleteHandler = useCallback(() => {
+        // send Data to parent component for submition
+               const formToSubmit = {
+                   name : clientNameValue,
+                   email : emailValue,
+                   invoiceNumber : invoiceNumberValue,
+                   companyName : companyNameValue,
+                   companyAddress : companyAddressValue,
+                   serviceName : serviceNameValue,
+                   dueDate : dueDateValue,
+                   subTotal : subTotalValue,
+                   serviceDetails : serviceDetailsValue
+                 }
+                 onSaveInvoice(formToSubmit);
+                 onSetFormSubmitted(true);
+                 
+                   resetServiceDetails();
+                   resetSubTotal();
+                   resetDueDate();
+                   resetServiceName();
+                   resetCompanyName();
+                   resetCompanyAddress();
+                   resetInvoiceNumber();
+                   resetClientName();
+                   resetEmail();
+       },[resetServiceDetails,resetSubTotal,resetDueDate,resetServiceName,resetCompanyName,resetCompanyAddress,resetInvoiceNumber,resetClientName,resetEmail,onSetFormSubmitted,onSaveInvoice
+           ,clientNameValue,invoiceNumberValue,serviceDetailsValue,subTotalValue,dueDateValue,serviceNameValue,companyAddressValue,companyNameValue,emailValue]);
+
     useEffect(() => {
 
         //Auto fill the date field input to Today date
@@ -106,14 +133,16 @@ const InvoiceFormElements = (props) => {
 
         // Checking Form Validation
         if (clientNameIsValid && emailIsValid && invoiceNumberIsValid && companyNameIsValid && companyAddressIsValid && serviceNameIsValid && dueDateIsValid && subTotalIsValid && serviceDetailsIsValid) {
-            setFormValid(true)
-            setFormSubmitted(true)
+            onSetFormValid(true)
+            onSetFormSubmitted(true)
+            FormCompleteHandler()
         }
         if (clientNameHasError || emailHasError || invoiceNumberHasError || companyNameHasError || companyAddressHasError || serviceNameHasError || dueDateHasError || subTotalHasError || serviceDetailsHasError) {
-            setFormValid(false)
-            setFormSubmitted(true)
+            onSetFormValid(false)
+            onSetFormSubmitted(false)
         }
-    }, [setDateToday ,
+
+    }, [setDateToday ,onSetFormSubmitted, onSetFormValid,FormCompleteHandler,
         clientNameIsValid , companyNameIsValid,
         emailIsValid , companyNameHasError,
         clientNameHasError, companyAddressHasError,
@@ -123,40 +152,12 @@ const InvoiceFormElements = (props) => {
         dueDateHasError , dueDateIsValid ,
         subTotalHasError , subTotalIsValid , 
         serviceDetailsHasError , serviceDetailsIsValid
-    ])
-
-
+    ]);
+    
+       
+    
     const SubmitFormHandler = event => {
         event.preventDefault();
-    
-        if (!formValid) {
-          return;
-        }
-    
-        const formToSubmit = {
-          name : clientNameValue,
-          email : emailValue,
-          invoiceNumber : invoiceNumberValue,
-          companyName : companyNameValue,
-          companyAddress : companyAddressValue,
-          serviceName : serviceNameValue,
-          dueDate : dueDateValue,
-          subTotal : subTotalValue,
-          serviceDetails : serviceDetailsValue
-        }
-
-        setFormSubmitted(true)
-        console.log(formToSubmit)
-
-        resetServiceDetails();
-        resetSubTotal();
-        resetDueDate();
-        resetServiceName();
-        resetCompanyName();
-        resetCompanyAddress();
-        resetInvoiceNumber();
-        resetClientName();
-        resetEmail();
     }
 
     return (
@@ -223,9 +224,10 @@ const InvoiceFormElements = (props) => {
                         <select id="service-details"
                                 name="service-details"
                                 value={serviceDetailsValue}
+                                onChange={serviceDetailsSelectHandler}
                                 onSelect={serviceDetailsSelectHandler}
                                 onBlur={serviceDetailsBlurHandler}>
-                            {props.services.map(service => (
+                            {services.map(service => (
                                  <option key={service.serviceId} value={service.serviceName}>{service.serviceName}</option>
                             ))}
                         </select>
@@ -250,9 +252,6 @@ const InvoiceFormElements = (props) => {
                     </div>
                 </Row>
             </form>
-            {/* <button className={`${formValid ? Classes.submitButton : Classes.submitButtonDisabled}`}
-                    disabled={!formSubmitted}
-                    onClick={SubmitFormHandler}>Submit</button> */}
         </section>
     )
 }

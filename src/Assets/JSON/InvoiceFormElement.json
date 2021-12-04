@@ -1,0 +1,102 @@
+[
+    {
+        "field_id": "invoice-number",
+        "field_label": "Invoice Number",
+        "field_mandatory": "yes",
+        "field_placeholder": "",
+        "field_element":"input",
+        "field_type": "text",
+        "field_value": ""
+    },
+    {
+        "field_id": "date",
+        "field_label": "Date",
+        "field_mandatory": "yes",
+        "field_placeholder": "",
+        "field_element":"input",
+        "field_type": "date",
+        "field_value": ""
+    },
+    {
+        "field_id": "client-name",
+        "field_label": "Client Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "",
+        "field_element":"input",
+        "field_type": "text",
+        "field_value": ""
+    },
+    {
+        "field_id": "company-name",
+        "field_label": "Company Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "",
+        "field_element":"input",
+        "field_type": "text",
+        "field_value": ""
+    },
+    {
+        "field_id": "company-address",
+        "field_label": "Company Address",
+        "field_mandatory": "yes",
+        "field_placeholder": "",
+        "field_element":"textarea",
+        "fields_cols" : "40",
+        "fields_rows" : "2",
+        "field_value": ""
+    },
+    {
+        "field_id": "company-email",
+        "field_label": "Company Email",
+        "field_mandatory": "yes",
+        "field_placeholder": "",
+        "field_element":"input",
+        "field_type": "email",
+        "field_value": ""
+    },
+    {
+        "field_id": "service-name",
+        "field_label": "Service Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "Web Design and Development",
+        "field_element":"input",
+        "field_type": "text",
+        "field_value": ""
+    },
+    {
+        "field_id": "service-details",
+        "field_label": "Service Details",
+        "field_value": "Web Development",
+        "field_mandatory": "yes",
+        "field_options": [
+            {
+                "option_label": "Web Development"
+            },
+            {
+                "option_label": "UI/Ux Design"
+            },
+            {
+                "option_label": "Integration"
+            }
+        ],
+        "field_element":"select"
+    },
+    {
+        "field_id": "due-date",
+        "field_label": "Due Date",
+        "field_mandatory": "yes",
+        "field_placeholder": "",
+        "field_element":"input",
+        "field_type": "date",
+        "field_value": ""
+    },
+    {
+        "field_id": "subtotal",
+        "field_label": "Subtotal",
+        "field_mandatory": "yes",
+        "field_placeholder": "",
+        "field_element":"input",
+        "field_type": "number",
+        "field_value": ""
+    }
+]
