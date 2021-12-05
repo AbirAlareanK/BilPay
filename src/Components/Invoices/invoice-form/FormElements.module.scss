@@ -4,37 +4,42 @@ form{
     padding: 20px;
 }
 
-    label{
-        color: $main-font;
-        font-weight: 400 ;
-        font-size: 13px;
-    }
+label{
+    color: $main-font;
+    font-weight: 400 ;
+    font-size: 13px;
+}
 
-    input, textarea, select{
-        border: 1px solid $para-font;
-        border-radius: 3px;
-        margin-bottom: 0.5rem !important;
-        padding: 5px;
-        padding-left: 15px;
-        font-size: 13px;
-    }
+input, textarea, select{
+    border: 1px solid $para-font;
+    border-radius: 3px;
+    margin-bottom: 0.5rem !important;
+    padding: 5px;
+    padding-left: 15px;
+    font-size: 13px;
+}
 
-    input:focus,
-    textarea:focus,
-    select:focus{
-        background-color: $second-theme;
-        color: $para-font;
-        outline: none;
-    }
+input:focus,
+textarea:focus,
+select:focus{
+    // background-color: $second-theme;
+    color: $para-font;
+    outline: none;
+}
 
-    input::placeholder,
-    textarea::placeholder,
-    select::placeholder {
-        color: $para-font;
-        outline: none;
-        font-size: 13px;
-    }
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+    color: $para-font;
+    outline: none;
+    font-size: 13px;
+}
 
+.autoFucosEffect{
+    background-color: $second-theme;
+    color: $para-font;
+    outline: none;
+}
 
 .formControl{
     display: flex;

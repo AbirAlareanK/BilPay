@@ -6,7 +6,11 @@
         "field_placeholder": "",
         "field_element":"input",
         "field_type": "text",
-        "field_value": ""
+        "field_value": "",
+        "field_focus" : true,
+        "field_isValid" : true,
+        "field_isTouched": false,
+        "field_hasError":false
     },
     {
         "field_id": "date",
@@ -15,7 +19,11 @@
         "field_placeholder": "",
         "field_element":"input",
         "field_type": "date",
-        "field_value": ""
+        "field_value": "",
+        "field_focus" : true,
+        "field_isValid" : true,
+        "field_isTouched": true,
+        "field_hasError":false
     },
     {
         "field_id": "client-name",
@@ -24,7 +32,11 @@
         "field_placeholder": "",
         "field_element":"input",
         "field_type": "text",
-        "field_value": ""
+        "field_value": "",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
     },
     {
         "field_id": "company-name",
@@ -33,7 +45,11 @@
         "field_placeholder": "",
         "field_element":"input",
         "field_type": "text",
-        "field_value": ""
+        "field_value": "",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
     },
     {
         "field_id": "company-address",
@@ -43,7 +59,11 @@
         "field_element":"textarea",
         "fields_cols" : "40",
         "fields_rows" : "2",
-        "field_value": ""
+        "field_value": "",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
     },
     {
         "field_id": "company-email",
@@ -52,7 +72,11 @@
         "field_placeholder": "",
         "field_element":"input",
         "field_type": "email",
-        "field_value": ""
+        "field_value": "",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
     },
     {
         "field_id": "service-name",
@@ -61,7 +85,11 @@
         "field_placeholder": "Web Design and Development",
         "field_element":"input",
         "field_type": "text",
-        "field_value": ""
+        "field_value": "",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
     },
     {
         "field_id": "service-details",
@@ -79,7 +107,11 @@
                 "option_label": "Integration"
             }
         ],
-        "field_element":"select"
+        "field_element":"select",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
     },
     {
         "field_id": "due-date",
@@ -88,7 +120,11 @@
         "field_placeholder": "",
         "field_element":"input",
         "field_type": "date",
-        "field_value": ""
+        "field_value": "",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
     },
     {
         "field_id": "subtotal",
@@ -97,6 +133,10 @@
         "field_placeholder": "",
         "field_element":"input",
         "field_type": "number",
-        "field_value": ""
+        "field_value": "",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
     }
 ]

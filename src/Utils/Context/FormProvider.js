@@ -1,4 +1,4 @@
-import { createContext , useCallback, useContext , useEffect, useState } from "react";
+import { createContext , useCallback, useContext , useState } from "react";
 import formJSON from '../../Assets/JSON/InvoiceFormElement.json';
 
 
@@ -9,20 +9,22 @@ const FormProvider = (props) => {
 
     const [ fieldElements , setFieldElements] = useState(formJSON);
 
-    // get today date
+    const isNotEmpty = (value) => value.trim() !== '';
+    const isEmail = (value) => value.includes('@');
+
+    // get month by name:
     // const monthNames = ["January", "February", "March", "April", "May", "June",
-    // "July", "August", "September", "October", "November", "December"
-    // ];
-    const today = new Date()
+    //                     "July", "August", "September", "October", "November", "December"];
     // const DateToday = (monthNames[today.getMonth()])+' '+today.getDate()+', '+today.getFullYear()
+    
+    const today = new Date()
     var DateDay = today.getDate()
     if(DateDay < 9){
         DateDay = `0${DateDay}`
     }
     const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay)
-    console.log(DateToday)
-    //
-
+    
+    
     const initialElements =  useCallback(()=> {
         return fieldElements.map(field => {
                 if(field['field_id'] === "date"){
@@ -31,23 +33,75 @@ const FormProvider = (props) => {
                 if(field['field_id'] === 'invoice-number'){
                     return {...field , field_value: "INV_002" }
                 }
-                if(field['field_id'] === 'due-date'){
-                    return {...field , field_value: DateToday }
-                }
                 return field
-            }) || []
+            })
     },[])
+
+    const HasError = (id) => {
+        const newElements = [ ...fieldElements ] 
+        newElements.forEach(field => {
+        const { field_id } = field;
+            if (id === field_id) {
+                if(!field['field_isValid'] && !field['field_isTouched']){
+                    field['field_hasError'] = true;
+                }else{
+                    field['field_hasError'] = false;
+                }
+            }
+        });
+        setFieldElements(newElements)
+    }
     
     const HandleChange = (id, event) => {
-        console.log('event' + event.target.value);
-        console.log(id)
+        const newElements = [ ...fieldElements ] 
+        newElements.forEach(field => {
+            const { field_type, field_id } = field;
+            if (id === field_id) {
+                field['field_isTouched'] = true;
+                
+                // Check if input is valid
+                if(field_type === "email"){
+                    field['field_isValid'] = isEmail(event.target.value);
+                }else{
+                    field['field_isValid'] = isNotEmpty(event.target.value);
+                }
+                
+                // check if input has error
+                HasError(id);
+
+                // save the value
+                switch (field_type) {
+                case 'checkbox':
+                    field['field_value'] = event.target.checked;
+                    break;
+                default:
+                    field['field_value'] = event.target.value;
+                    console.log('value ' + field['field_value'] )
+                    break;
+                }
+            }
+        });
+        setFieldElements(newElements)
     }
 
+    const HandleBlur = (id) => {
+        const newElements = [ ...fieldElements ] 
+        newElements.forEach(field => {
+            const { field_id } = field;
+            if (id === field_id) {
+                field['field_isTouched'] = false;
+                HasError(id);
+            }
+        });
+        setFieldElements(newElements)
+    }
     
     return(
         <FormContext.Provider value = {{
                 initialElements,
                 HandleChange,
+                HandleBlur,
+                HasError
             }}>
            {props.children}
         </FormContext.Provider>

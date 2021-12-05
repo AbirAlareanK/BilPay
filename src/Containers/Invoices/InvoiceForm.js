@@ -14,16 +14,18 @@ import { useEffect, useState } from 'react';
 const InvoiceForm = () => {
 
  
-  const  { initialElements }  =  UseFormElement();
-  const [ fields , setFields ] = useState()
+    const  { initialElements }  =  UseFormElement();
+    const [ fields , setFields ] = useState()
+    
+    useEffect(() => {
+        setFields(initialElements())
+        console.log('set the initial only once')
+    } ,[initialElements])
 
-  useEffect(() => {
-      setFields(initialElements())
-  } ,[initialElements])
 
-  const SubmitFormHandler = (event) => {
-    event.preventDefault();
-  }
+    const SubmitFormHandler = (event) => {
+        event.preventDefault();
+    }
 
 
     const PrintInvoiceHandler = () => {
@@ -43,7 +45,7 @@ const InvoiceForm = () => {
                         <Row>
                             <Col lg={8} md={9} xs={12} className="card-wrapper">
                               <form>
-                                  {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : null}
+                                  {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
                               </form>
                             </Col>
                             <Col lg={4} md={3} xs={12}>
