@@ -10,9 +10,11 @@
 }
 
 .saveInvoiceButton{
+    pointer-events: auto; 
     cursor: pointer;
 }
 
 .saveInvoiceButtonDisabled{
-  cursor: not-allowed;
+    pointer-events: none; 
+    cursor: not-allowed;
 }

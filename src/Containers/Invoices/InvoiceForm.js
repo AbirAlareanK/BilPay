@@ -8,16 +8,17 @@ import { BsPrinter , BsDownload} from 'react-icons/bs';
 import  {IoSendOutline} from 'react-icons/io5'
 import FormElement from '../../Components/Invoices/invoice-form/FormElement';
 import { UseFormElement } from '../../Utils/Context/FormProvider';
+import { UseInvoices } from '../../Utils/Context/InvoicesProvider';
 import { useEffect, useState } from 'react';
 
 
 const InvoiceForm = () => {
 
  
-    const  { FormIsValid , initialElements }  =  UseFormElement();
-    // const [ formValid , setFormValid ] = useState();
+    const  { GetNewInvoice , FormIsValid , initialElements }  =  UseFormElement();
+    const  { AddInvoice } = UseInvoices();
+    
     const [ fields , setFields ] = useState()
-    console.log('form is valid ' + FormIsValid)
     
     useEffect(() => {
         setFields(initialElements())
@@ -25,12 +26,9 @@ const InvoiceForm = () => {
     } ,[initialElements])
 
 
-    // useEffect(()=>{
-    //     setFormIsValid(FormIsValid())
-    // },[FormIsValid])
-
     const SubmitFormHandler = (event) => {
         event.preventDefault();
+        AddInvoice(GetNewInvoice());
     }
 
 
@@ -57,7 +55,7 @@ const InvoiceForm = () => {
                             <Col lg={4} md={3} xs={12}>
                                 <section className={Classes.createInvoiceActions}>
                                     <Button className={`${FormIsValid ? Classes.saveInvoiceButton : Classes.saveInvoiceButtonDisabled}`}
-                                            disabled={FormIsValid}
+                                            // disabled={!FormIsValid}
                                             onClick={SubmitFormHandler}>
                                         <AiOutlineSave />
                                         Save

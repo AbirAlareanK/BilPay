@@ -1,6 +1,6 @@
 import { createContext, useContext , useState } from "react";
 import InvoicesData from '../../Assets/JSON/invoices-data.json';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 
 
 const InvoicesContext =  createContext();
@@ -8,7 +8,6 @@ export const UseInvoices = () => useContext(InvoicesContext) ;
 
 const InvoicesProvider = (props) => {
     const [invoices , setInvoices ] = useState(InvoicesData);
-
     const filteredPaidInvo = invoices.filter(invoice =>  invoice.status === "paid");
     const filteredUnPaidInvo = invoices.filter(invoice => invoice.status === "unpaid");
     const filteredRows = invoices.map(invoice => (
@@ -27,7 +26,6 @@ const InvoicesProvider = (props) => {
         setInvoices([
             ...invoices,
             {
-                id: nanoid(),
                 ...newInvoice
             }
         ]);

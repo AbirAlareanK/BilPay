@@ -25,7 +25,7 @@ const FormProvider = (props) => {
     const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay)
     
     const ClaculateInvoiceNumber = () => {
-        const Invoice_number = Invoices.length
+        const Invoice_number = Invoices.length + 1
         const zeroFilled =  ('000' + Invoice_number).substr(-3)
         const fullChar = `INV_${zeroFilled}`
         return fullChar ;
@@ -41,7 +41,7 @@ const FormProvider = (props) => {
                 }
                 return field
             })
-    },[])
+    },[DateToday , fieldElements ])
 
     const FormIsValidCheck = () => {
         const newElements = fieldElements.map(field => {
@@ -113,7 +113,60 @@ const FormProvider = (props) => {
         setFieldElements(newElements)
     }
 
-
+    const GetNewInvoice = () => {
+        const newInvoice =  {
+            invoiceNumber : '',
+            invoiceDate: '',
+            client: '',
+            email:  '',
+            companyName: '',
+            companyAddress: '',
+            serviceName: '',
+            serviceDetails:'' ,
+            dueDate: '',
+            subtotal: '',
+            status:  'Unpaid',
+            discount:  0 ,
+            dicountAmount : 0   
+        }
+        fieldElements.map(field => {
+            switch(field['field_id']){
+                case 'invoice-number':
+                    newInvoice.invoiceNumber = ClaculateInvoiceNumber()
+                break;
+                case 'date':
+                    newInvoice.invoiceDate = DateToday
+                break;
+                case 'client-name':
+                    newInvoice.client = field['field_value']
+                break;
+                case 'client-email':
+                    newInvoice.email = field['field_value']
+                break;
+                case 'company-name':
+                    newInvoice.companyName = field['field_value']
+                break;
+                case 'company-address':
+                    newInvoice.companyAddress = field['field_value']
+                break;
+                case 'service-name':
+                    newInvoice.serviceName = field['field_value']
+                break;
+                case 'service-details':
+                    newInvoice.serviceDetails = field['field_value']
+                break;
+                case 'due-date':
+                    newInvoice.dueDate = field['field_value']
+                break;
+                case 'subtotal':
+                    newInvoice.subtotal = field['field_value']
+                break;
+                default:
+                return null;
+            }
+        });
+        return newInvoice ;
+    }
     
     return(
         <FormContext.Provider value = {{
@@ -121,7 +174,8 @@ const FormProvider = (props) => {
                 HandleChange,
                 HandleBlur,
                 HasError,
-                FormIsValid
+                FormIsValid,
+                GetNewInvoice
             }}>
            {props.children}
         </FormContext.Provider>
