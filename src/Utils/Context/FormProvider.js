@@ -1,6 +1,6 @@
 import { createContext , useCallback, useContext , useState } from "react";
 import formJSON from '../../Assets/JSON/InvoiceFormElement.json';
-
+import Invoices from '../../Assets/JSON/invoices-data.json';
 
 const FormContext = createContext(null); 
 export const UseFormElement = () => useContext(FormContext) ;
@@ -24,14 +24,20 @@ const FormProvider = (props) => {
     }
     const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay)
     
-    
+    const ClaculateInvoiceNumber = () => {
+        const Invoice_number = Invoices.length
+        const zeroFilled =  ('000' + Invoice_number).substr(-3)
+        const fullChar = `INV_${zeroFilled}`
+        return fullChar ;
+    }
+
     const initialElements =  useCallback(()=> {
         return fieldElements.map(field => {
                 if(field['field_id'] === "date"){
                     return {...field , field_value: DateToday }
                 }
                 if(field['field_id'] === 'invoice-number'){
-                    return {...field , field_value: "INV_002" }
+                    return {...field , field_value: ClaculateInvoiceNumber() }
                 }
                 return field
             })
