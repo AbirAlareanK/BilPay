@@ -157,9 +157,9 @@ const FormProvider = (props) => {
                 case 'due-date':
                     newInvoice.dueDate = field['field_value']
                 break;
-                // case 'subtotal':
-                //     newInvoice.subtotal = field['field_value']
-                // break;
+                case 'subtotal':
+                    newInvoice.subtotal = field['field_value']
+                break;
                 default:
                 return null;
             }
