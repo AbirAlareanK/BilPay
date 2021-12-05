@@ -13,16 +13,12 @@ import { useEffect, useState } from 'react';
 
 
 const InvoiceForm = () => {
-
- 
     const  { GetNewInvoice , FormIsValid , initialElements }  =  UseFormElement();
     const  { AddInvoice } = UseInvoices();
-    
     const [ fields , setFields ] = useState()
     
     useEffect(() => {
-        setFields(initialElements())
-        console.log('set the initial only once')
+        setFields(initialElements);
     } ,[initialElements])
 
 

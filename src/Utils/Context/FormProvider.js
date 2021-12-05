@@ -1,8 +1,8 @@
-import { createContext , useCallback, useContext , useState } from "react";
+import { createContext , useContext , useState } from "react";
 import formJSON from '../../Assets/JSON/InvoiceFormElement.json';
 import Invoices from '../../Assets/JSON/invoices-data.json';
 
-const FormContext = createContext(null); 
+export const FormContext = createContext(null); 
 export const UseFormElement = () => useContext(FormContext) ;
 
 const FormProvider = (props) => {
@@ -24,24 +24,23 @@ const FormProvider = (props) => {
     }
     const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay)
     
-    const ClaculateInvoiceNumber = () => {
+    const CalculateInvoiceNumber = () => {
         const Invoice_number = Invoices.length + 1
         const zeroFilled =  ('000' + Invoice_number).substr(-3)
         const fullChar = `INV_${zeroFilled}`
         return fullChar ;
     }
 
-    const initialElements =  useCallback(()=> {
-        return fieldElements.map(field => {
+    const initialElements = fieldElements.map(field => {
                 if(field['field_id'] === "date"){
                     return {...field , field_value: DateToday }
                 }
                 if(field['field_id'] === 'invoice-number'){
-                    return {...field , field_value: ClaculateInvoiceNumber() }
+                    return {...field , field_value: CalculateInvoiceNumber() }
                 }
                 return field
             })
-    },[DateToday , fieldElements ])
+    
 
     const FormIsValidCheck = () => {
         const newElements = fieldElements.map(field => {
@@ -125,14 +124,14 @@ const FormProvider = (props) => {
             serviceDetails:'' ,
             dueDate: '',
             subtotal: '',
-            status:  'Unpaid',
+            status:  'UnPaid',
             discount:  0 ,
             dicountAmount : 0   
         }
-        fieldElements.map(field => {
+        fieldElements.forEach(field => {
             switch(field['field_id']){
                 case 'invoice-number':
-                    newInvoice.invoiceNumber = ClaculateInvoiceNumber()
+                    newInvoice.invoiceNumber = CalculateInvoiceNumber()
                 break;
                 case 'date':
                     newInvoice.invoiceDate = DateToday
@@ -158,9 +157,9 @@ const FormProvider = (props) => {
                 case 'due-date':
                     newInvoice.dueDate = field['field_value']
                 break;
-                case 'subtotal':
-                    newInvoice.subtotal = field['field_value']
-                break;
+                // case 'subtotal':
+                //     newInvoice.subtotal = field['field_value']
+                // break;
                 default:
                 return null;
             }

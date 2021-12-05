@@ -12,7 +12,7 @@ const Input = ({ field_hasError , field_focus, field_type ,field_id, field_label
         <div className={field_hasError ? `${Classes.formControl} ${Classes.invalid}` : `${Classes.formControl}`}>
             <label>{field_label}</label>
             <input type={field_type}
-                className={field_focus && Classes.autoFucosEffect }  
+                className={field_focus ? Classes.autoFucosEffect : ''}  
                 placeholder={field_placeholder ? field_placeholder : ''}
                 readOnly={field_focus}
                 value={field_value}
