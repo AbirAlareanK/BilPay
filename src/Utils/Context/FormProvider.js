@@ -8,7 +8,7 @@ export const UseFormElement = () => useContext(FormContext) ;
 const FormProvider = (props) => {
 
     const [ fieldElements , setFieldElements] = useState(formJSON);
-
+    const [ FormIsValid , setFormIsValid ] = useState(false);
     const isNotEmpty = (value) => value.trim() !== '';
     const isEmail = (value) => value.includes('@');
 
@@ -43,6 +43,17 @@ const FormProvider = (props) => {
             })
     },[])
 
+    const FormIsValidCheck = () => {
+        const newElements = fieldElements.map(field => {
+            return field['field_isValid']
+        }) 
+        if(newElements.every(v => v === true)){
+            setFormIsValid(true)
+        }else{
+            setFormIsValid(false)
+        }
+    }
+
     const HasError = (id) => {
         const newElements = [ ...fieldElements ] 
         newElements.forEach(field => {
@@ -55,6 +66,7 @@ const FormProvider = (props) => {
                 }
             }
         });
+        FormIsValidCheck();
         setFieldElements(newElements)
     }
     
@@ -82,7 +94,6 @@ const FormProvider = (props) => {
                     break;
                 default:
                     field['field_value'] = event.target.value;
-                    console.log('value ' + field['field_value'] )
                     break;
                 }
             }
@@ -101,13 +112,16 @@ const FormProvider = (props) => {
         });
         setFieldElements(newElements)
     }
+
+
     
     return(
         <FormContext.Provider value = {{
                 initialElements,
                 HandleChange,
                 HandleBlur,
-                HasError
+                HasError,
+                FormIsValid
             }}>
            {props.children}
         </FormContext.Provider>

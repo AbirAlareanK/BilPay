@@ -14,14 +14,20 @@ import { useEffect, useState } from 'react';
 const InvoiceForm = () => {
 
  
-    const  { initialElements }  =  UseFormElement();
+    const  { FormIsValid , initialElements }  =  UseFormElement();
+    // const [ formValid , setFormValid ] = useState();
     const [ fields , setFields ] = useState()
+    console.log('form is valid ' + FormIsValid)
     
     useEffect(() => {
         setFields(initialElements())
         console.log('set the initial only once')
     } ,[initialElements])
 
+
+    // useEffect(()=>{
+    //     setFormIsValid(FormIsValid())
+    // },[FormIsValid])
 
     const SubmitFormHandler = (event) => {
         event.preventDefault();
@@ -50,9 +56,8 @@ const InvoiceForm = () => {
                             </Col>
                             <Col lg={4} md={3} xs={12}>
                                 <section className={Classes.createInvoiceActions}>
-                                    <Button 
-                                    //className={`${formValid ? Classes.saveInvoiceButton : Classes.saveInvoiceButtonDisabled}`}
-                                            //disabled={!formSubmitted}
+                                    <Button className={`${FormIsValid ? Classes.saveInvoiceButton : Classes.saveInvoiceButtonDisabled}`}
+                                            disabled={FormIsValid}
                                             onClick={SubmitFormHandler}>
                                         <AiOutlineSave />
                                         Save
