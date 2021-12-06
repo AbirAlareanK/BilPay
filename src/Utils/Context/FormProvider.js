@@ -24,22 +24,9 @@ const FormProvider = (props) => {
     }
     const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay)
     
-    const CalculateInvoiceNumber = () => {
-        const Invoice_number = Invoices.length + 1
-        const zeroFilled =  ('000' + Invoice_number).substr(-3)
-        const fullChar = `INV_${zeroFilled}`
-        return fullChar ;
-    }
-
-    const initialElements = fieldElements.map(field => {
-                if(field['field_id'] === "date"){
-                    return {...field , field_value: DateToday }
-                }
-                if(field['field_id'] === 'invoice-number'){
-                    return {...field , field_value: CalculateInvoiceNumber() }
-                }
-                return field
-            })
+    const Invoice_number = Invoices.length + 1
+    const zeroFilled =  ('000' + Invoice_number).substr(-3)
+    const CalculateInvoiceNumber =  `INV_${zeroFilled}`
     
 
     const FormIsValidCheck = () => {
@@ -100,7 +87,17 @@ const FormProvider = (props) => {
         setFieldElements(newElements)
     }
 
-
+    const ResetForm = () => {
+        const newElements = [ ...fieldElements ] 
+        newElements.forEach(field => {
+            if(field['field_id'] === 'invoice-number'){
+                field['field_value'] = CalculateInvoiceNumber
+            }else{
+                field['field_value'] = ''
+            }
+        });
+        setFieldElements(newElements)
+    }
 
     const HandleBlur = (id) => {
         const newElements = [ ...fieldElements ] 
@@ -133,7 +130,7 @@ const FormProvider = (props) => {
         fieldElements.forEach(field => {
             switch(field['field_id']){
                 case 'invoice-number':
-                    newInvoice.invoiceNumber = CalculateInvoiceNumber()
+                    newInvoice.invoiceNumber = CalculateInvoiceNumber
                 break;
                 case 'date':
                     newInvoice.invoiceDate = DateToday
@@ -171,12 +168,15 @@ const FormProvider = (props) => {
     
     return(
         <FormContext.Provider value = {{
-                initialElements,
+                //initialElements,
+                FormIsValid,
+                DateToday,
+                CalculateInvoiceNumber,
                 HandleChange,
                 HandleBlur,
                 HasError,
-                FormIsValid,
-                GetNewInvoice
+                GetNewInvoice,
+                ResetForm
             }}>
            {props.children}
         </FormContext.Provider>

@@ -1,7 +1,6 @@
 
 import Button from '../../Components/UIs/Button';
 import { Col , Row , Container } from "react-bootstrap";
-// import InvoiceFormElements from "../../Components/Invoices/invoice-form/InvoiceFormElements";
 import Classes from './InvoiceForm.module.scss'
 import { AiOutlineSave , AiOutlineEye} from 'react-icons/ai';
 import { BsPrinter , BsDownload} from 'react-icons/bs';
@@ -9,25 +8,19 @@ import  {IoSendOutline} from 'react-icons/io5'
 import FormElement from '../../Components/Invoices/invoice-form/FormElement';
 import { UseFormElement } from '../../Utils/Context/FormProvider';
 import { UseInvoices } from '../../Utils/Context/InvoicesProvider';
-import { useEffect, useState } from 'react';
-
+import { useState } from 'react';
+import formJSON from '../../Assets/JSON/InvoiceFormElement.json';
 
 const InvoiceForm = () => {
-    const  { GetNewInvoice , FormIsValid , initialElements }  =  UseFormElement();
+    const  { ResetForm , GetNewInvoice , FormIsValid }  =  UseFormElement();
     const  { AddInvoice } = UseInvoices();
-    const [ fields , setFields ] = useState()
-    
-    useEffect(() => {
-        setFields(initialElements);
-    } ,[initialElements])
-
+    const [ fields ] = useState(formJSON)
 
     const SubmitFormHandler = (event) => {
         event.preventDefault();
         AddInvoice(GetNewInvoice());
-        setFields(initialElements);
+        ResetForm();
     }
-
 
     const PrintInvoiceHandler = () => {
         window.print();
