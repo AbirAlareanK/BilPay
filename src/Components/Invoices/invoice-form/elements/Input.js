@@ -12,9 +12,6 @@ const Input = ({ field_hasError , field_focus, field_type ,field_id, field_label
     }
 
     useEffect(()=> {
-        console.log('that will be executed once only');
-        console.log('date ' + DateToday);
-        console.log('inv - num : ' + CalculateInvoiceNumber)
         if(field_id === 'date' && field_value === ''){
             setInitialValue(DateToday);
         }else
