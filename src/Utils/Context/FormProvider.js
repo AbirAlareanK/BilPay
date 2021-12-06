@@ -100,6 +100,8 @@ const FormProvider = (props) => {
         setFieldElements(newElements)
     }
 
+
+
     const HandleBlur = (id) => {
         const newElements = [ ...fieldElements ] 
         newElements.forEach(field => {

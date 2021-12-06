@@ -25,6 +25,7 @@ const InvoiceForm = () => {
     const SubmitFormHandler = (event) => {
         event.preventDefault();
         AddInvoice(GetNewInvoice());
+        setFields(initialElements);
     }
 
 
