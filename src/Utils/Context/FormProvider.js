@@ -100,7 +100,17 @@ const FormProvider = (props) => {
         setFieldElements(newElements)
     }
 
-
+    const ResetForm = () => {
+        const newElements = [ ...fieldElements ] 
+        newElements.forEach(field => {
+            if(field['field_id'] === 'invoice-number'){
+                field['field_value'] = CalculateInvoiceNumber()
+            }else{
+                field['field_value'] = ''
+            }
+        });
+        setFieldElements(newElements)
+    }
 
     const HandleBlur = (id) => {
         const newElements = [ ...fieldElements ] 
@@ -176,7 +186,8 @@ const FormProvider = (props) => {
                 HandleBlur,
                 HasError,
                 FormIsValid,
-                GetNewInvoice
+                GetNewInvoice,
+                ResetForm
             }}>
            {props.children}
         </FormContext.Provider>

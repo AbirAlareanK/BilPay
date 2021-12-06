@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 
 
 const InvoiceForm = () => {
-    const  { GetNewInvoice , FormIsValid , initialElements }  =  UseFormElement();
+    const  { ResetForm , GetNewInvoice , FormIsValid , initialElements }  =  UseFormElement();
     const  { AddInvoice } = UseInvoices();
     const [ fields , setFields ] = useState()
     
@@ -25,7 +25,7 @@ const InvoiceForm = () => {
     const SubmitFormHandler = (event) => {
         event.preventDefault();
         AddInvoice(GetNewInvoice());
-        setFields(initialElements);
+        ResetForm();
     }
 
 
