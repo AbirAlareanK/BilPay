@@ -1,8 +1,8 @@
 
 import './App.scss';
 // import InvoiceDetails from './Containers/Invoices/InvoiceDetails';
-import InvoiceForm from './Containers/Invoices/InvoiceForm';
-import FormProvider from './Utils/Context/FormProvider';
+// import InvoiceForm from './Containers/Invoices/InvoiceForm';
+// import FormProvider from './Utils/Context/FormProvider';
 // import Invoices from './Containers/Invoices/Invoices';
 import InvoicesProvider from './Utils/Context/InvoicesProvider';
 import AdminCard from './Components/UIs/AdminCard';
@@ -16,7 +16,9 @@ function App() {
   return (
     <div className="App">
       <InvoicesProvider>
-        <AdminCard/>
+        <AdminCard cardNum="1234 5678 7654 7892"
+                   balance="4811,21"
+                   validation="03/21"/>
         {/* <Invoices /> */}
         {/* <InvoiceDetails/> */}
         {/* <FormProvider>
