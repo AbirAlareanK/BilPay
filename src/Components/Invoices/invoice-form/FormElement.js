@@ -4,7 +4,7 @@ import Select from './elements/Select';
 import File from './elements/File';
 import Textarea from './elements/Textarea';
 
-const FormElement = ({ field: { field_hasError , field_focus , field_cols , field_rows ,field_type ,field_element, field_id, field_label, field_placeholder, field_value, field_options } }) => {
+const FormElement = ({ field: { field_size, field_hasError , field_focus , field_cols , field_rows ,field_type ,field_element, field_id, field_label, field_placeholder, field_value, field_options } }) => {
 
     switch (field_element) {
         case 'input':
@@ -16,6 +16,7 @@ const FormElement = ({ field: { field_hasError , field_focus , field_cols , fiel
                 field_type={field_type}
                 field_focus={field_focus}
                 field_hasError={field_hasError}
+                field_size ={field_size}
             />)
         case 'select':
             return (<Select
@@ -25,6 +26,7 @@ const FormElement = ({ field: { field_hasError , field_focus , field_cols , fiel
                 field_value={field_value}
                 field_options={field_options}
                 field_hasError={field_hasError}
+                field_size ={field_size}
             />)
         case 'textarea':
             return (<Textarea

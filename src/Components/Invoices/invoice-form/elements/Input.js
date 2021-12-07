@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { UseFormElement } from '../../../../Utils/Context/FormProvider'
 import Classes from '../FormElements.module.scss'
 
-const Input = ({ field_hasError , field_focus, field_type ,field_id, field_label, field_placeholder, field_value }) => {
+const Input = ({ field_size , field_hasError , field_focus, field_type ,field_id, field_label, field_placeholder, field_value }) => {
     
     const { DateToday , CalculateInvoiceNumber , HandleBlur , HandleChange } = UseFormElement();
     const [ initialValue , setInitialValue ] = useState('');

@@ -1,13 +1,14 @@
 import { UseFormElement } from '../../../../Utils/Context/FormProvider'
 import Classes from '../FormElements.module.scss'
 
-const Select = ({  field_hasError , field_id, field_label, field_options }) => {
+const Select = ({ field_size, field_hasError , field_id, field_label, field_options }) => {
     
     const { HandleChange , HandleBlur} = UseFormElement();
 
     const HandleSelectBlur = () => {
         HandleBlur(field_id)
     }
+    
     return (
         <div className={field_hasError ? `${Classes.formControl} ${Classes.invalid}` : `${Classes.formControl}`}>
             <label >{field_label}</label>

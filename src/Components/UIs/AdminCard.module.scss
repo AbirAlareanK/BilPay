@@ -1,0 +1,44 @@
+@import '../../Assets/Scss/colors';
+
+.adminCard{
+    background-color:$main-theme;
+    width: 300px;
+    height: 150px;
+    position: relative;
+    border-radius: 13px;
+    overflow: hidden;
+
+    span{
+        content: '';
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        position: absolute;
+        // transform: translate(90%, 25%);;
+        top: 20%;
+        left: 56%;
+
+        span{
+            content: '';
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            position: absolute;
+            top: 14%;
+            left: 15%;
+
+            span{
+                content: '';
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                border: 1px solid #ccc;
+                position: absolute;
+                top: 22%;
+                left: 25%;
+            }
+        }
+    }
+}
