@@ -1,4 +1,3 @@
-import { propTypes } from 'react-bootstrap/esm/Image';
 import Classes from './AdminCard.module.scss';
 
 

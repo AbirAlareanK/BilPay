@@ -7,18 +7,26 @@ import { BsPrinter , BsDownload} from 'react-icons/bs';
 import  {IoSendOutline} from 'react-icons/io5'
 import FormElement from '../../Components/Invoices/invoice-form/FormElement';
 import { UseFormElement } from '../../Utils/Context/FormProvider';
-import { UseInvoices } from '../../Utils/Context/InvoicesProvider';
-import { useState } from 'react';
+// import { UseInvoices } from '../../Utils/Context/InvoicesProvider';
+import { useEffect, useState } from 'react';
 import formJSON from '../../Assets/JSON/InvoiceFormElement.json';
 
 const InvoiceForm = () => {
-    const  { ResetForm , GetNewInvoice , FormIsValid }  =  UseFormElement();
-    const  { AddInvoice } = UseInvoices();
+    const  { ResetForm , SetFormElements , FormIsValid }  =  UseFormElement();
+    // const  { AddInvoice } = UseInvoices();
     const [ fields ] = useState(formJSON)
+
+    useEffect(()=>{
+        SetFormElements(fields);
+        return () => {
+            SetFormElements([])
+        }
+    },[SetFormElements , fields])
+
 
     const SubmitFormHandler = (event) => {
         event.preventDefault();
-        AddInvoice(GetNewInvoice());
+        // AddInvoice(GetNewInvoice());
         ResetForm();
     }
 

@@ -10,6 +10,12 @@ const InvoicesProvider = (props) => {
     const [invoices , setInvoices ] = useState(InvoicesData);
     const filteredPaidInvo = invoices.filter(invoice =>  invoice.status === "paid");
     const filteredUnPaidInvo = invoices.filter(invoice => invoice.status === "unpaid");
+
+    // Calculate Invoice Next Number
+    const Invoice_number = invoices.length + 1
+    const zeroFilled =  ('000' + Invoice_number).substr(-3)
+    const CalculateInvoiceNumber =  `INV_${zeroFilled}`
+
     const filteredRows = invoices.map(invoice => (
         {
             id : invoice['invoice-number'],
@@ -22,6 +28,8 @@ const InvoicesProvider = (props) => {
             detailsPage : "..."
          } 
      ))
+
+     
     const AddInvoice = (newInvoice) => {
         setInvoices([
             ...invoices,
@@ -60,6 +68,7 @@ const InvoicesProvider = (props) => {
        return invoiceDe;
     }
     
+    
     return(
         <InvoicesContext.Provider value = {{
                 invoices,
@@ -68,7 +77,8 @@ const InvoicesProvider = (props) => {
                 GetUnPaidInvoices,
                 GetTotalInvoices ,
                 GetTableRows,
-                GetInvoiceDetails
+                GetInvoiceDetails,
+                CalculateInvoiceNumber
             }}>
            {props.children}
         </InvoicesContext.Provider>

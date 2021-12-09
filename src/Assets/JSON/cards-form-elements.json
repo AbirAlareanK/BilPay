@@ -1,0 +1,51 @@
+[
+    {
+        "field_id": "card-number",
+        "field_label": "Card Number",
+        "field_mandatory": "yes",
+        "field_placeholder": "Card Number",
+        "field_element":"input",
+        "field_type": "text",
+        "field_value": "",
+        "field_size" : "half",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
+    },
+    {
+        "field_id": "bank",
+        "field_label": "Bank",
+        "field_value": "",
+        "field_mandatory": "yes",
+        "field_options": [
+            {
+                "option_label": "ABC Bank"
+            },
+            {
+                "option_label": "HCN Bank"
+            },
+            {
+                "option_label": "CDD Bank"
+            }
+        ],
+        "field_element":"select",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
+    },
+    {
+        "field_id": "namein-card",
+        "field_label": "Namein Card",
+        "field_mandatory": "yes",
+        "field_placeholder": "Name..",
+        "field_element":"input",
+        "field_type": "text",
+        "field_value": "",
+        "field_focus" : false,
+        "field_isValid" : false,
+        "field_isTouched": false,
+        "field_hasError":false
+    }
+]
