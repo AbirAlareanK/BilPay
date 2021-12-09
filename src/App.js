@@ -2,10 +2,10 @@
 import './App.scss';
 // import InvoiceDetails from './Containers/Invoices/InvoiceDetails';
 // import InvoiceForm from './Containers/Invoices/InvoiceForm';
-// import FormProvider from './Utils/Context/FormProvider';
+import FormProvider from './Utils/Context/FormProvider';
 // import Invoices from './Containers/Invoices/Invoices';
 import InvoicesProvider from './Utils/Context/InvoicesProvider';
-import AdminCard from './Components/UIs/AdminCard';
+import CardCenter from './Containers/Cards/CardCenter';
 
 // THis code to check if there is two react 
 require('react-dom');
@@ -16,14 +16,12 @@ function App() {
   return (
     <div className="App">
       <InvoicesProvider>
-        <AdminCard cardNum="1234 5678 7654 7892"
-                   balance="4811,21"
-                   validation="03/21"/>
+      <FormProvider>
+        <CardCenter />
         {/* <Invoices /> */}
         {/* <InvoiceDetails/> */}
-        {/* <FormProvider>
-          <InvoiceForm />
-        </FormProvider> */}
+          {/* <InvoiceForm /> */}
+        </FormProvider>
       </InvoicesProvider>
     </div>
   );
