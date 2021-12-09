@@ -3,7 +3,7 @@ import InvoicesData from '../../Assets/JSON/invoices-data.json';
 // import { nanoid } from 'nanoid';
 
 
-const InvoicesContext =  createContext();
+export const InvoicesContext =  createContext();
 export const UseInvoices = () => useContext(InvoicesContext) ;
 
 const InvoicesProvider = (props) => {
@@ -11,10 +11,6 @@ const InvoicesProvider = (props) => {
     const filteredPaidInvo = invoices.filter(invoice =>  invoice.status === "paid");
     const filteredUnPaidInvo = invoices.filter(invoice => invoice.status === "unpaid");
 
-    // Calculate Invoice Next Number
-    const Invoice_number = invoices.length + 1
-    const zeroFilled =  ('000' + Invoice_number).substr(-3)
-    const CalculateInvoiceNumber =  `INV_${zeroFilled}`
 
     const filteredRows = invoices.map(invoice => (
         {
@@ -29,7 +25,55 @@ const InvoicesProvider = (props) => {
          } 
      ))
 
+    const FindMissingNInArray = (array) => {
+        const mnia = array.sort().reduce((acc, cur, ind, arr)=> {
+            var diff = cur - arr[ind-1];
+            if (diff > 1) {
+              var i = 1;
+              while (i < diff) {
+                acc.push(arr[ind-1]+i);
+                i++;
+              }
+            }
+            return acc;
+          }, []);
+        return mnia;
+    }
+
+    const CalculateInvoiceNumber = () => {
+        const invoiceNums = invoices.map(inv => {
+           return inv['invoice-number'].slice(4)
+        })
+        const missingNum = FindMissingNInArray(invoiceNums.map((el)=>{ return +el;}))
+        if(missingNum.length === 0){
+             const Invoice_number = invoices.length + 1
+            const zeroFilled =  ('00' + Invoice_number)
+            const CalculateInvoiceNumber =  `INV_${zeroFilled}`
+            return CalculateInvoiceNumber;
+        }else {
+            const zeroFilled =  ('00' + missingNum[0])
+            const CalculateInvoiceNumber =  `INV_${zeroFilled}`
+            return CalculateInvoiceNumber;
+        }
+    }
      
+    const GetDateToday = () => {
+       // get month by name: => that will not work with Default value..
+
+       // const monthNames = ["January", "February", "March", "April", "May", "June",
+       //                     "July", "August", "September", "October", "November", "December"];
+       // const DateToday = (monthNames[today.getMonth()])+' '+today.getDate()+', '+today.getFullYear()
+       
+       const today = new Date()
+       var DateDay = today.getDate()
+       if(DateDay <= 9){
+           DateDay = `0${DateDay}`
+       }
+       const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay)
+       return DateToday;
+   
+   };
+
     const AddInvoice = (newInvoice) => {
         setInvoices([
             ...invoices,
@@ -78,7 +122,8 @@ const InvoicesProvider = (props) => {
                 GetTotalInvoices ,
                 GetTableRows,
                 GetInvoiceDetails,
-                CalculateInvoiceNumber
+                CalculateInvoiceNumber,
+                GetDateToday
             }}>
            {props.children}
         </InvoicesContext.Provider>

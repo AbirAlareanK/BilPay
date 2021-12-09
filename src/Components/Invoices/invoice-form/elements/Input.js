@@ -6,7 +6,7 @@ import { UseInvoices } from '../../../../Utils/Context/InvoicesProvider';
 const Input = ({ field_hasError , field_focus, field_type ,field_id, field_label, field_placeholder, field_value }) => {
     
     const {  HandleBlur , HandleChange } = UseFormElement();
-    const { CalculateInvoiceNumber } = UseInvoices();
+    const { GetDateToday , CalculateInvoiceNumber} = UseInvoices();
     const [ initialValue , setInitialValue ] = useState('');
 
     const HandleInputBlur = () => {
@@ -14,15 +14,14 @@ const Input = ({ field_hasError , field_focus, field_type ,field_id, field_label
     }
 
     useEffect(()=> {
-        // if(field_id === 'date' && field_value === ''){
-        //     setInitialValue(DateToday);
-        // }else
-        if(field_id === 'invoice-number'  && field_value === ''){
-            setInitialValue(CalculateInvoiceNumber)
+        if(field_id === 'date' && field_value === ''){
+            setInitialValue(GetDateToday());
+        }else if(field_id === 'invoice-number'  && field_value === ''){
+            setInitialValue(CalculateInvoiceNumber())
         }else{
             setInitialValue(field_value)
         }
-    } ,[field_value , field_id  , CalculateInvoiceNumber])
+    } ,[field_value , field_id , GetDateToday , CalculateInvoiceNumber])
 
     return (
         <div className={field_hasError ? `${Classes.formControl} ${Classes.invalid}` : `${Classes.formControl}`}>

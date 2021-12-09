@@ -30,7 +30,7 @@
         "dicount-amount" : 10 
     },
     {
-        "invoice-number" : "INV-003",
+        "invoice-number" : "INV-004",
         "invoice-date":"March 20,2021",
         "client":"Zaiful Bahri",
         "email": "abg@kfo",
@@ -45,7 +45,7 @@
         "dicount-amount" : 10 
     },
     {
-        "invoice-number" : "INV-004",
+        "invoice-number" : "INV-005",
         "invoice-date":"March 20,2021",
         "client":"John Doe",
         "email": "abg@kfo",
@@ -60,7 +60,7 @@
         "dicount-amount" : 13
     },
     {
-        "invoice-number" : "INV-005",
+        "invoice-number" : "INV-006",
         "invoice-date":"March 20,2021",
         "client":"Zaiful Bahri",
         "email": "abg@kfo",
@@ -75,7 +75,7 @@
         "dicount-amount" : 10 
     },
     {
-        "invoice-number" : "INV-006",
+        "invoice-number" : "INV-007",
         "invoice-date":"March 20,2021",
         "client":"John Doe",
         "email": "abg@kfo",
@@ -90,7 +90,7 @@
         "dicount-amount" : 14
     },
     {
-        "invoice-number" : "INV-007",
+        "invoice-number" : "INV-008",
         "invoice-date":"March 20,2021",
         "client":"Zaiful Bahri",
         "email": "abg@kfo",
