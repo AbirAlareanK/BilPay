@@ -1,8 +1,8 @@
 
 import './App.scss';
-// import CardCenter from './Containers/Cards/CardCenter';
+import CardCenter from './Containers/Cards/CardCenter';
 // import InvoiceDetails from './Containers/Invoices/InvoiceDetails';
-import InvoiceForm from './Containers/Invoices/InvoiceForm';
+// import InvoiceForm from './Containers/Invoices/InvoiceForm';
 import FormProvider from './Utils/Context/FormProvider';
 // import Invoices from './Containers/Invoices/Invoices';
 import InvoicesProvider from './Utils/Context/InvoicesProvider';
@@ -17,10 +17,10 @@ function App() {
     <div className="App">
       <InvoicesProvider>
         <FormProvider>
-          {/* <CardCenter /> */}
+          <CardCenter />
            {/* <Invoices /> */}
         {/* <InvoiceDetails/> */}
-          <InvoiceForm />
+          {/* <InvoiceForm /> */}
         </FormProvider>
       </InvoicesProvider>
     </div>
