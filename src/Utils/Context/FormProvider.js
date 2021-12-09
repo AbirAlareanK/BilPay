@@ -1,33 +1,20 @@
 import { createContext , useContext , useState } from "react";
-import formJSON from '../../Assets/JSON/InvoiceFormElement.json';
-import Invoices from '../../Assets/JSON/invoices-data.json';
 
 export const FormContext = createContext(null); 
 export const UseFormElement = () => useContext(FormContext) ;
 
 const FormProvider = (props) => {
 
-    const [ fieldElements , setFieldElements] = useState(formJSON);
+    const [ fieldElements , setFieldElements] = useState();
     const [ FormIsValid , setFormIsValid ] = useState(false);
+
     const isNotEmpty = (value) => value.trim() !== '';
     const isEmail = (value) => value.includes('@');
+    const isCardNumber = (value) =>  /^\d+$/.test(value) && value.length === 16 ;
 
-    // get month by name:
-    // const monthNames = ["January", "February", "March", "April", "May", "June",
-    //                     "July", "August", "September", "October", "November", "December"];
-    // const DateToday = (monthNames[today.getMonth()])+' '+today.getDate()+', '+today.getFullYear()
-    
-    const today = new Date()
-    var DateDay = today.getDate()
-    if(DateDay < 9){
-        DateDay = `0${DateDay}`
+    const SetFormElements = (formEl) => {
+        setFieldElements(formEl)
     }
-    const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay)
-    
-    const Invoice_number = Invoices.length + 1
-    const zeroFilled =  ('000' + Invoice_number).substr(-3)
-    const CalculateInvoiceNumber =  `INV_${zeroFilled}`
-    
 
     const FormIsValidCheck = () => {
         const newElements = fieldElements.map(field => {
@@ -57,7 +44,9 @@ const FormProvider = (props) => {
     }
     
     const HandleChange = (id, event) => {
+        
         const newElements = [ ...fieldElements ] 
+        console.log(newElements);
         newElements.forEach(field => {
             const { field_type, field_id } = field;
             if (id === field_id) {
@@ -66,11 +55,13 @@ const FormProvider = (props) => {
                 // Check if input is valid
                 if(field_type === "email"){
                     field['field_isValid'] = isEmail(event.target.value);
+                }else if(field_id === "card-number"){
+                    field['field_isValid'] = isCardNumber(event.target.value);
                 }else{
                     field['field_isValid'] = isNotEmpty(event.target.value);
                 }
                 
-                // check if input has error
+                //check if input has error
                 HasError(id);
 
                 // save the value
@@ -90,11 +81,12 @@ const FormProvider = (props) => {
     const ResetForm = () => {
         const newElements = [ ...fieldElements ] 
         newElements.forEach(field => {
-            if(field['field_id'] === 'invoice-number'){
-                field['field_value'] = CalculateInvoiceNumber
-            }else{
-                field['field_value'] = ''
-            }
+            // if(field['field_id'] === 'invoice-number'){
+            //     field['field_value'] = CalculateInvoiceNumber
+            // }else{
+            //     field['field_value'] = ''
+            // }
+            field['field_value'] = ''
         });
         setFieldElements(newElements)
     }
@@ -111,71 +103,70 @@ const FormProvider = (props) => {
         setFieldElements(newElements)
     }
 
-    const GetNewInvoice = () => {
-        const newInvoice =  {
-            invoiceNumber : '',
-            invoiceDate: '',
-            client: '',
-            email:  '',
-            companyName: '',
-            companyAddress: '',
-            serviceName: '',
-            serviceDetails:'' ,
-            dueDate: '',
-            subtotal: '',
-            status:  'UnPaid',
-            discount:  0 ,
-            dicountAmount : 0   
-        }
-        fieldElements.forEach(field => {
-            switch(field['field_id']){
-                case 'invoice-number':
-                    newInvoice.invoiceNumber = CalculateInvoiceNumber
-                break;
-                case 'date':
-                    newInvoice.invoiceDate = DateToday
-                break;
-                case 'client-name':
-                    newInvoice.client = field['field_value']
-                break;
-                case 'client-email':
-                    newInvoice.email = field['field_value']
-                break;
-                case 'company-name':
-                    newInvoice.companyName = field['field_value']
-                break;
-                case 'company-address':
-                    newInvoice.companyAddress = field['field_value']
-                break;
-                case 'service-name':
-                    newInvoice.serviceName = field['field_value']
-                break;
-                case 'service-details':
-                    newInvoice.serviceDetails = field['field_value']
-                break;
-                case 'due-date':
-                    newInvoice.dueDate = field['field_value']
-                break;
-                case 'subtotal':
-                    newInvoice.subtotal = field['field_value']
-                break;
-                default:
-                return null;
-            }
-        });
-        return newInvoice ;
-    }
+    // const GetNewInvoice = () => {
+    //     const newInvoice =  {
+    //         invoiceNumber : '',
+    //         invoiceDate: '',
+    //         client: '',
+    //         email:  '',
+    //         companyName: '',
+    //         companyAddress: '',
+    //         serviceName: '',
+    //         serviceDetails:'' ,
+    //         dueDate: '',
+    //         subtotal: '',
+    //         status:  'UnPaid',
+    //         discount:  0 ,
+    //         dicountAmount : 0   
+    //     }
+    //     fieldElements.forEach(field => {
+    //         switch(field['field_id']){
+    //             case 'invoice-number':
+    //                 newInvoice.invoiceNumber = CalculateInvoiceNumber
+    //             break;
+    //             case 'date':
+    //                 newInvoice.invoiceDate = DateToday
+    //             break;
+    //             case 'client-name':
+    //                 newInvoice.client = field['field_value']
+    //             break;
+    //             case 'client-email':
+    //                 newInvoice.email = field['field_value']
+    //             break;
+    //             case 'company-name':
+    //                 newInvoice.companyName = field['field_value']
+    //             break;
+    //             case 'company-address':
+    //                 newInvoice.companyAddress = field['field_value']
+    //             break;
+    //             case 'service-name':
+    //                 newInvoice.serviceName = field['field_value']
+    //             break;
+    //             case 'service-details':
+    //                 newInvoice.serviceDetails = field['field_value']
+    //             break;
+    //             case 'due-date':
+    //                 newInvoice.dueDate = field['field_value']
+    //             break;
+    //             case 'subtotal':
+    //                 newInvoice.subtotal = field['field_value']
+    //             break;
+    //             default:
+    //             return null;
+    //         }
+    //     });
+    //     return newInvoice ;
+    // }
     
     return(
         <FormContext.Provider value = {{
                 //initialElements,
                 FormIsValid,
-                DateToday,
-                CalculateInvoiceNumber,
                 HandleChange,
+                SetFormElements,
                 HandleBlur,
                 HasError,
-                GetNewInvoice,
+                // GetNewInvoice,
                 ResetForm
             }}>
            {props.children}

@@ -5,7 +5,7 @@
     width: 300px;
     height: 170px;
     position: relative;
-    border-radius: 13px;
+    border-radius: 21px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -93,4 +93,5 @@
 .balanceSection{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }

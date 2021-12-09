@@ -1,9 +1,9 @@
 import { UseFormElement } from '../../../../Utils/Context/FormProvider'
 import Classes from '../FormElements.module.scss'
 
-const Select = ({ field_size, field_hasError , field_id, field_label, field_options }) => {
+const Select = ({  field_hasError , field_id, field_label, field_options }) => {
     
-    const { HandleChange , HandleBlur} = UseFormElement();
+    const { HandleBlur , HandleChange } = UseFormElement();
 
     const HandleSelectBlur = () => {
         HandleBlur(field_id)
@@ -14,8 +14,9 @@ const Select = ({ field_size, field_hasError , field_id, field_label, field_opti
             <label >{field_label}</label>
             <select
                 onChange={event => HandleChange(field_id, event)}
-                onBlur={HandleSelectBlur} >
-                {/* <option >Select </option> */}
+                onBlur={HandleSelectBlur}
+                defaultValue={field_label} >
+                <option disabled>{field_label}</option>
                 {field_options.length > 0 && field_options.map((option, i) =>
                     <option value={option.option_label} key={i}>{option.option_label}</option>
                 )}

@@ -1,0 +1,48 @@
+[
+    {
+        "card-id": "CARD_001",
+        "card-number" : "1234 5678 7654 7892",
+        "card-balance":"4811,21",
+        "card-type":"Primary",
+        "card-bank":"ABC Bank",
+        "namein-card":"Tony Soap",
+        "card-validation":"03/21"
+    },
+    {
+        "card-id": "CARD_002",
+        "card-number" : "1234 5678 7654 2456",
+        "card-balance":"4811,21",
+        "card-type":"Secondary",
+        "card-bank":"ABC Bank",
+        "namein-card":"Tony Soap",
+        "card-validation":"03/22"
+    },
+    {
+        "card-id": "CARD_003",
+        "card-number" : "1234 5678 7654 1122",
+        "card-balance":"4811,21",
+        "card-type":"Secondary",
+        "card-bank":"ABC Bank",
+        "namein-card":"Tony Soap",
+        "card-validation":"03/22"
+    },
+    {
+        "card-id": "CARD_004",
+        "card-number" : "1234 5678 7654 0933",
+        "card-balance":"4811,21",
+        "card-type":"Secondary",
+        "card-bank":"ABC Bank",
+        "namein-card":"Tony Soap",
+        "card-validation":"03/23"
+    },
+    {
+        "card-id": "CARD_004",
+        "card-number" : "1234 5678 7654 0933",
+        "card-balance":"4811,21",
+        "card-type":"Secondary",
+        "card-bank":"ABC Bank",
+        "namein-card":"Tony Soap",
+        "card-validation":"03/23"
+    }
+   
+]
