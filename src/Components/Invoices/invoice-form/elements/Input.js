@@ -3,7 +3,7 @@ import { UseFormElement } from '../../../../Utils/Context/FormProvider'
 import Classes from '../FormElements.module.scss';
 import { UseInvoices } from '../../../../Utils/Context/InvoicesProvider';
 
-const Input = ({ field_hasError , field_focus, field_type ,field_id, field_label, field_placeholder, field_value }) => {
+const Input = ({ field_error_m, field_hasError , field_focus, field_type ,field_id, field_label, field_placeholder, field_value }) => {
     
     const {  HandleBlur , HandleChange } = UseFormElement();
     const { GetDateToday , CalculateInvoiceNumber} = UseInvoices();
@@ -25,7 +25,7 @@ const Input = ({ field_hasError , field_focus, field_type ,field_id, field_label
 
     return (
         <div className={field_hasError ? `${Classes.formControl} ${Classes.invalid}` : `${Classes.formControl}`}>
-            <label>{field_label}</label>
+            <label>{field_label}</label>{field_hasError && <p>{field_error_m}</p>}
             <input type={field_type}
                 className={field_focus ? Classes.autoFucosEffect : ''}  
                 placeholder={field_placeholder ? field_placeholder : ''}

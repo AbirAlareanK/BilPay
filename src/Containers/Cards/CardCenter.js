@@ -6,11 +6,14 @@ import FormJSON from '../../Assets/JSON/cards-form-elements.json';
 import FormElement from "../../Components/Invoices/invoice-form/FormElement";
 import { UseFormElement } from "../../Utils/Context/FormProvider";
 import Button from '../../Components/UIs/Button';
-import { MdOutlineAddBox } from 'react-icons/md'
+import { MdOutlineAddBox } from 'react-icons/md';
+import DataTable from "../../Components/Table/DataTable";
+import { UseCards } from "../../Utils/Context/CardsProvider";
 
 const CardCenter = () => {
 
-    const { SetFormElements , ResetForm } = UseFormElement();
+    const { SetFormElements , ResetForm , FormIsValid } = UseFormElement();
+    const { CardsTableRows , CardsTableCols } =  UseCards();
     const [ fields ] = useState(FormJSON);
 
     useEffect(()=>{
@@ -22,11 +25,16 @@ const CardCenter = () => {
 
     const SubmitFormHandler = (event) =>{
         event.preventDefault();
-        ResetForm();
+        if(!FormIsValid){
+            return;
+        }else{
+            console.log('submitted !');
+            ResetForm();
+        }
     }
 
     return(
-        <Container fluid className="full-view">
+        <Container fluid>
             <Row>
                 <Col lg={3}>
                 </Col>
@@ -39,6 +47,11 @@ const CardCenter = () => {
                     </Row>
                     <Row>
                         <Col lg={9}>
+                            <DataTable rows={CardsTableRows}
+                                       cols={CardsTableCols}
+                                       paging={false}
+                                       sortable={false}
+                                       small={false} />
                         </Col>
                         <Col lg={3} className="card-wrapper">
                             <h6>Add Card</h6>
@@ -46,8 +59,8 @@ const CardCenter = () => {
                                 {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
                             </form>
                             <Button 
-                                    //className={`${FormIsValid ? Classes.saveInvoiceButton : Classes.saveInvoiceButtonDisabled}`}
-                                    // disabled={!FormIsValid}
+                                    className={`${FormIsValid ? 'submitFormButton' : 'submitFormButtonDisabled' }`}
+                                    disabled={!FormIsValid}
                                     onClick={SubmitFormHandler}>
                                 <MdOutlineAddBox />
                                 Add Card

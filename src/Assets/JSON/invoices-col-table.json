@@ -2,11 +2,7 @@
     {
       "label": "Client",
       "field": "client",
-      "width": 50,
-      "attributes": {
-        "aria-controls": "DataTable",
-        "aria-label": "client"
-      }
+      "width": 50
     },
     {
       "label": "Date",

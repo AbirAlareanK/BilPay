@@ -44,3 +44,13 @@ code {
 .carousel .slider-wrapper{
   padding: 25px;
 }
+
+.submitFormButton{
+  // pointer-events: auto; 
+  cursor: pointer;
+}
+
+.submitFormButtonDisabled{
+  // pointer-events: none; 
+  cursor: not-allowed;
+}

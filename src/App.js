@@ -1,12 +1,12 @@
 
 import './App.scss';
-import CardCenter from './Containers/Cards/CardCenter';
 // import InvoiceDetails from './Containers/Invoices/InvoiceDetails';
 // import InvoiceForm from './Containers/Invoices/InvoiceForm';
 import FormProvider from './Utils/Context/FormProvider';
 // import Invoices from './Containers/Invoices/Invoices';
 import InvoicesProvider from './Utils/Context/InvoicesProvider';
 import CardCenter from './Containers/Cards/CardCenter';
+import CardsProvider from './Utils/Context/CardsProvider';
 
 // THis code to check if there is two react 
 require('react-dom');
@@ -18,7 +18,9 @@ function App() {
     <div className="App">
       <InvoicesProvider>
       <FormProvider>
-        <CardCenter />
+        <CardsProvider>
+          <CardCenter />
+        </CardsProvider>
         {/* <Invoices /> */}
         {/* <InvoiceDetails/> */}
           {/* <InvoiceForm /> */}

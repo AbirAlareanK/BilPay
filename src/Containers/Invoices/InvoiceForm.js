@@ -52,7 +52,7 @@ const InvoiceForm = () => {
                             </Col>
                             <Col lg={4} md={3} xs={12}>
                                 <section className={Classes.createInvoiceActions}>
-                                    <Button className={`${FormIsValid ? Classes.saveInvoiceButton : Classes.saveInvoiceButtonDisabled}`}
+                                    <Button className={`${FormIsValid ? 'submitFormButton' :  'submitFormButtonDisabled' }`}
                                             // disabled={!FormIsValid}
                                             onClick={SubmitFormHandler}>
                                         <AiOutlineSave />

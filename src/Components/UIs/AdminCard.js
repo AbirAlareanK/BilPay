@@ -14,7 +14,7 @@ const AdminCard = (props) => {
             <div className={Classes.validSection}>
                 <div>
                     <p>Valid Thru</p>
-                    <h7>{validation}</h7>
+                    <h6>{validation}</h6>
                 </div>
                 <CardNumber str={cardNum}/>
             </div>

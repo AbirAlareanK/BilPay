@@ -1,0 +1,27 @@
+[
+    {
+      "label": "Card",
+      "field": "card",
+      "width": 50
+    },
+    {
+      "label": "Card Type",
+      "field": "cardType",
+      "width": 170
+    },
+    {
+      "label": "Bank" ,
+      "field": "bank",
+      "width": 260
+    },
+    {
+      "label": "Card Number" ,
+      "field": "cardNumber",
+      "width": 160
+    },
+    {
+      "label": "Namein Card" ,
+      "field": "nameinCard",
+      "width": 160
+    }
+]

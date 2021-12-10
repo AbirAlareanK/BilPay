@@ -8,6 +8,7 @@
         "field_type": "text",
         "field_value": "",
         "field_size" : "half",
+        "field_error_m" : "16 Digits, No Space",
         "field_focus" : false,
         "field_isValid" : false,
         "field_isTouched": false,
@@ -18,6 +19,7 @@
         "field_label": "Bank",
         "field_value": "",
         "field_mandatory": "yes",
+        "field_error_m" : "Select a Bank",
         "field_options": [
             {
                 "option_label": "ABC Bank"
@@ -41,6 +43,7 @@
         "field_mandatory": "yes",
         "field_placeholder": "Name..",
         "field_element":"input",
+        "field_error_m" : "Write a name",
         "field_type": "text",
         "field_value": "",
         "field_focus" : false,
