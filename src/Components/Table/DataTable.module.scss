@@ -1,4 +1,4 @@
-@import '../../Assets/Scss/colors'; 
+@import '../../Assets//Scss/colors'; 
 
 .tableCard
 {
@@ -14,37 +14,6 @@
 
 h5{
     font-weight:400 !important;
-}
-
-.tableActionButtons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-}
-
-.tableActionButtons ul {
-    list-style: none;
-    display: inline-flex;
-    padding: 0px;
-    justify-content: space-between;
-    background-color:  $card-bg-dark;
-    border-radius: 30px;
-}
-
-.tableActionButtons ul li{
-    padding: 8px 10px;
-    border-radius: 30px;
-    font-size: 13px;
-    width: 75px;
-    text-align: center;
-    color:$para-font;
-    cursor: pointer;
-}
-
-.tableActionButtons ul li:hover{
-    background-color : $main-icon;
-    color:$hover-font;
 }
 
 thead{

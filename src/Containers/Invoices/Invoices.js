@@ -1,12 +1,12 @@
 import InvoiceBriefArray from "./InvoiceBriefArray";
-import InvoicesTable from '../../Components/Invoices/invoice-table/InvoicesTable';
+import DataTable from "../../Components/Table/DataTable";
 import Container  from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import { Col } from "react-bootstrap";
 import colData from '../../Assets/JSON/invoices-col-table.json';
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 import { useState } from "react";
-// import Classes from './Invoices.module.scss';
+import Classes from './Invoices.module.scss';
 
 const Invoices = () => {
     
@@ -24,7 +24,22 @@ const Invoices = () => {
                         <InvoiceBriefArray />
                     </Row>
                     <Row>
-                        <InvoicesTable rows={rows} cols={colData}/>
+                        <DataTable rows={rows}
+                                    cols={colData}
+                                    paging={true}
+                                    sortable={false}
+                                    small={true}
+                                    label={["<", ">"]}
+                                    infoLabel={["Showing", "to", "of", ""]} >
+                            <section className={Classes.tableActionButtons}>
+                                <h5>Latest Invoives</h5>                  
+                                <ul>
+                                <li>Monthly</li>
+                                <li>Weekly</li>
+                                <li>Today</li>
+                                </ul>
+                            </section>
+                        </DataTable>
                     </Row>
                 </Col>
             </Row>

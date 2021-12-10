@@ -51,7 +51,9 @@ const CardCenter = () => {
                                        cols={CardsTableCols}
                                        paging={false}
                                        sortable={false}
-                                       small={false} />
+                                       small={false} >
+                            <h2>Card Table</h2>
+                            </DataTable>
                         </Col>
                         <Col lg={3} className="card-wrapper">
                             <h6>Add Card</h6>

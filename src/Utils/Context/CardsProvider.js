@@ -15,7 +15,8 @@ const CardsProvider = (props) => {
             cardType : card['card-type'],
             bank: card['card-bank'],
             cardNumber : card['card-number'],
-            nameinCard : card['namein-card']
+            nameinCard : card['namein-card'],
+            detailsPage : "..."
          } 
      ))
      

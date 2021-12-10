@@ -23,5 +23,10 @@
       "label": "Namein Card" ,
       "field": "nameinCard",
       "width": 160
+    },
+    {
+      "label":  " ",
+      "field": "detailsPage",
+      "width": 60
     }
 ]

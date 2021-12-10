@@ -2,7 +2,9 @@ import React , {  useState} from 'react';
 import { MDBDataTable } from 'mdbreact';
 import Classes from './DataTable.module.scss';
 
-const DataTable = ({rows,cols , paging , sortable , small}) => {
+const DataTable = (props) => {
+
+    const { rows , cols , paging , sortable , small , label , infoLabel} = props
 
     const ShowDetailPage = (id)=> {
         console.log('itemPresses' + id )
@@ -20,6 +22,7 @@ const DataTable = ({rows,cols , paging , sortable , small}) => {
 
     return (
         <div className={`${Classes.tableCard} card-wrapper`} >
+        {props.children}
         <MDBDataTable
             className={Classes.tableData} 
             responsiveMd
@@ -30,12 +33,11 @@ const DataTable = ({rows,cols , paging , sortable , small}) => {
             searching={false}
             data={datatable}
             paging={paging}
-            paginationLabel={["<", ">"]}
+            paginationLabel={label}
             displayEntries={false}
             pagesAmount={3}
             entries={5}
-            infoLabel={["Showing", "to", "of", ""]}
-            
+            infoLabel={infoLabel}
         />
         </div>
     )
