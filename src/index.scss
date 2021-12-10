@@ -41,3 +41,36 @@ code {
   height: 100vh;
 }
 
+.carousel .slider-wrapper{
+  padding: 25px;
+  height: 100%;
+}
+
+.carousel.carousel-slider{
+  height: 30vh;
+}
+.submitFormButton{
+  // pointer-events: auto; 
+  cursor: pointer;
+}
+
+.submitFormButtonDisabled{
+  // pointer-events: none; 
+  cursor: not-allowed;
+}
+
+.greenBg {
+  background-image: url('../src/Assets/CardsBg/bg-green.svg');
+}
+
+.blueBg{
+  background-image: url('../src/Assets/CardsBg/bg-blue.svg');
+}
+
+.redBg{
+  background-image: url('../src/Assets/CardsBg/bg-red.svg');
+}
+
+.yellowBg{
+  background-image: url('../src/Assets/CardsBg/bg-yellow.svg');
+}

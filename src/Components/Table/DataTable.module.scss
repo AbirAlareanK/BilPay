@@ -1,59 +1,38 @@
-@import '../../../Assets/Scss/colors'; 
+@import '../../Assets//Scss/colors'; 
 
 .tableCard
 {
     width: 100%;
     padding: 18px;
-    margin: 0px 15px;
     border-radius: 15px;
     box-shadow: none;
     background-color:$card-bg;
-    cursor: pointer
-
+    cursor: pointer;
 }
 
 h5{
     font-weight:400 !important;
 }
 
-.tableActionButtons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-}
-
-.tableActionButtons ul {
-    list-style: none;
-    display: inline-flex;
-    padding: 0px;
-    justify-content: space-between;
-    background-color:  $card-bg-dark;
-    border-radius: 30px;
-}
-
-.tableActionButtons ul li{
-    padding: 8px 10px;
-    border-radius: 30px;
-    font-size: 13px;
-    width: 75px;
-    text-align: center;
-    color:$para-font;
-    cursor: pointer;
-}
-
-.tableActionButtons ul li:hover{
-    background-color : $main-icon;
-    color:$hover-font;
-}
-
 thead{
     color : $para-font;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 thead:nth-child(3){
     display:none;
+}
+
+tbody tr td{
+    font-weight: 400;
+    font-size: 12px;
+}
+
+thead tr {
+    border-bottom: 1.5px solid rgb(226, 226, 226);
+}
+thead tr th{    
+    font-size: 11px;
 }
 
 tbody tr td:nth-child(5){

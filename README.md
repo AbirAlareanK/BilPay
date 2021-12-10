@@ -16,3 +16,6 @@ npm install react-icons --save
 ## GitHub page 
 npm install gh-pages
 
+##Carousel
+npm i react-responsive-carousel
+
