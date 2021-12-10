@@ -9,9 +9,12 @@ const CardsWrapper = () => {
     return (
         <Carousel 
                 className={Classes.carouselCards}
-                emulateTouch={true}
+                // emulateTouch={true}
+                swipeable={true}
+                interval={5000}
                 centerMode={true}
                 showThumbs={false}
+                autoPlay={true}
                 centerSlidePercentage={27}
                 showArrows={false}
                 showStatus={false}
