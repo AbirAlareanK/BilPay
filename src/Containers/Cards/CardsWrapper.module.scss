@@ -2,11 +2,12 @@
     :hover{
         cursor: pointer;
     }
-    padding: 20px;
+    padding: 20px 0px;
     ul{
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-around;
+        height: 100%;
     }
     
     li{

@@ -1,25 +1,22 @@
 @import '../../Assets/Scss/colors';
 
 .themeButton{
+    background-color: $main-theme;
+    color:$card-bg;
     padding: 5px 10px;
-    background-color: $card-bg;
-    color:$main-theme;
     font-size: 12px;
     font-weight: 400;
     border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    color: $main-theme;
-    width: 47%;
-    margin-bottom: 10px;
     // cursor: pointer;
 }
 
 
 .themeButton:hover{
-    background-color: $main-theme;
-    color:$card-bg;
+    background-color: $card-bg;
+    color:$main-theme;
 }
 
 

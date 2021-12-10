@@ -10,7 +10,7 @@ const Input = ({ field_error_m , field_hasError , field_cols, field_rows , field
     }
     return (
         <div className={field_hasError ? `${Classes.formControl} ${Classes.invalid}` : `${Classes.formControl}`}>
-            <label>{field_label}</label>{field_hasError && <p>{field_error_m}</p>}
+            <label>{field_label} {field_hasError && <p>{field_error_m}</p>}</label>
             <textarea rows={field_rows} cols={field_cols}  
                 placeholder={field_placeholder ? field_placeholder : ''}
                 value={field_value}

@@ -6,7 +6,8 @@
         "card-type":"Primary",
         "card-bank":"ABC Bank",
         "namein-card":"Tony Soap",
-        "card-validation":"03/21"
+        "card-validation":"03/21",
+        "card-color":"greenBg"
     },
     {
         "card-id": "CARD_002",
@@ -15,7 +16,8 @@
         "card-type":"Secondary",
         "card-bank":"ABC Bank",
         "namein-card":"Tony Soap",
-        "card-validation":"03/22"
+        "card-validation":"03/22",
+        "card-color":"yellowBg"
     },
     {
         "card-id": "CARD_003",
@@ -24,7 +26,8 @@
         "card-type":"Secondary",
         "card-bank":"ABC Bank",
         "namein-card":"Tony Soap",
-        "card-validation":"03/22"
+        "card-validation":"03/22",
+        "card-color":"redBg"
     },
     {
         "card-id": "CARD_004",
@@ -33,7 +36,8 @@
         "card-type":"Secondary",
         "card-bank":"ABC Bank",
         "namein-card":"Tony Soap",
-        "card-validation":"03/23"
+        "card-validation":"03/23",
+        "card-color":"blueBg"
     },
     {
         "card-id": "CARD_004",
@@ -42,7 +46,8 @@
         "card-type":"Secondary",
         "card-bank":"ABC Bank",
         "namein-card":"Tony Soap",
-        "card-validation":"03/23"
+        "card-validation":"03/23",
+        "card-color":"greenBg"
     }
    
 ]

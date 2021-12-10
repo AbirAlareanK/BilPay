@@ -2,7 +2,7 @@
     {
       "label": "Card",
       "field": "card",
-      "width": 50
+      "width": 100
     },
     {
       "label": "Card Type",

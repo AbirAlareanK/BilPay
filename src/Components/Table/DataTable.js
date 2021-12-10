@@ -4,7 +4,7 @@ import Classes from './DataTable.module.scss';
 
 const DataTable = (props) => {
 
-    const { rows , cols , paging , sortable , small , label , infoLabel} = props
+    const { rows , cols , paging , sortable  , label , infoLabel} = props
 
     const ShowDetailPage = (id)=> {
         console.log('itemPresses' + id )
@@ -26,8 +26,8 @@ const DataTable = (props) => {
         <MDBDataTable
             className={Classes.tableData} 
             responsiveMd
-            small={small}
             btn={true}
+            borderless={true}
             hover={true}
             sortable={sortable}
             searching={false}

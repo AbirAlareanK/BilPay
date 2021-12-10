@@ -4,12 +4,10 @@
 {
     width: 100%;
     padding: 18px;
-    margin: 0px 15px;
     border-radius: 15px;
     box-shadow: none;
     background-color:$card-bg;
-    cursor: pointer
-
+    cursor: pointer;
 }
 
 h5{
@@ -18,11 +16,23 @@ h5{
 
 thead{
     color : $para-font;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 thead:nth-child(3){
     display:none;
+}
+
+tbody tr td{
+    font-weight: 400;
+    font-size: 12px;
+}
+
+thead tr {
+    border-bottom: 1.5px solid rgb(226, 226, 226);
+}
+thead tr th{    
+    font-size: 11px;
 }
 
 tbody tr td:nth-child(5){

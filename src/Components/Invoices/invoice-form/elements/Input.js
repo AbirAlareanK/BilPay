@@ -25,7 +25,7 @@ const Input = ({ field_error_m, field_hasError , field_focus, field_type ,field_
 
     return (
         <div className={field_hasError ? `${Classes.formControl} ${Classes.invalid}` : `${Classes.formControl}`}>
-            <label>{field_label}</label>{field_hasError && <p>{field_error_m}</p>}
+            <label>{field_label} {field_hasError && <p>{field_error_m}</p>}</label>
             <input type={field_type}
                 className={field_focus ? Classes.autoFucosEffect : ''}  
                 placeholder={field_placeholder ? field_placeholder : ''}

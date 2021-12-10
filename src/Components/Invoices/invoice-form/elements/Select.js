@@ -11,7 +11,7 @@ const Select = ({ field_error_m , field_hasError , field_id, field_label, field_
     
     return (
         <div className={field_hasError ? `${Classes.formControl} ${Classes.invalid}` : `${Classes.formControl}`}>
-            <label >{field_label}</label>{field_hasError && <p>{field_error_m}</p>}
+            <label >{field_label} {field_hasError && <p>{field_error_m}</p>}</label>
             <select
                 onChange={event => HandleChange(field_id, event)}
                 onBlur={HandleSelectBlur}

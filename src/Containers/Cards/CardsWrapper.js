@@ -12,14 +12,15 @@ const CardsWrapper = () => {
                 emulateTouch={true}
                 centerMode={true}
                 showThumbs={false}
-                centerSlidePercentage={24}
+                centerSlidePercentage={27}
                 showArrows={false}
                 showStatus={false}
                 showIndicators={false}>
                 {Cards.map(card => {
                     return (<AdminCard key={card['card-id']}  cardNum={card["card-number"]}
                                                 balance={card["card-balance"]}
-                                                validation={card["card-validation"]}/>)     
+                                                validation={card["card-validation"]}
+                                                color={card['card-color']}/>)     
                 })}
            
         </Carousel>
