@@ -1,21 +1,5 @@
 @import '../../Assets/Scss/colors';
 
-.paymentCard h6 , h7{
-        font-weight: 500;
-        color: $main-font;
-}
-
-.paymentCard p {
-    text-transform: capitalize;
-    font-size: 12px;
-}
-
-.paymentCard{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
 
 .invoiceDetailsActions{
     display: flex;
