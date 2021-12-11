@@ -12,10 +12,11 @@ import { UseCards } from "../../Utils/Context/CardsProvider";
 
 const CardCenter = () => {
 
-    const { SetFormElements , ResetForm , FormIsValid } = UseFormElement();
-    const { CardsTableRows , CardsTableCols } =  UseCards();
+    const { GetFormElement , SetFormElements , ResetForm , FormIsValid } = UseFormElement();
+    const { AddNewCard , CardsTableRows , CardsTableCols } =  UseCards();
     const [ fields ] = useState(FormJSON);
 
+    console.log('Card center rendered ! '  + CardsTableRows)
     useEffect(()=>{
         SetFormElements(fields);
         return () => {
@@ -28,7 +29,29 @@ const CardCenter = () => {
         if(!FormIsValid){
             return;
         }else{
-            console.log('submitted !');
+            const obj = GetFormElement();
+            const cardform = {
+                "card-number" : '',
+                "card-bank" : '',
+                "namein-card" : ''
+            }
+            obj.forEach(field => {
+                switch(field['field_id']){
+                    case 'card-number':
+                        cardform['card-number'] = field['field_value']
+                    break;
+                    case 'card-bank':
+                        cardform['card-bank'] = field['field_value']
+                    break;
+                    case 'client-name':
+                        cardform['namein-card'] = field['field_value']
+                    break;
+                    default:
+                        return null;
+                }
+            });
+            console.log('submitted !' +  cardform);
+            AddNewCard(cardform);
             ResetForm();
         }
     }
