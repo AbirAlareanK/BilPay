@@ -5,8 +5,9 @@ import './App.scss';
 import FormProvider from './Utils/Context/FormProvider';
 // import Invoices from './Containers/Invoices/Invoices';
 import InvoicesProvider from './Utils/Context/InvoicesProvider';
-import CardCenter from './Containers/Cards/CardCenter';
+// import CardCenter from './Containers/Cards/CardCenter';
 import CardsProvider from './Utils/Context/CardsProvider';
+import Transactions from './Containers/Transctions/Transactions';
 
 // THis code to check if there is two react 
 require('react-dom');
@@ -16,10 +17,11 @@ console.log('this proj has one react ' + (window.React1 === window.React2)); // 
 function App() {
   return (
     <div className="App">
+     <Transactions />
       <InvoicesProvider>
       <FormProvider>
         <CardsProvider>
-          <CardCenter />
+          {/* <CardCenter /> */}
         </CardsProvider>
         {/* <Invoices /> */}
         {/* <InvoiceDetails/> */}
