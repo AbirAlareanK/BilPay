@@ -35,7 +35,8 @@ const Transaction = (props) => {
                     </div>
                 </div>
                 <div className={Classes.serviceSection}>
-
+                    <h5>Service</h5>
+                    
                 </div>
                 <div className={Classes.note}>
                     <h5>Note:</h5>
