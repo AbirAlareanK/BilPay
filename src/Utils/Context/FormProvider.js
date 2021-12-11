@@ -102,7 +102,10 @@ const FormProvider = (props) => {
         });
         setFieldElements(newElements)
     }
-
+    
+    const GetFormElement = () => {
+        return fieldElements;
+    }
     // const GetNewInvoice = () => {
     //     const newInvoice =  {
     //         invoiceNumber : '',
@@ -166,6 +169,7 @@ const FormProvider = (props) => {
                 SetFormElements,
                 HandleBlur,
                 HasError,
+                GetFormElement,
                 // GetNewInvoice,
                 ResetForm
             }}>

@@ -6,6 +6,7 @@ const DataTable = (props) => {
 
     const { rows , cols , paging , sortable  , label , infoLabel} = props
 
+    console.log('data tabe rendered' + rows)
     const ShowDetailPage = (id)=> {
         console.log('itemPresses' + id )
     }
