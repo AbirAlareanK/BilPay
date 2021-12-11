@@ -63,9 +63,7 @@ const InvoiceDetails = () => {
                                         services={services}/>
                             </Col>
                             <Col lg={4} md={5} xs={12}>
-                                <section className={`card-wrapper ${Classes.paymentCard}`}>
-                                    <PaymentCard />
-                                </section>
+                                <PaymentCard />
                                 <section className={Classes.invoiceDetailsActions}>
                                     <Button><BsCheckCircle />Mark As Paid</Button>
                                     <Button><BsDownload />Download</Button>

@@ -1,8 +1,6 @@
 import InvoiceBriefArray from "./InvoiceBriefArray";
 import DataTable from "../../Components/Table/DataTable";
-import Container  from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
-import { Col } from "react-bootstrap";
+import { Col , Row , Container } from "react-bootstrap";
 import colData from '../../Assets/JSON/invoices-col-table.json';
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 import { useState } from "react";

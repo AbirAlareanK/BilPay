@@ -9,7 +9,7 @@ const PaymentCard = () => {
     const [ CardNum ]  = useState('1234 5678 7654 7892')
 
     return(
-        <>
+        <section className={`card-wrapper ${Classes.paymentCard}`}>
             <div>
                 <h6>Payment Card Used</h6>
                 <div className={Classes.firstSectionContent}>
@@ -25,7 +25,7 @@ const PaymentCard = () => {
                     <p>OAP</p>
                 </div>
             </div>
-        </>
+        </section>
     );
 }
 
