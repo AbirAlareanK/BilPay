@@ -17,6 +17,9 @@
 .themeButton:hover{
     background-color: $card-bg;
     color:$main-theme;
+    border: 1px solid $main-theme;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 

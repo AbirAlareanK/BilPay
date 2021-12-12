@@ -1,4 +1,26 @@
+@import '../../Assets/Scss/colors';
+
 .CardUsed{
     width: 85%;
     height: 192px;
 }
+
+h4{
+    padding-left: 15px;
+}
+
+.heading {
+    display: flex;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    p {
+        color: $para-font;
+        font-weight: 400;
+    }
+
+    h6{
+        color: $main-theme;
+        padding-right: 5px;
+    }
+}
+
