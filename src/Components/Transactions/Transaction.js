@@ -1,10 +1,26 @@
+import { useState } from 'react';
 import { BsPrinter , BsDownload} from 'react-icons/bs';
 import Button from '../../Components/UIs/Button';
 import Classes from './Transaction.module.scss';
 
 
 const Transaction = (props) => {
-    const {service , invoice } = props
+    const { invoice } = props
+    const [ services ] = useState([
+        {
+            id : 'SER_001',
+            serviceName : 'Web Design and Development',
+            servicePrice : '750.00'
+        },
+        {
+            id : 'SER_002',
+            serviceName : 'Hosting',
+            servicePrice : '50.00'
+        }
+    ]);
+
+    const [ tax ] = useState('10.00');
+
     return (
         <div className="card-wrapper">
             <section>
@@ -36,7 +52,25 @@ const Transaction = (props) => {
                 </div>
                 <div className={Classes.serviceSection}>
                     <h5>Service</h5>
-                    
+                    {services.map(service => (
+                        <div key={service.id}>
+                            <h5>{service.serviceName}</h5>
+                            <p>{`$${service.servicePrice}`}</p>
+                        </div>
+                    ))}
+                    <span className={Classes.deviderline}/>
+                    <div>
+                        <h5>Subtotal</h5>
+                        <p>$800.00</p>
+                    </div>
+                    <div>
+                        <h5>Tax</h5>
+                        <p>{`$${tax}`}</p>
+                    </div>
+                    <div>
+                        <h5>Total</h5>
+                        <p>$810.00</p>
+                    </div>
                 </div>
                 <div className={Classes.note}>
                     <h5>Note:</h5>
