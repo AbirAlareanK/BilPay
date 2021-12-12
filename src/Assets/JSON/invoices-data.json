@@ -2,9 +2,9 @@
     {
         "invoice-number" : "INV-001",
         "invoice-date":"March 20,2021",
-        "client":"John Doe",
+        "client":"Samantha W",
         "email": "abg@kfo",
-        "company-name":"FexGroup",
+        "company-name":"ABC Studio",
         "company-address":"Kota Kemuning",
         "service-name":"Upgrade System",
         "service-details":"programming",
