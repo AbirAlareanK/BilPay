@@ -9,9 +9,9 @@ import FormProvider from './Utils/Context/FormProvider';
 import InvoicesProvider from './Utils/Context/InvoicesProvider';
 import CardsProvider from './Utils/Context/CardsProvider';
 import Layout from './Components/UIs/Layout';
-// import Transactions from './Containers/Transctions/Transactions';
+import Transactions from './Containers/Transctions/Transactions';
 
-// THis code to check if there is two react 
+// This code to check if there is two react 
 require('react-dom');
 window.React2 = require('react');
 console.log('this proj has one react ' + (window.React1 === window.React2)); // true => one react
@@ -32,7 +32,7 @@ function App() {
               </Route>
               <Route path="invoice-form" element={<InvoiceForm />} />
               <Route path="/card-center" element={<CardCenter />} />
-              {/* <Route path="/transaction" element={<Transactions />} /> */}
+              <Route path="/transaction" element={<Transactions />} />
             </Routes>
           </CardsProvider>
         </FormProvider>
