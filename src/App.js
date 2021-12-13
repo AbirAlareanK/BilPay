@@ -1,13 +1,15 @@
 
 import './App.scss';
-// import InvoiceDetails from './Containers/Invoices/InvoiceDetails';
-// import InvoiceForm from './Containers/Invoices/InvoiceForm';
+import { Routes , Route} from "react-router-dom";
+import CardCenter from "./Containers/Cards/CardCenter";
+import InvoiceDetails from "./Containers/Invoices/InvoiceDetails";
+import InvoiceForm from "./Containers/Invoices/InvoiceForm";
+import Invoices from "./Containers/Invoices/Invoices";
 import FormProvider from './Utils/Context/FormProvider';
-// import Invoices from './Containers/Invoices/Invoices';
 import InvoicesProvider from './Utils/Context/InvoicesProvider';
-// import CardCenter from './Containers/Cards/CardCenter';
 import CardsProvider from './Utils/Context/CardsProvider';
-import Transactions from './Containers/Transctions/Transactions';
+import Layout from './Components/UIs/Layout';
+// import Transactions from './Containers/Transctions/Transactions';
 
 // THis code to check if there is two react 
 require('react-dom');
@@ -19,13 +21,20 @@ function App() {
     <div className="App">
      <Transactions />
       <InvoicesProvider>
-      <FormProvider>
-        <CardsProvider>
-          {/* <CardCenter /> */}
-        </CardsProvider>
-        {/* <Invoices /> */}
-        {/* <InvoiceDetails/> */}
-          {/* <InvoiceForm /> */}
+        <FormProvider>
+          <CardsProvider>
+            <Layout />
+            <Routes>
+              {/* <Route path="/dashboard" element={} />
+              <Route path="/wallet" element={} /> */}
+              <Route path="invoices" element={<Invoices />}>
+                <Route path="invoice-details" element={<InvoiceDetails />} />
+              </Route>
+              <Route path="invoice-form" element={<InvoiceForm />} />
+              <Route path="/card-center" element={<CardCenter />} />
+              {/* <Route path="/transaction" element={<Transactions />} /> */}
+            </Routes>
+          </CardsProvider>
         </FormProvider>
       </InvoicesProvider>
     </div>
