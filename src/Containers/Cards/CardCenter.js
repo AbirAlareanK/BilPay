@@ -1,4 +1,4 @@
-import { Col , Row , Container } from "react-bootstrap";
+import { Col , Row } from "react-bootstrap";
 import {useEffect, useState} from 'react';
 import CardsWrapper from "./CardsWrapper";
 import Classes from './CardCenter.module.scss';
@@ -16,7 +16,6 @@ const CardCenter = () => {
     const { AddNewCard , CardsTableRows , CardsTableCols } =  UseCards();
     const [ fields ] = useState(FormJSON);
 
-    console.log('Card center rendered ! '  + CardsTableRows)
     useEffect(()=>{
         SetFormElements(fields);
         return () => {
@@ -57,49 +56,40 @@ const CardCenter = () => {
     }
 
     return(
-        <Container fluid>
+        <Col lg={12}>
             <Row>
-                <Col lg={3}>
-                </Col>
+                <div className={Classes.cardWrapper}>
+                    <CardsWrapper />
+                </div>
+            </Row>
+            <Row>
                 <Col lg={9}>
-                    <h5>Card Center</h5>
-                    <Container>
-                        <Row>
-                            <div className={Classes.cardWrapper}>
-                                <CardsWrapper />
-                            </div>
-                        </Row>
-                        <Row>
-                            <Col lg={9}>
-                                <DataTable rows={CardsTableRows}
-                                        cols={CardsTableCols}
-                                        paging={false}
-                                        sortable={false}
-                                        small={false} >
-                                <h6>Card List</h6>
-                                </DataTable>
-                            </Col>
-                            <Col lg={3} className="card-wrapper">
-                                <h6>Add Card</h6>
-                                <form style={{padding:'10px'}}>
-                                    {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
-                                </form>
-                                <Button 
-                                        className={`${FormIsValid ? 'submitFormButton' : 'submitFormButtonDisabled' } ${Classes.addCardBtn}`}
-                                        disabled={!FormIsValid}
-                                        onClick={SubmitFormHandler}>
-                                    <span>
-                                        <MdOutlineAddBox style={{paddingLeft:'5px', width:'30px'}} />
-                                        Add Card
-                                    </span>
-                                   
-                                </Button>
-                            </Col>
-                        </Row>
-                    </Container>
+                    <DataTable rows={CardsTableRows}
+                            cols={CardsTableCols}
+                            paging={false}
+                            sortable={false}
+                            small={false} >
+                    <h6>Card List</h6>
+                    </DataTable>
+                </Col>
+                <Col lg={3} className="card-wrapper">
+                    <h6>Add Card</h6>
+                    <form style={{padding:'10px'}}>
+                        {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
+                    </form>
+                    <Button 
+                            className={`${FormIsValid ? 'submitFormButton' : 'submitFormButtonDisabled' } ${Classes.addCardBtn}`}
+                            disabled={!FormIsValid}
+                            onClick={SubmitFormHandler}>
+                        <span>
+                            <MdOutlineAddBox style={{paddingLeft:'5px', width:'30px'}} />
+                            Add Card
+                        </span>
+                        
+                    </Button>
                 </Col>
             </Row>
-        </Container>
+        </Col>
     );
 }
 

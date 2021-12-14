@@ -1,14 +1,20 @@
 import React , {  useState} from 'react';
+import { Col , Row } from 'react-bootstrap';
 import { MDBDataTable } from 'mdbreact';
 import Classes from './DataTable.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 const DataTable = (props) => {
 
-    const { rows , cols , paging , sortable  , label , infoLabel} = props
+    const navigate = useNavigate();
+    // console.log(navigate());
 
-    console.log('data tabe rendered' + rows)
+    const { rows , cols , paging , sortable  , label , infoLabel} = props
+ 
+    
     const ShowDetailPage = (id)=> {
         console.log('itemPresses' + id )
+        navigate('/invoice-details' , {replace : true})
     }
 
     const [datatable ] = useState({
@@ -16,31 +22,36 @@ const DataTable = (props) => {
         rows : rows.map(row => ({
               ...row,
               clickEvent:(row)=>{
-                ShowDetailPage(row["id"])
+                ShowDetailPage(row["id"]);
               }
             }))
       });
 
     return (
-        <div className={`${Classes.tableCard} card-wrapper`} >
-        {props.children}
-        <MDBDataTable
-            className={Classes.tableData} 
-            responsiveMd
-            btn={true}
-            borderless={true}
-            hover={true}
-            sortable={sortable}
-            searching={false}
-            data={datatable}
-            paging={paging}
-            paginationLabel={label}
-            displayEntries={false}
-            pagesAmount={3}
-            entries={5}
-            infoLabel={infoLabel}
-        />
-        </div>
+        <Row>
+            <Col lg={12} >
+            <div className={`${Classes.tableCard} card-wrapper`}>
+            {props.children}
+            <MDBDataTable
+                className={Classes.tableData} 
+                responsiveMd
+                btn={true}
+                borderless={true}
+                hover={true}
+                sortable={sortable}
+                searching={false}
+                data={datatable}
+                paging={paging}
+                paginationLabel={label}
+                displayEntries={false}
+                pagesAmount={3}
+                entries={5}
+                infoLabel={infoLabel}
+            />
+            </div>
+        </Col>
+        </Row>
+        
     )
 }
 
