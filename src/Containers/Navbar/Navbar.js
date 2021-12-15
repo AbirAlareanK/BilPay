@@ -6,16 +6,21 @@ import { GoDiffAdded } from 'react-icons/go';
 import { BsCardText } from 'react-icons/bs'  ;
 import { AiOutlineTransaction } from 'react-icons/ai';
 import { useState } from "react";
+import Burger from "../../Components/UIs/Burger";
 
 const Navbar = () => {
     const [showNavbar , setShowNavbar ] = useState(false);
 
     return(
         <div className={Classes.navbar}>
-            <div className={Classes.logo}>
-                <p>BilPay</p>
+            <div className={Classes.headingSmall}>
+                <div onClick={()=> setShowNavbar(!showNavbar)} className={Classes.menuButton}>
+                    <Burger open={showNavbar} />
+                </div>
+                <div className={Classes.logo}>
+                    <p>BilPay</p>
+                </div>
             </div>
-            <button onClick={()=> setShowNavbar(!showNavbar)} className={Classes.menuButton}>menu</button>
             <ul className={ showNavbar ? `${Classes.navbarList} ${Classes.hidden}` : `${Classes.navbarList}`}>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/dashboard">
