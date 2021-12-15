@@ -49,10 +49,10 @@ const Layout = () => {
     return (
       <Container fluid>
         <Row>
-          <Col xs={12} lg={2} style={{padding:'0px'}} className="fixed-top one">
+          <Col xs={12} md={3} lg={2} style={{padding:'0px'}} className="fixed-top one">
               <Navbar/>
           </Col>
-          <Col xs={12} lg={10} className="offset-lg-2 two">
+          <Col xs={12} md={9} lg={10} className={`${Classes.contentContainer} offset-lg-2 offset-md-3 two`}>
                 <Row>
                     <h3>Search bar and profile pic</h3>
                 </Row>

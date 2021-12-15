@@ -48,7 +48,7 @@ const InvoiceDetails = () => {
                 <h5>Invoice Details</h5>
                 <p><span>invoice</span>/ #{invoiceDetails['invoice-number']}</p>
             </section> */}
-            <Col lg={8} md={7} xs={12}>
+            <Col lg={8} xs={12}>
                     <InvoiceDetailsInfo 
                         discount={discount}
                         subTotal={SubTotal}
@@ -56,7 +56,7 @@ const InvoiceDetails = () => {
                         icon={statusIcon}
                         services={services}/>
             </Col>
-            <Col lg={4} md={5} xs={12}>
+            <Col lg={4} xs={12}>
                 <PaymentCard />
                 <section className={Classes.invoiceDetailsActions}>
                     <Button><BsCheckCircle />Mark As Paid</Button>

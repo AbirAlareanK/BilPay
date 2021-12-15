@@ -36,14 +36,14 @@ const InvoiceForm = () => {
 
     return(
         <>
-            <Col lg={8} md={9} xs={12}>
+            <Col lg={8} xs={12}>
                 <div  className="card-wrapper">
                     <form>
                         {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
                     </form>
                 </div>
             </Col>
-            <Col lg={4} md={3} xs={12}>
+            <Col lg={4} xs={12}>
                 <section className={Classes.createInvoiceActions}>
                     <Button className={`${FormIsValid ? 'submitFormButton' :  'submitFormButtonDisabled' }`}
                             // disabled={!FormIsValid}
