@@ -66,13 +66,14 @@ const CardCenter = () => {
                 <Col lg={9}>
                     <DataTable rows={CardsTableRows}
                             cols={CardsTableCols}
+                            clickable={false}
                             paging={false}
                             sortable={false}
                             small={false} >
                     <h6>Card List</h6>
                     </DataTable>
                 </Col>
-                <Col lg={3} className="card-wrapper">
+                <Col lg={3} className={`${Classes.addcartContainer} card-wrapper`}>
                     <h6>Add Card</h6>
                     <form style={{padding:'10px'}}>
                         {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
@@ -82,11 +83,10 @@ const CardCenter = () => {
                             disabled={!FormIsValid}
                             onClick={SubmitFormHandler}>
                         <span>
-                            <MdOutlineAddBox style={{paddingLeft:'5px', width:'30px'}} />
+                            <MdOutlineAddBox  />
                             Add Card
                         </span>
-                        
-                    </Button>
+                    </Button> 
                 </Col>
             </Row>
         </Col>

@@ -1,8 +1,33 @@
+@import '../../Assets/Scss/spacing';
+
 .cardWrapper{
     width: -webkit-fill-available;
 }
 
 .addCardBtn{
-    margin-bottom: 0px;
-    width: 100%;
+    width: 93% !important;
+    margin:0px auto;
+    // margin-bottom: 0px;
+    span{
+        font-size: 13px;
+    }
+}
+
+.addCardBtn:hover{
+    width: 93% !important;
+    margin:0px auto;
+    // margin-bottom: 0px;
+    span{
+        font-size: 13px;
+    }
+}
+
+@media (max-width:992px) {
+    .addcartContainer{
+        margin: $margin-component;
+        margin-top: $margin-component;
+    }
+    .addCardBtn{
+        margin: auto;
+    }
 }

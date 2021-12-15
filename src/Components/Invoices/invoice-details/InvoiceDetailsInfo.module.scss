@@ -1,7 +1,6 @@
 @import '../../../Assets/Scss/colors';
 
 .invoiceDetailContent{
-    height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -16,9 +15,7 @@
 .invoiceSubtotal{
     display: flex;
     justify-content: flex-end;
-    div{
-        width: 25vh;
-    }
+    
     div:nth-child(2){
         text-align: end;
     }
@@ -32,8 +29,15 @@
 
 .paidButton{
    width:85px;
+   color:$main-theme;
    background-color: $main-theme-tran;
 }
+.paidButton:hover{
+    width:85px;
+   color:$main-theme;
+   background-color: $main-theme-tran;
+    cursor:not-allowed;
+ }
 
 .invoiceDetailContent{
     h6{

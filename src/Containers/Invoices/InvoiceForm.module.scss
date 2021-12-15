@@ -1,7 +1,13 @@
+@import '../../Assets/Scss/spacing';
 
+.createInvoiceActions span{
+    margin: $margin-heading;
+}
 
-@media (max-width:769px) {
+@media (max-width:992px) {
     .createInvoiceActions {
+        width: 70%;
+        margin: auto;
         display: flex;
         flex-wrap: wrap;
         align-items: center;

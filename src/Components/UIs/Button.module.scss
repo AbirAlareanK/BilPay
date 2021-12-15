@@ -1,32 +1,39 @@
 @import '../../Assets/Scss/colors';
+@import '../../Assets/Scss/spacing';
 
-.themeButton{
-    background-color: $main-theme;
-    color:$card-bg;
+
+@mixin btnStyle {
+    width: 42%;
     padding: 5px 10px;
     font-size: 12px;
     font-weight: 400;
     border-radius: 3px;
     display: flex;
     align-items: center;
+    // margin: $margin-heading;
     justify-content: space-evenly;
-    // cursor: pointer;
+}
+
+.themeButton{
+    @include btnStyle;
+    color:$card-bg;
+    background-color: $main-theme;
 }
 
 
 .themeButton:hover{
+    @include btnStyle;
     background-color: $card-bg;
     color:$main-theme;
-    border: 1px solid $main-theme;
-    border-radius: 3px;
+    // border: 0.5px solid $main-theme;
     cursor: pointer;
 }
 
 
 
-/* No less than 400px, no greater than 900px */
-@media (min-width:767px) and (max-width:900px){
- .themeButton{
-        width: 100%;
-    }
-}
+// /* No less than 400px, no greater than 900px */
+// @media (max-width:992px){
+//  .themeButton{
+//        width: 55%;
+//     }
+// }

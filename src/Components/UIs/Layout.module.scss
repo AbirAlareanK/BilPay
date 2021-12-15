@@ -1,5 +1,28 @@
+@import '../../Assets/Scss/colors';
 
 
+.sectionHeader{
+    margin-bottom: 15px;
+
+    h5{
+        font-weight: 600;
+    }
+
+    span{
+        color: $main-theme;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    p{
+        color: $para-font;
+        font-size: 12px;
+    }
+}
+
+.contentContainer{
+    padding-left: 15px;
+}
 @media (max-width:768px){ 
   .contentContainer{
       margin-top: 100px;

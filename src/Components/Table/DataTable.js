@@ -9,10 +9,13 @@ const DataTable = (props) => {
     const navigate = useNavigate();
     // console.log(navigate());
 
-    const { rows , cols , paging , sortable  , label , infoLabel} = props
+    const { clickable , rows , cols , paging , sortable  , label , infoLabel} = props
  
     
     const ShowDetailPage = (id)=> {
+        if(!clickable){
+            return;
+        }
         console.log('itemPresses' + id )
         navigate('/invoice-details' , {replace : true})
     }

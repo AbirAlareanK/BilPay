@@ -1,3 +1,5 @@
+@import './Assets/Scss/spacing';
+
 .App{
     
     font-size: 14px;
@@ -15,5 +17,21 @@
         margin-bottom: 6px;
         font-weight: 500;
     }
+}
+
+.padding{
+    padding : $padding-components;
+}
+
+.padding-top{
+    padding-top : $padding-top;
+}
+
+.margin {
+    margin : $margin-component;   
+}
+
+.margin-btm {
+    margin-bottom : $margin-component;   
 }
 

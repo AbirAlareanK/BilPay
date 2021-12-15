@@ -54,14 +54,18 @@ const Layout = () => {
           </Col>
           <Col xs={12} md={9} lg={10} className={`${Classes.contentContainer} offset-lg-2 offset-md-3 two`}>
                 <Row>
-                    <h3>Search bar and profile pic</h3>
+                    <Col lg={12}>
+                        <h3>Search bar and profile pic</h3>
+                    </Col>
                 </Row>
                 <Row>
-                    <section className={Classes.sectionHeader}>
-                        <h5>{pageTitle}</h5>
-                    </section>    
+                    <Col lg={12}>
+                        <section className={Classes.sectionHeader}>
+                            <h5>{pageTitle}</h5>
+                        </section> 
+                    </Col>
                 </Row>
-                <Row>
+                <Row className='padding'>
                     <Routes>
                         <Route path="/dashboard" element={<p>Dashboard</p>} />
                         <Route path="/wallet" element={<p>Wallet page</p>} />

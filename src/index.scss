@@ -74,3 +74,12 @@ code {
 .yellowBg{
   background-image: url('../src/Assets/CardsBg/bg-yellow.svg');
 }
+
+.pagination .page-item.active .page-link{
+    color: $card-bg;
+    background-color : $main-theme;
+}
+
+.pagination .page-item.active .page-link:hover{
+  color: $main-theme;
+}
