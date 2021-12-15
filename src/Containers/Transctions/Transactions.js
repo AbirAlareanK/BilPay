@@ -27,18 +27,20 @@ const Transactions = () => {
     return(
         <Container fluid>
             <Row>
-                <div className={Classes.heading}>
-                    <h6>Transaction</h6>
-                    <p>/{Invoices[0]['invoice-number']}</p>
-                </div>
+                <Col lg={12}>
+                    <div className={Classes.heading}>
+                        <h6>Transaction</h6>
+                        <p>/{Invoices[0]['invoice-number']}</p>
+                    </div>
+                </Col>
             </Row>
             <Row>
-                <Col lg={8}>
+                <Col lg={8} md={12}>
                     <Transaction services={services}
                                  invoice={Invoices[0]} 
                                  tax={tax}  />
                 </Col>  
-                <Col lg={4}>
+                <Col lg={4} md={12}>
                     <div className={Classes.CardUsed}>
                         <AdminCard key={cardData['card-id']}  cardNum={cardData["card-number"]}
                                                     balance={cardData["card-balance"]}
