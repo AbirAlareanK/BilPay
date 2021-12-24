@@ -1,31 +1,45 @@
 import { createContext, useContext , useMemo, useState } from "react";
 import CardsData from '../../Assets/JSON/cards-data.json';
 import CardsCols from '../../Assets/JSON/cards-col-table.json';
-import CardBgGreen from '../../Assets/CardsBg/bg-green.svg';
+import greenBg from '../../Assets/CardsBg/bg-green.svg';
+import yellowBg from '../../Assets/CardsBg/bg-yellow.svg';
+import redBg from '../../Assets/CardsBg/bg-red.svg';
+import blueBg from '../../Assets/CardsBg/bg-blue.svg';
+import CardNumber from "../../Components/UIs/CardNumber";
 
 export const CardsContext =  createContext();
 export const UseCards = () => useContext(CardsContext) ;
 
 const CardsProvider = (props) => {
     const [ Cards , setCards ] = useState(CardsData);
-    console.log('Card state has changed !');
+    console.log('Card state has changed !' , Cards);
 
     const CardsTableRows = useMemo(()=>{
-        const img = <img alt="cardbg" src={CardBgGreen} />
+        console.log('inside memo cars has changed ' , Cards);
+        const img = (src) => { 
+            switch(src) {
+                case 'greenBg' : return <img alt="cardbg" src={greenBg} /> ;
+                case 'blueBg' : return <img alt="cardbg" src={blueBg} />;
+                case 'redBg' : return <img alt="cardbg" src={redBg} /> ;
+                case 'yellowBg' : return <img alt="cardbg" src={yellowBg} />; 
+                default : return;
+            }
+        }
+        const cardNumber = (str) => { return <CardNumber str={str} />}
         return Cards.map(card => (
             {
                 id : card['card-id'],
-                card : img ,
+                card : img(card['card-color']) ,
                 cardType : card['card-type'],
                 bank: card['card-bank'],
-                cardNumber : card['card-number'],
+                cardNumber : cardNumber(card['card-number']),
                 nameinCard : card['namein-card'],
                 detailsPage : "..."
              } 
          ))
     },[Cards]) 
      
-    const CardsTableCols = CardsCols ;
+    const CardsTableCols = CardsCols;
 
     const card_number = Cards.length + 1
     const zeroFilled =  ('00' + card_number)
@@ -33,7 +47,7 @@ const CardsProvider = (props) => {
 
     
     const AddNewCard = (card) => {
-        // console.log(card)
+        console.log(card)
         // console.log(card['cardNumber'])
         setCards([
             ...Cards,

@@ -1,29 +1,40 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import Cards from '../../Assets/JSON/cards-data.json';
 import AdminCard from "../../Components/UIs/AdminCard";
-import Classes from './CardsWrapper.module.scss';
-
+// import Classes from './CardsWrapper.module.scss';
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3.3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 const CardsWrapper = () => {
 
     return (
-        <Carousel 
-                className={Classes.carouselCards}
-                // emulateTouch={true}
-                swipeable={true}
-                interval={5000}
-                centerMode={true}
-                showThumbs={false}
-                autoPlay={true}
-                centerSlidePercentage={27}
-                showArrows={false}
-                showStatus={false}
-                showIndicators={false}>
+        <Carousel responsive={responsive}
+                  arrows={false}
+                  infinite={true}
+                  // ref={el => (this.Carousel = el)}additionalTransfrom={-20 * 5}
+                  partialVisible={false}>
                 {Cards.map(card => {
-                    return (<AdminCard key={card['card-id']}  cardNum={card["card-number"]}
-                                                balance={card["card-balance"]}
-                                                validation={card["card-validation"]}
-                                                color={card['card-color']}/>)     
+                    return (<AdminCard  key={card['card-id']}  cardNum={card["card-number"]}
+                                        balance={card["card-balance"]}
+                                        validation={card["card-validation"]}
+                                        color={card['card-color']}/>)     
                 })}
            
         </Carousel>

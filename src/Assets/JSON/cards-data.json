@@ -38,16 +38,6 @@
         "namein-card":"Tony Soap",
         "card-validation":"03/23",
         "card-color":"blueBg"
-    },
-    {
-        "card-id": "CARD_004",
-        "card-number" : "1234 5678 7654 0933",
-        "card-balance":"4811,21",
-        "card-type":"Secondary",
-        "card-bank":"ABC Bank",
-        "namein-card":"Tony Soap",
-        "card-validation":"03/23",
-        "card-color":"greenBg"
     }
    
 ]

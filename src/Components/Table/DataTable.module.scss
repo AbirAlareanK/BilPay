@@ -35,13 +35,6 @@ thead tr th{
     font-size: 11px;
 }
 
-tbody tr td:nth-child(5){
-    color : $para-font;
-}
-
-/* tbody tr td:nth-child(6){
-   color:red;
-} */
 
 
 ul[data-test="pagination"]{
@@ -87,6 +80,6 @@ tbody tr td:nth-child(7){
 }
 
 td{
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }

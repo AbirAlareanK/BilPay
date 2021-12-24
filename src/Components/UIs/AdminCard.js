@@ -5,7 +5,7 @@ const AdminCard = (props) => {
     const { color , cardNum , balance , validation } = props
    
     return(
-        <div className={`${Classes.adminCard}  ${ props.className ? props.className : ''} ${color}`}>
+        <div className={`${Classes.adminCard} unselectable ${ props.className ? props.className : ''} ${color}`}>
             <span className={Classes.circles}><span></span></span>
             <div className={Classes.balanceSection}>
                 <h6>Balance</h6>

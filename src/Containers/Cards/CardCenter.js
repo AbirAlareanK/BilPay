@@ -65,9 +65,11 @@ const CardCenter = () => {
                     <h5>Card Center</h5>
                     <Container>
                         <Row>
-                            <div className={Classes.cardWrapper}>
-                                <CardsWrapper />
-                            </div>
+                            <Col lr={12}>
+                               <div className={Classes.cardWrapper}>
+                                    <CardsWrapper />
+                                </div> 
+                            </Col>
                         </Row>
                         <Row>
                             <Col lg={9}>
@@ -79,21 +81,23 @@ const CardCenter = () => {
                                 <h6>Card List</h6>
                                 </DataTable>
                             </Col>
-                            <Col lg={3} className="card-wrapper">
-                                <h6>Add Card</h6>
-                                <form style={{padding:'10px'}}>
-                                    {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
-                                </form>
-                                <Button 
-                                        className={`${FormIsValid ? 'submitFormButton' : 'submitFormButtonDisabled' } ${Classes.addCardBtn}`}
-                                        disabled={!FormIsValid}
-                                        onClick={SubmitFormHandler}>
-                                    <span>
-                                        <MdOutlineAddBox style={{paddingLeft:'5px', width:'30px'}} />
-                                        Add Card
-                                    </span>
-                                   
-                                </Button>
+                            <Col lg={3}>
+                                <div  className="card-wrapper">
+                                    <h6>Add Card</h6>
+                                    <form style={{padding:'10px'}}>
+                                        {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
+                                    </form>
+                                    <Button 
+                                            className={`${FormIsValid ? 'submitFormButton' : 'submitFormButtonDisabled' } ${Classes.addCardBtn}`}
+                                            disabled={!FormIsValid}
+                                            onClick={SubmitFormHandler}>
+                                        <span>
+                                            <MdOutlineAddBox style={{paddingLeft:'5px', width:'30px'}} />
+                                            Add Card
+                                        </span>
+                                    
+                                    </Button>
+                                </div>
                             </Col>
                         </Row>
                     </Container>
