@@ -27,9 +27,6 @@ const Transactions = () => {
     return(
         <Container fluid>
             <Row>
-                <h4>Transaction Details</h4>
-            </Row>
-            <Row>
                 <div className={Classes.heading}>
                     <h6>Transaction</h6>
                     <p>/{Invoices[0]['invoice-number']}</p>

@@ -1,5 +1,5 @@
 import {  useState } from "react";
-import { Col , Row , Container } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 import Classes from './InvoiceDetails.module.scss'
 import { AiFillWarning , AiFillCheckCircle } from 'react-icons/ai'
@@ -43,40 +43,29 @@ const InvoiceDetails = () => {
    });
 
     return (
-        <Container fluid >
-            <Row>
-                <Col lg={3}>
-                </Col>
-                <Col lg={9}>
-                    <Container>
-                    <section className={Classes.sectionHeader}>
-                        <h5>Invoice Details</h5>
-                        <p><span>invoice</span>/ #{invoiceDetails['invoice-number']}</p>
-                    </section>
-                        <Row>
-                            <Col lg={8} md={7} xs={12}>
-                                    <InvoiceDetailsInfo 
-                                        discount={discount}
-                                        subTotal={SubTotal}
-                                        invoiceDetails={invoiceDetails}
-                                        icon={statusIcon}
-                                        services={services}/>
-                            </Col>
-                            <Col lg={4} md={5} xs={12}>
-                                <PaymentCard />
-                                <section className={Classes.invoiceDetailsActions}>
-                                    <Button><BsCheckCircle />Mark As Paid</Button>
-                                    <Button><BsDownload />Download</Button>
-                                    <Button><BsPrinter />Print</Button>
-                                    <Button><IoSendOutline />Send</Button>
-                                </section>
-                            </Col>
-                        </Row>
-                     </Container>
-                   
-                </Col>
-            </Row>
-        </Container>
+        <>
+        {/* <section className={Classes.sectionHeader}>
+                <h5>Invoice Details</h5>
+                <p><span>invoice</span>/ #{invoiceDetails['invoice-number']}</p>
+            </section> */}
+            <Col lg={8} md={7} xs={12}>
+                    <InvoiceDetailsInfo 
+                        discount={discount}
+                        subTotal={SubTotal}
+                        invoiceDetails={invoiceDetails}
+                        icon={statusIcon}
+                        services={services}/>
+            </Col>
+            <Col lg={4} md={5} xs={12}>
+                <PaymentCard />
+                <section className={Classes.invoiceDetailsActions}>
+                    <Button><BsCheckCircle />Mark As Paid</Button>
+                    <Button><BsDownload />Download</Button>
+                    <Button><BsPrinter />Print</Button>
+                    <Button><IoSendOutline />Send</Button>
+                </section>
+            </Col>
+        </>
     );
 }
 

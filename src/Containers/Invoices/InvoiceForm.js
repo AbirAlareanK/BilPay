@@ -1,6 +1,6 @@
 
 import Button from '../../Components/UIs/Button';
-import { Col , Row , Container } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import Classes from './InvoiceForm.module.scss'
 import { AiOutlineSave , AiOutlineEye} from 'react-icons/ai';
 import { BsPrinter , BsDownload} from 'react-icons/bs';
@@ -35,40 +35,29 @@ const InvoiceForm = () => {
     }
 
     return(
-        <Container fluid >
-            <Row>
-                <Col lg={3}>
-                </Col>
-                <Col lg={9}>
-                    <Container>
-                    <section className={Classes.sectionHeader}>
-                        <h5>Create Invoice</h5>
-                    </section>
-                        <Row>
-                            <Col lg={8} md={9} xs={12} className="card-wrapper">
-                              <form>
-                                  {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
-                              </form>
-                            </Col>
-                            <Col lg={4} md={3} xs={12}>
-                                <section className={Classes.createInvoiceActions}>
-                                    <Button className={`${FormIsValid ? 'submitFormButton' :  'submitFormButtonDisabled' }`}
-                                            // disabled={!FormIsValid}
-                                            onClick={SubmitFormHandler}>
-                                        <AiOutlineSave />
-                                        Save
-                                    </Button>
-                                    <Button><AiOutlineEye />Preview</Button>
-                                    <Button><BsDownload />Download</Button>
-                                    <Button onClick={PrintInvoiceHandler}><BsPrinter />Print</Button>
-                                    <Button><IoSendOutline />Send</Button>
-                                </section>
-                            </Col>
-                        </Row>
-                     </Container>
-                </Col>
-            </Row>
-        </Container>
+        <>
+            <Col lg={8} md={9} xs={12}>
+                <div  className="card-wrapper">
+                    <form>
+                        {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
+                    </form>
+                </div>
+            </Col>
+            <Col lg={4} md={3} xs={12}>
+                <section className={Classes.createInvoiceActions}>
+                    <Button className={`${FormIsValid ? 'submitFormButton' :  'submitFormButtonDisabled' }`}
+                            // disabled={!FormIsValid}
+                            onClick={SubmitFormHandler}>
+                        <AiOutlineSave />
+                        Save
+                    </Button>
+                    <Button><AiOutlineEye />Preview</Button>
+                    <Button><BsDownload />Download</Button>
+                    <Button onClick={PrintInvoiceHandler}><BsPrinter />Print</Button>
+                    <Button><IoSendOutline />Send</Button>
+                </section>
+            </Col>
+        </>
     );
 }
 
