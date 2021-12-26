@@ -1,0 +1,48 @@
+@import '.././../Assets/Scss/colors';
+
+.searchBar{
+    padding: 20px 0;
+    
+    form {
+    position: relative;
+    margin: auto;
+  }
+  
+  input{
+    background: white;
+    border: navajowhite;
+    border-radius: 23px;
+    width: 100%;
+    height: 40px;
+    padding: 15px;
+    color: #ccc;  
+  }
+  
+  input:focus{
+    outline:none;
+    padding-left:65px;
+  }
+  
+  input:focus::placeholder {
+    padding-left : 0;
+  }
+  
+  input::placeholder {
+    padding-left:50px;
+    font-size:14px; 
+    color: #ccc;  
+  }
+
+}
+
+.searchIcon{
+    position: absolute;
+    top: 0px;
+    color: $main-theme;
+    left: 30px;
+    cursor: pointer;
+  }
+
+
+
+ 
