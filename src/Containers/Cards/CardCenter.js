@@ -15,7 +15,6 @@ const CardCenter = () => {
     const { GetFormElement , SetFormElements , ResetForm , FormIsValid } = UseFormElement();
     const { AddNewCard , CardsTableRows , CardsTableCols } =  UseCards();
     const [ fields ] = useState(FormJSON);
-
     useEffect(()=>{
         SetFormElements(fields);
         return () => {
@@ -58,9 +57,11 @@ const CardCenter = () => {
     return(
         <Col lg={12}>
             <Row>
-                <div className={Classes.cardWrapper}>
-                    <CardsWrapper />
-                </div>
+                <Col lg={12}>
+                    <div className={Classes.cardWrapper}>
+                        <CardsWrapper />
+                    </div>
+                </Col>
             </Row>
             <Row>
                 <Col lg={9}>
@@ -73,20 +74,22 @@ const CardCenter = () => {
                     <h6>Card List</h6>
                     </DataTable>
                 </Col>
-                <Col lg={3} className={`${Classes.addcartContainer} card-wrapper`}>
-                    <h6>Add Card</h6>
-                    <form style={{padding:'10px'}}>
-                        {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
-                    </form>
-                    <Button 
-                            className={`${FormIsValid ? 'submitFormButton' : 'submitFormButtonDisabled' } ${Classes.addCardBtn}`}
-                            disabled={!FormIsValid}
-                            onClick={SubmitFormHandler}>
-                        <span>
-                            <MdOutlineAddBox  />
-                            Add Card
-                        </span>
-                    </Button> 
+                <Col lg={3}>
+                    <div className={`${Classes.addcartContainer} card-wrapper`}>
+                      <h6>Add Card</h6>
+                        <form>
+                            {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
+                        </form>
+                        <Button 
+                                className={`${FormIsValid ? 'submitFormButton' : 'submitFormButtonDisabled' } ${Classes.addCardBtn}`}
+                                disabled={!FormIsValid}
+                                onClick={SubmitFormHandler}>
+                            <div>
+                                <MdOutlineAddBox size={18} />
+                                <span>Add Card</span>
+                            </div>
+                        </Button>   
+                    </div>
                 </Col>
             </Row>
         </Col>

@@ -5,20 +5,19 @@
 }
 
 .addCardBtn{
-    width: 93% !important;
     margin:0px auto;
-    // margin-bottom: 0px;
-    span{
-        font-size: 13px;
-    }
 }
 
 .addCardBtn:hover{
-    width: 93% !important;
     margin:0px auto;
-    // margin-bottom: 0px;
-    span{
-        font-size: 13px;
+}
+
+
+form{
+    margin-bottom: 15px;
+
+    input, select{
+        background-color: rgba(230, 230, 230, 0.8);
     }
 }
 

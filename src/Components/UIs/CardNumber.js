@@ -15,9 +15,10 @@ const CardNumber = (props) => {
     
     
     return (
-        <>
-            <span className={Classes.cardNumber}>{CradNum}</span>
-        </>
+        <div>
+            <span className={Classes.hiddenNumber}>{CradNum.slice(0,14)}</span>
+            <span className={Classes.cardNumber}>{CradNum.slice(14)}</span>
+        </div>
     );
 }
 

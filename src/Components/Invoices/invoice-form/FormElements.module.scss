@@ -1,7 +1,6 @@
 @import '../../../Assets/Scss/colors';
 
 form{
-    padding: 20px;
     p{
         font-size: 11px;
         color: red;
@@ -22,6 +21,7 @@ input, textarea, select{
     padding: 5px;
     padding-left: 15px;
     font-size: 13px;
+    color: $para-font;
 }
 
 input:focus,

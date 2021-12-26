@@ -3,10 +3,8 @@
 
 
 @mixin btnStyle {
-    width: 42%;
     padding: 5px 10px;
     font-size: 12px;
-    font-weight: 400;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -18,6 +16,18 @@
     @include btnStyle;
     color:$card-bg;
     background-color: $main-theme;
+
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 60%;
+        align-items: center;
+    }
+
+    span{
+        font-size: 12px;
+    }
 }
 
 

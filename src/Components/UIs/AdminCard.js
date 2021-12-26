@@ -2,7 +2,7 @@ import Classes from './AdminCard.module.scss';
 import CardNumber from './CardNumber';
 
 const AdminCard = (props) => {
-    const { color , cardNum , balance , validation } = props
+    const { color , cardNum, balance , validation } = props
    
     return(
         <div className={`${Classes.adminCard} unselectable ${ props.className ? props.className : ''} ${color}`}>
@@ -16,7 +16,7 @@ const AdminCard = (props) => {
                     <p>Valid Thru</p>
                     <h6>{validation}</h6>
                 </div>
-                
+                <CardNumber str={cardNum}/>
                 {/* <span className={Classes.bgCircles}><span><span></span></span></span> */}
             </div>
         </div>
