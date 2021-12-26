@@ -107,3 +107,11 @@ code {
       transform: scale(1.1);
   }
 }
+.pagination .page-item.active .page-link{
+    color: $card-bg;
+    background-color : $main-theme;
+}
+
+.pagination .page-item.active .page-link:hover{
+  color: $main-theme;
+}

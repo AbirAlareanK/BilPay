@@ -2,6 +2,8 @@
 import { useState } from "react";
 import CardNumber from "../../UIs/CardNumber";
 import Classes from './PaymmentCard.module.scss';
+import cardbg from '../../../Assets/CardsBg/bg-green.svg';
+
 
 const PaymentCard = () => {
 
@@ -9,7 +11,8 @@ const PaymentCard = () => {
     const [ CardNum ]  = useState('1234 5678 7654 7892')
 
     return(
-        <section className={`card-wrapper ${Classes.paymentCard}`}>
+        <section    style={{backgroundImage:{cardbg}}}
+                    className={`card-wrapper ${Classes.paymentCard}`}>
             <div>
                 <h6>Payment Card Used</h6>
                 <div className={Classes.firstSectionContent}>

@@ -10,7 +10,6 @@ import { BsPrinter , BsCheckCircle , BsDownload} from 'react-icons/bs';
 import  {IoSendOutline} from 'react-icons/io5'
 
 
-
 const InvoiceDetails = () => {
 
    const { GetInvoiceDetails } =  UseInvoices();
@@ -59,7 +58,7 @@ const InvoiceDetails = () => {
             <Col lg={4} xs={12}>
                 <PaymentCard />
                 <section className={Classes.invoiceDetailsActions}>
-                    <Button><BsCheckCircle />Mark As Paid</Button>
+                    <Button><BsCheckCircle />Mark Paid</Button>
                     <Button><BsDownload />Download</Button>
                     <Button><BsPrinter />Print</Button>
                     <Button><IoSendOutline />Send</Button>

@@ -1,4 +1,4 @@
-@import '../../Assets//Scss/colors'; 
+@import '../../Assets/Scss/colors'; 
 
 .tableCard
 {
@@ -8,10 +8,6 @@
     box-shadow: none;
     background-color:$card-bg;
     cursor: pointer;
-}
-
-h5{
-    font-weight:400 !important;
 }
 
 thead{
@@ -54,6 +50,10 @@ li[data-test="page-item"]{
 
 }
 
+li[data-test="page-item"]:hover{
+    color: $main-theme;
+}
+
 li[data-test="page-item"] span{
     font-size:18px;
 }
@@ -66,7 +66,7 @@ div[data-test="dataTables_paginate"]{
 
 div[data-test="datatable-info"]{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     color: $para-font;
     font-size:15px; 
 

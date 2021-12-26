@@ -16,10 +16,11 @@ const Invoices = () => {
              <Row>
                 <InvoiceBriefArray />
             </Row>
-            <Row>
+            <Row className="padding-top">
                 <Col lg={12}>
                     <DataTable rows={rows}
                                 cols={colData}
+                                clickable={true}
                                 paging={true}
                                 sortable={false}
                                 small={true}

@@ -1,27 +1,33 @@
+@import '../../Assets/Scss/spacing';
+
 .cardWrapper{
     width: -webkit-fill-available;
 }
 
 .addCardBtn{
-    margin-bottom: 0px;
-    width: 100%;
+    width: 93% !important;
+    margin:0px auto;
+    // margin-bottom: 0px;
+    span{
+        font-size: 13px;
+    }
 }
 
-h6{
-    margin-bottom: 15px !important;
+.addCardBtn:hover{
+    width: 93% !important;
+    margin:0px auto;
+    // margin-bottom: 0px;
+    span{
+        font-size: 13px;
+    }
 }
 
-tbody tr td:nth-child(5){
-    color : #000000;
+@media (max-width:992px) {
+    .addcartContainer{
+        margin: $margin-component;
+        margin-top: $margin-component;
+    }
+    .addCardBtn{
+        margin: auto;
+    }
 }
-
-tbody tr td:nth-child(4){
-   font-size: 12px ;
-}
-
-form{
-    padding: 0px !important;
-    margin-bottom: 15px;
-}
-
-

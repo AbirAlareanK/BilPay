@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col'
 
 const InvoiceBriefWrapper = ({precentage , number , title , color}) => {
     return (
-        <Col xs={12} sm={6} md={6} lg={3}>
+        <Col xs={12} sm={6} md={6} lg={3} className="margin-btm">
             <div className={`${Classes.InvoBriefWrapper} card-wrapper`}>
                 <div className={Classes.InvoBriefWrapperSec}>
                     <IoReceiptOutline color={color} size="25px"/>

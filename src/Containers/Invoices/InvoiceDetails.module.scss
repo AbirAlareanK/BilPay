@@ -1,5 +1,5 @@
 @import '../../Assets/Scss/colors';
-
+@import '../../Assets/Scss/spacing';
 
 .invoiceDetailsActions{
     display: flex;
@@ -7,6 +7,10 @@
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: space-between;
+}
+
+.invoiceDetailsActions span{
+    margin: $margin-heading;
 }
 
 
