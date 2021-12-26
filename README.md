@@ -19,3 +19,10 @@ npm install gh-pages
 ##Carousel
 npm i react-responsive-carousel
 
+## Carousel for cards center
+npm install react-multi-carousel --save
+## APIs : 
+https://bestofreactjs.com/repo/YIZHUANG-react-multi-carousel-react-image-gallery
+
+
+
