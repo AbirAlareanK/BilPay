@@ -47,8 +47,6 @@ const CardsProvider = (props) => {
 
     
     const AddNewCard = (card) => {
-        console.log(card)
-        // console.log(card['cardNumber'])
         setCards([
             ...Cards,
             {

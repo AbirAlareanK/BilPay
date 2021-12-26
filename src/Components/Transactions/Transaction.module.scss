@@ -1,3 +1,5 @@
+@import '../../Assets/Scss/colors';
+
 .tranheading p {
     font-size: 12px;
 }
@@ -62,14 +64,15 @@
     justify-content: space-between;
 
     .actionButtons{
-        width: 64%;
+        width: 66%;
         display: flex;
         justify-content: flex-end;
 
         .transButton{
-            width: 25%;
-            height: 35px;
             margin-left: 20px;
+            width: 30%;
+            height: 36px;
+            border: 1px solid $main-theme;
         }
 
     }

@@ -33,26 +33,29 @@ const DataTable = (props) => {
     return (
         <Row>
             <Col lg={12} >
-            <div className={`${Classes.tableCard} card-wrapper`}>
-            {props.children}
-            <MDBDataTable
-                className={Classes.tableData} 
-                responsiveMd
-                btn={true}
-                borderless={true}
-                hover={true}
-                sortable={sortable}
-                searching={false}
-                data={datatable}
-                paging={paging}
-                paginationLabel={label}
-                displayEntries={false}
-                pagesAmount={3}
-                entries={5}
-                infoLabel={infoLabel}
-            />
-            </div>
-        </Col>
+                <div className={`${Classes.tableCard} card-wrapper`}>
+                    {props.children}
+                    <MDBDataTable
+                        className={`${Classes.tableData} ${props.className} `}
+                        responsiveMd={true}
+                        responsiveXL={true}
+                        responsiveLg={true}
+                        responsiveSm={true}
+                        btn={true}
+                        borderless={true}
+                        hover={true}
+                        sortable={sortable}
+                        searching={false}
+                        data={datatable}
+                        paging={paging}
+                        paginationLabel={label}
+                        displayEntries={false}
+                        pagesAmount={3}
+                        entries={5}
+                        infoLabel={infoLabel}
+                    />
+                </div>
+            </Col>
         </Row>
         
     )

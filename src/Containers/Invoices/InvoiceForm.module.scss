@@ -1,17 +1,49 @@
 @import '../../Assets/Scss/spacing';
 
-.createInvoiceActions span{
-    margin: $margin-heading;
+.createInvoiceActions {
+    margin-top: 20px;
+    span{
+        margin: $margin-heading;
+        width: 50%;
+    }
+} 
+
+.invoiceForm{
+    margin-top: 20px;
+}
+
+
+
+.invoiceForm form div:nth-child(1),
+.invoiceForm form div:nth-child(6),
+.invoiceForm form div:nth-child(8)
+{
+    width: 50%;
+    float: left;
+    padding-right: 20px;
+}
+
+.invoiceForm form div:nth-child(2),
+.invoiceForm form div:nth-child(7),
+.invoiceForm form div:nth-child(9) {
+    width: 50%;
 }
 
 @media (max-width:992px) {
     .createInvoiceActions {
-        width: 70%;
         margin: auto;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
     }
+
+    @media (max-width:992px) {
+        .invoiceForm form div:nth-child(n+1){
+            width: 100% ;
+            padding-right: 0px;
+        }
+    }
+    
 }
 

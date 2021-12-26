@@ -37,7 +37,7 @@ const InvoiceForm = () => {
     return(
         <>
             <Col lg={8} xs={12}>
-                <div  className="card-wrapper">
+                <div  className={` ${Classes.invoiceForm} card-wrapper`}>
                     <form>
                         {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
                     </form>
@@ -48,13 +48,13 @@ const InvoiceForm = () => {
                     <Button className={`${FormIsValid ? 'submitFormButton' :  'submitFormButtonDisabled' }`}
                             // disabled={!FormIsValid}
                             onClick={SubmitFormHandler}>
-                        <AiOutlineSave />
+                        <AiOutlineSave  size={15} />
                         Save
                     </Button>
-                    <Button><AiOutlineEye />Preview</Button>
-                    <Button><BsDownload />Download</Button>
-                    <Button onClick={PrintInvoiceHandler}><BsPrinter />Print</Button>
-                    <Button><IoSendOutline />Send</Button>
+                    <Button><AiOutlineEye size={15} />Preview</Button>
+                    <Button><BsDownload size={15}  />Download</Button>
+                    <Button onClick={PrintInvoiceHandler}><BsPrinter size={15}  />Print</Button>
+                    <Button><IoSendOutline size={15}  />Send</Button>
                 </section>
             </Col>
         </>

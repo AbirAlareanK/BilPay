@@ -20,7 +20,11 @@
 }
 
 .padding{
-    padding : $padding-components;
+    padding : 0 $padding-components;
+}
+
+.r0-padding {
+    padding-right: 0 !important;
 }
 
 .padding-top{
@@ -31,7 +35,4 @@
     margin : $margin-component;   
 }
 
-.margin-btm {
-    margin-bottom : $margin-component;   
-}
 

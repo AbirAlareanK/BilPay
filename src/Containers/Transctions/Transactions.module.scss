@@ -1,14 +1,15 @@
 @import '../../Assets/Scss/colors';
 
 .CardUsed{
-    width: 85%;
-    height: 192px;
+    height: 30%;
 }
 
 @media (max-width:992px) {
     .CardUsed{
-        margin: auto;
-        width: 50%;
+        margin: 20px auto !important;
+        width: 60%;
+        height: 100%;
+        padding-bottom: 20px;
     }
 }
 

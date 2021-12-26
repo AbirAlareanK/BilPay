@@ -14,8 +14,9 @@
 
 .themeButton{
     @include btnStyle;
-    color:$card-bg;
-    background-color: $main-theme;
+    color:$main-theme;
+    font-weight: 400;
+    background-color: $card-bg ;
 
     div{
         display: flex;
@@ -33,8 +34,8 @@
 
 .themeButton:hover{
     @include btnStyle;
-    background-color: $card-bg;
-    color:$main-theme;
+    background-color:$main-theme ;
+    color:$card-bg;
     // border: 0.5px solid $main-theme;
     cursor: pointer;
 }

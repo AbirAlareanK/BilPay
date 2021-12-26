@@ -11,7 +11,7 @@ const PaymentCard = () => {
     const [ CardNum ]  = useState('1234 5678 7654 7892')
 
     return(
-        <section    style={{backgroundImage:{cardbg}}}
+        <section style={{backgroundImage:{cardbg}}}
                     className={`card-wrapper ${Classes.paymentCard}`}>
             <div>
                 <h6>Payment Card Used</h6>

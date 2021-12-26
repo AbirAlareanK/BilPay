@@ -32,7 +32,7 @@ const InvoiceDetails = () => {
         return servicesfees.reduce((preFee , currentFee) => preFee + currentFee , 0)
    });
 
-   const statusIcon = invoiceDetails['status'] === 'paid' ?  <AiFillCheckCircle /> : <AiFillWarning/>
+   const statusIcon = invoiceDetails['status'] === 'paid' ?  <AiFillCheckCircle size={15} /> : <AiFillWarning  size={15} />
    const [discount] = useState(()=> {
        if(invoiceDetails['dicount-amount'] > 0){
             return (invoiceDetails['dicount-amount'] *  SubTotal / 100)
@@ -43,10 +43,6 @@ const InvoiceDetails = () => {
 
     return (
         <>
-        {/* <section className={Classes.sectionHeader}>
-                <h5>Invoice Details</h5>
-                <p><span>invoice</span>/ #{invoiceDetails['invoice-number']}</p>
-            </section> */}
             <Col lg={8} xs={12}>
                     <InvoiceDetailsInfo 
                         discount={discount}
@@ -58,10 +54,10 @@ const InvoiceDetails = () => {
             <Col lg={4} xs={12}>
                 <PaymentCard />
                 <section className={Classes.invoiceDetailsActions}>
-                    <Button><BsCheckCircle />Mark Paid</Button>
-                    <Button><BsDownload />Download</Button>
-                    <Button><BsPrinter />Print</Button>
-                    <Button><IoSendOutline />Send</Button>
+                    <Button><BsCheckCircle  size={15}  />Mark Paid</Button>
+                    <Button><BsDownload  size={15} />Download</Button>
+                    <Button><BsPrinter  size={15} />Print</Button>
+                    <Button><IoSendOutline  size={15} />Send</Button>
                 </section>
             </Col>
         </>

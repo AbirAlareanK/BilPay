@@ -1,4 +1,4 @@
-import { Col , Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import {useEffect, useState} from 'react';
 import CardsWrapper from "./CardsWrapper";
 import Classes from './CardCenter.module.scss';
@@ -14,6 +14,7 @@ const CardCenter = () => {
 
     const { GetFormElement , SetFormElements , ResetForm , FormIsValid } = UseFormElement();
     const { AddNewCard , CardsTableRows , CardsTableCols } =  UseCards();
+    console.log('CardsTableRows inside cards center  ' , CardsTableRows);
     const [ fields ] = useState(FormJSON);
     useEffect(()=>{
         SetFormElements(fields);
@@ -28,6 +29,7 @@ const CardCenter = () => {
             return;
         }else{
             const obj = GetFormElement();
+            console.log('get element added  ' , obj)
             const cardform = {
                 "card-number" : '',
                 "card-bank" : '',
@@ -48,51 +50,47 @@ const CardCenter = () => {
                         return null;
                 }
             });
-            console.log('submitted !' +  cardform);
+            console.log('submitted !' +  cardform["card-bank"]);
             AddNewCard(cardform);
             ResetForm();
         }
     }
 
     return(
-        <Col lg={12}>
-            <Row>
-                <Col lg={12}>
-                    <div className={Classes.cardWrapper}>
-                        <CardsWrapper />
-                    </div>
-                </Col>
-            </Row>
-            <Row>
-                <Col lg={9}>
-                    <DataTable rows={CardsTableRows}
-                            cols={CardsTableCols}
-                            clickable={false}
-                            paging={false}
-                            sortable={false}
-                            small={false} >
-                    <h6>Card List</h6>
-                    </DataTable>
-                </Col>
-                <Col lg={3}>
-                    <div className={`${Classes.addcartContainer} card-wrapper`}>
-                      <h6>Add Card</h6>
-                        <form>
-                            {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
-                        </form>
-                        <Button 
-                                className={`${FormIsValid ? 'submitFormButton' : 'submitFormButtonDisabled' } ${Classes.addCardBtn}`}
-                                disabled={!FormIsValid}
-                                onClick={SubmitFormHandler}>
-                            <div>
-                                <MdOutlineAddBox size={18} />
-                                <span>Add Card</span>
-                            </div>
-                        </Button>   
-                    </div>
-                </Col>
-            </Row>
+        <>
+        <Col lg={12} className="r0-padding">
+            <CardsWrapper />
         </Col>
+        <Col lg={9}>
+            <DataTable 
+                    className={Classes.cardsTable}
+                    rows={CardsTableRows}
+                    cols={CardsTableCols}
+                    clickable={false}
+                    paging={false}
+                    sortable={false}
+                    small={false} >
+            <h6>Card List</h6>
+            </DataTable>
+        </Col>
+        <Col lg={3}>
+            <div className={`${Classes.addcartContainer} card-wrapper`}>
+                <h6>Add Card</h6>
+                <form>
+                    {fields ? fields.map((field, i) => <FormElement key={i} field={field} />) : <p>Form is emplty</p>}
+                </form>
+                <Button 
+                        className={`${FormIsValid ? 'submitFormButton' : 'submitFormButtonDisabled' } ${Classes.addCardBtn}`}
+                        disabled={!FormIsValid}
+                        onClick={SubmitFormHandler}>
+                    <div>
+                        <MdOutlineAddBox size={18} />
+                        <span>Add Card</span>
+                    </div>
+                </Button>   
+            </div>
+        </Col>
+        </>
     );
 }
 

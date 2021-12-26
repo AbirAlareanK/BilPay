@@ -1,4 +1,5 @@
-import { BsPrinter , BsDownload} from 'react-icons/bs';
+import { BsPrinter } from 'react-icons/bs';
+import { FiDownload } from 'react-icons/fi';
 import Button from '../../Components/UIs/Button';
 import Classes from './Transaction.module.scss';
 
@@ -16,11 +17,11 @@ const Transaction = (props) => {
                     </div>
                     <div className={Classes.actionButtons}>
                         <Button className={Classes.transButton}>
-                            <BsPrinter />
+                            <BsPrinter size={16} />
                             Print
                         </Button>
                         <Button className={Classes.transButton}>
-                            <BsDownload />
+                            <FiDownload size={16} />
                             Download
                         </Button>
                     </div>

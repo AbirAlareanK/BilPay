@@ -1,6 +1,7 @@
 @import '../../../Assets/Scss/colors';
 
 .invoiceDetailContent{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -16,6 +17,10 @@
     display: flex;
     justify-content: flex-end;
     
+    div:nth-child(1){
+        width: 30%;
+    }
+
     div:nth-child(2){
         text-align: end;
     }
@@ -29,6 +34,7 @@
 
 .paidButton{
    width:85px;
+   height: 34px;
    color:$main-theme;
    background-color: $main-theme-tran;
 }
@@ -48,8 +54,9 @@
     
     p,li{
         color: $main-font;
-        font-weight: 400 ;
+        font-weight: 500 ;
         font-size: 13px;
+        padding-bottom: 8px;
     }
 }
 

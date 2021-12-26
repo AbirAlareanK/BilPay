@@ -52,6 +52,11 @@ li[data-test="page-item"]{
 
 li[data-test="page-item"]:hover{
     color: $main-theme;
+    
+}
+
+li[data-test="page-item"] a:hover{
+    border: 1px solid $main-theme;
 }
 
 li[data-test="page-item"] span{
@@ -79,7 +84,4 @@ tbody tr td:nth-child(7){
     font-size:20px;
 }
 
-td{
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
+

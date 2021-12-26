@@ -9,6 +9,7 @@ import Invoices from "../../Containers/Invoices/Invoices";
 import Transactions from '../../Containers/Transctions/Transactions';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import TopNavbar from '../../Containers/Navbar/TopNavbar';
 
 const Layout = () => {
 
@@ -32,7 +33,7 @@ const Layout = () => {
                 setPageTitle('Invoice Details');
             break;
             case'card-center' : 
-                setPageTitle('Card Center');
+                setPageTitle('Cards Center');
             break;
             case'transaction' : 
                 setPageTitle('Transaction Details');
@@ -55,17 +56,17 @@ const Layout = () => {
           <Col xs={12} md={9} lg={10} className={`${Classes.contentContainer} offset-lg-2 offset-md-3 two`}>
                 <Row>
                     <Col lg={12}>
-                        <h3>Search bar and profile pic</h3>
+                        <TopNavbar />
                     </Col>
                 </Row>
                 <Row>
                     <Col lg={12}>
                         <section className={Classes.sectionHeader}>
-                            <h5>{pageTitle}</h5>
+                            <h4>{pageTitle}</h4>
                         </section> 
                     </Col>
                 </Row>
-                <Row className='padding'>
+                <Row className="padding">
                     <Routes>
                         <Route path="/dashboard" element={<p>Dashboard</p>} />
                         <Route path="/wallet" element={<p>Wallet page</p>} />

@@ -12,32 +12,33 @@ const Invoices = () => {
     const [ rows ] = useState(GetTableRows());
 
     return(
-        <Col lg={12}>
-             <Row>
-                <InvoiceBriefArray />
-            </Row>
-            <Row className="padding-top">
-                <Col lg={12}>
-                    <DataTable rows={rows}
-                                cols={colData}
-                                clickable={true}
-                                paging={true}
-                                sortable={false}
-                                small={true}
-                                label={["<", ">"]}
-                                infoLabel={["Showing", "to", "of", ""]} >
-                        <section className={Classes.tableActionButtons}>
-                            <h5>Latest Invoives</h5>                  
-                            <ul>
-                            <li>Monthly</li>
-                            <li>Weekly</li>
-                            <li>Today</li>
-                            </ul>
-                        </section>
-                    </DataTable>
-                </Col>
-            </Row>
-        </Col>
+        <>
+            <Col lg={12}>
+                <Row>
+                    <InvoiceBriefArray /> 
+                </Row>
+            </Col>
+            <Col lg={12}>
+                <DataTable  className={Classes.InvoicesTable}
+                            rows={rows}
+                            cols={colData}
+                            clickable={true}
+                            paging={true}
+                            sortable={false}
+                            small={true}
+                            label={["<", ">"]}
+                            infoLabel={["Showing", "to", "of", ""]} >
+                    <section className={Classes.tableActionButtons}>
+                        <h5>Latest Invoives</h5>                  
+                        <ul>
+                        <li>Monthly</li>
+                        <li>Weekly</li>
+                        <li>Today</li>
+                        </ul>
+                    </section>
+                </DataTable>
+            </Col>
+        </>
     )
 }
 

@@ -46,7 +46,6 @@ const FormProvider = (props) => {
     const HandleChange = (id, event) => {
         
         const newElements = [ ...fieldElements ] 
-        console.log(newElements);
         newElements.forEach(field => {
             const { field_type, field_id } = field;
             if (id === field_id) {
