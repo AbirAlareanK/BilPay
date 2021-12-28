@@ -4,9 +4,7 @@
 {
     width: 100%;
     padding: 18px;
-    border-radius: 15px;
     box-shadow: none;
-    background-color:$card-bg;
     cursor: pointer;
 }
 
@@ -64,17 +62,20 @@ li[data-test="page-item"] span{
 }
 
 
-div[data-test="dataTables_paginate"]{
-    display:flex;
-    width:50%
+div[data-test="datatable-pagination"]{
+    position: absolute;
+    bottom: -65px;
+    right: -5px;
 }
 
 div[data-test="datatable-info"]{
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     color: $para-font;
     font-size:15px; 
-
+    position: absolute;
+    bottom: -46px;
+    left: -5px;
 }
 
 

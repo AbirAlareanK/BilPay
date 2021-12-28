@@ -24,43 +24,43 @@ const Navbar = () => {
             <ul className={ showNavbar ? `${Classes.navbarList} ${Classes.hidden}` : `${Classes.navbarList}`}>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/dashboard">
-                            <MdOutlineDashboard size={28} />
+                            <MdOutlineDashboard size={26} />
                             <span> Dashboard</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/wallet">
-                        <MdOutlineAccountBalanceWallet size={28} />
+                        <MdOutlineAccountBalanceWallet size={26} />
                         <span>Wallet</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/invoices">
-                        <IoReceiptOutline size={28} />
+                        <IoReceiptOutline size={24} />
                         <span>Invoices</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/invoice-form">
-                        <GoDiffAdded size={28} />
+                        <GoDiffAdded size={24} />
                         <span> Create Invoice</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/card-center">
-                        <BsCardText size={28} />
+                        <BsCardText size={24} />
                         <span>Cards</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/transaction">
-                        <AiOutlineTransaction size={28}/>
+                        <AiOutlineTransaction size={26}/>
                         <span>Transaction</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/clients">
-                        <IoPeopleOutline size={28} />
+                        <IoPeopleOutline size={26} />
                         <span>Clients</span>
                     </NavLink>
                 </li>
