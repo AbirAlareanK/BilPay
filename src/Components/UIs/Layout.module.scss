@@ -3,6 +3,8 @@
 
 .sectionHeader{
 
+    display: flex;
+    justify-content: space-between;
     h4{
         font-weight: 500;
     }
@@ -29,3 +31,38 @@
 
 }
 
+
+.pageFunctionsButtons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0px;
+    padding-right: 15px;
+    width: 36%;
+
+    ul{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    li:nth-child(1){
+        margin-right: 10px;
+    }
+    li{
+        background-color: $card-bg;
+        padding: 8px;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        color: $para-font;    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    li.selected{
+        background-color: $main-theme;
+        color: $card-bg;    
+    }
+}

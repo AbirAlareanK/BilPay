@@ -5,7 +5,8 @@
         "company":"Pogo Solutions",
         "company-address":"Jalan P Ramle",
         "contact-number":"+60-1234567",
-        "email-address":"zaiful@gmail.com"
+        "email-address":"zaiful@gmail.com",
+        "date" : "March 20,2020"
     },
     {
         "client-id" : "CLI-002",
@@ -13,6 +14,106 @@
         "company":"FlexGroup",
         "company-address":"Kota Kemuning",
         "contact-number":"+60-1234567",
-        "email-address":"John@hotmail.com"
+        "email-address":"John@hotmail.com",
+        "date" : "June 21,2020"
+    },
+    {
+        "client-id" : "CLI-003",
+        "client-name": "second Name",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "Aug 10,2020"
+    },
+    {
+        "client-id" : "CLI-004",
+        "client-name": "Third Name",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "March 20,2020"
+    },
+    {
+        "client-id" : "CLI-005",
+        "client-name": "John Max",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "March 20,2020"
+    },
+    {
+        "client-id" : "CLI-006",
+        "client-name": "Last Name",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "March 20,2020"
+    },
+    {
+        "client-id" : "CLI-007",
+        "client-name": "second Name",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "Aug 10,2020"
+    },
+    {
+        "client-id" : "CLI-008",
+        "client-name": "Third Name",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "March 20,2020"
+    },
+    {
+        "client-id" : "CLI-009",
+        "client-name": "John Max",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "March 20,2020"
+    },
+    {
+        "client-id" : "CLI-010",
+        "client-name": "11 Name",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "March 20,2020"
+    },
+    {
+        "client-id" : "CLI-011",
+        "client-name": "12 Name",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "March 20,2020"
+    },
+    {
+        "client-id" : "CLI-012",
+        "client-name": "13 Name",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "March 20,2020"
+    },
+    {
+        "client-id" : "CLI-013",
+        "client-name": "14 Name",
+        "company":"FlexGroup",
+        "company-address":"Kota Kemuning",
+        "contact-number":"+60-1234567",
+        "email-address":"John@hotmail.com",
+        "date" : "March 20,2020"
     }
 ]

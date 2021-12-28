@@ -1,0 +1,32 @@
+@import '../../Assets/Scss/colors';
+
+.pagination{
+    margin-bottom: 0;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 20%;
+    align-items: center;
+
+    li{
+        color: $para-font;
+        border: 1px solid $main-theme;
+        border-radius: 5px;
+        padding: 1px 8px;
+        cursor: pointer;
+    }
+
+    li.selected{
+        background-color: $main-theme;
+        color: $card-bg;
+    }
+
+    li.disabled{
+        pointer-events: none;
+    }
+
+    .arrows{
+        border: none;
+    }
+
+}

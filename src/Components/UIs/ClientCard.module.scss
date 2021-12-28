@@ -1,0 +1,58 @@
+@import '../../Assets/Scss/colors';
+
+.clientCard{
+    margin: 20px 0;
+
+    img{
+        width: 50px;
+        margin-bottom: 10px;
+    }
+
+    span{
+        font-size: 11px;
+        font-weight: 500;
+    }
+    p{
+        font-size: 11px;
+    }
+
+}
+
+.profileInfo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: flex-start;
+    margin-bottom: 10px;
+
+    h6{
+        margin-bottom: 0;
+        font-size: 12px;
+    }
+}
+
+.contactInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+
+.footer span {
+    color: $para-font;
+    font-weight: 400;
+}
+
+
+.details{
+    font-size: 22px !important;
+    font-weight: 800;
+    line-height: 0;
+}
