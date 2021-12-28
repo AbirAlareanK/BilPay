@@ -11,7 +11,7 @@ const NotificationMenu = (props) => {
         },
         {
             image: user,
-            message: 'Kameshwaran S had shared a feedback with you.',
+            message: 'Kameshwaran S had shared',
             // detailPage: '/',
         }
     ];

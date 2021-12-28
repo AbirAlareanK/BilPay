@@ -71,7 +71,7 @@ const Layout = () => {
                         <Route path="/dashboard" element={<p>Dashboard</p>} />
                         <Route path="/wallet" element={<p>Wallet page</p>} />
                         <Route path="/invoices" element={<Invoices />} />
-                        <Route path="/invoice-details" element={<InvoiceDetails />} />
+                        <Route path="/invoices/:invoiceId" element={<InvoiceDetails />} />
                         <Route path="/invoice-form" element={<InvoiceForm />} />
                         <Route path="/card-center" element={<CardCenter />} />
                         <Route path="/transaction" element={<Transactions />} />

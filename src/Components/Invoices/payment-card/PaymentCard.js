@@ -22,7 +22,7 @@ const PaymentCard = () => {
                 </div>
             </div>
             <div>
-                <h7>Insurance Responsibility</h7>
+                <h6>Insurance Responsibility</h6>
                 <div className={Classes.secondSectionContent}>
                     <p>Aetna - Open Access</p>
                     <p>OAP</p>

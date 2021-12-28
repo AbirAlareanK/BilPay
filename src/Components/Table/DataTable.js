@@ -1,4 +1,4 @@
-import React , {  useEffect, useState} from 'react';
+import React , {  useCallback, useEffect, useState} from 'react';
 import { Col , Row } from 'react-bootstrap';
 import { MDBDataTable } from 'mdbreact';
 import Classes from './DataTable.module.scss';
@@ -11,13 +11,14 @@ const DataTable = (props) => {
 
     const { clickable , rows , cols , paging , sortable  , label , infoLabel} = props;
 
-    const ShowDetailPage = (id)=> {
+    const ShowDetailPage = useCallback((id)=> {
         if(!clickable){
             return;
         }
-        navigate('/invoice-details' , {replace : true})
-    }
-
+        navigate('/invoices/:'+id , {replace : true});
+        
+    }, [clickable , navigate]) 
+ 
     const [ datatable , setDataTable ] = useState({});
 
     useEffect(()=>{
@@ -30,7 +31,7 @@ const DataTable = (props) => {
                   }
                 }))
           })
-    },[rows , cols ])
+    },[rows , cols , ShowDetailPage ])
 
     return (
         <Row>
