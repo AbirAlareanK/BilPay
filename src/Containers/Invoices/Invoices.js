@@ -10,7 +10,6 @@ const Invoices = () => {
     
     const { GetTableRows } = UseInvoices();
     const [ rows ] = useState(GetTableRows());
-
     return(
         <>
             <Col lg={12}>

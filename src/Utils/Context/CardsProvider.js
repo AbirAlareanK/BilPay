@@ -12,10 +12,8 @@ export const UseCards = () => useContext(CardsContext) ;
 
 const CardsProvider = (props) => {
     const [ Cards , setCards ] = useState(CardsData);
-    console.log('Card state has changed !' , Cards);
 
     const CardsTableRows = useMemo(()=>{
-        console.log('inside memo cars has changed ' , Cards);
         const img = (src) => { 
             switch(src) {
                 case 'greenBg' : return <img alt="cardbg" src={greenBg} /> ;

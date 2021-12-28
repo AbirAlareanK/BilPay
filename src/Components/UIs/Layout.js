@@ -54,7 +54,7 @@ const Layout = () => {
               <Navbar/>
           </Col>
           <Col xs={12} md={9} lg={10} className={`${Classes.contentContainer} offset-lg-2 offset-md-3 two`}>
-                <Row>
+                <Row style={{alignItems: 'center'}}>
                     <Col lg={12}>
                         <TopNavbar />
                     </Col>

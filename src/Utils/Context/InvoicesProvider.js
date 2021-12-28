@@ -1,17 +1,13 @@
 import { createContext, useContext , useState } from "react";
 import InvoicesData from '../../Assets/JSON/invoices-data.json';
-// import { nanoid } from 'nanoid';
-
 
 export const InvoicesContext =  createContext();
 export const UseInvoices = () => useContext(InvoicesContext) ;
 
 const InvoicesProvider = (props) => {
     const [invoices , setInvoices ] = useState(InvoicesData);
-    const filteredPaidInvo = invoices.filter(invoice =>  invoice.status === "paid");
-    const filteredUnPaidInvo = invoices.filter(invoice => invoice.status === "unpaid");
 
-
+    const status = (st) => st ? st : 'unpaid' ;
     const filteredRows = invoices.map(invoice => (
         {
             id : invoice['invoice-number'],
@@ -20,10 +16,10 @@ const InvoicesProvider = (props) => {
             email: invoice['email'],
             amount : invoice['subtotal'],
             serviceType : invoice['service-details'],
-            serviceStatus : invoice['status'],
+            serviceStatus : status(invoice['status']),
             detailsPage : "..."
          } 
-     ))
+    ));
 
     const FindMissingNInArray = (array) => {
         const mnia = array.sort().reduce((acc, cur, ind, arr)=> {
@@ -58,18 +54,18 @@ const InvoicesProvider = (props) => {
     }
      
     const GetDateToday = () => {
+
        // get month by name: => that will not work with Default value..
 
        // const monthNames = ["January", "February", "March", "April", "May", "June",
        //                     "July", "August", "September", "October", "November", "December"];
        // const DateToday = (monthNames[today.getMonth()])+' '+today.getDate()+', '+today.getFullYear()
-       
        const today = new Date()
        var DateDay = today.getDate()
        if(DateDay <= 9){
            DateDay = `0${DateDay}`
        }
-       const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay)
+       const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay);
        return DateToday;
    
    };
@@ -78,9 +74,11 @@ const InvoicesProvider = (props) => {
         setInvoices([
             ...invoices,
             {
-                ...newInvoice
+                ...newInvoice,
+                status : 'unpaid'
             }
         ]);
+        GetUnPaidInvoices();
     }
 
     const GetTableRows = () => {
@@ -88,15 +86,17 @@ const InvoicesProvider = (props) => {
     }
 
     const  GetPaidInvoices = () => {
+        const fInv = invoices.filter(invoice =>  invoice.status === "paid");
         return {
-            number : filteredPaidInvo.length,
-            precentage : Math.round(100 * filteredPaidInvo.length / invoices.length)
+            number : fInv.length,
+            precentage : Math.round(100 * fInv.length / invoices.length)
         }
     }
     const GetUnPaidInvoices = () => {
+        const fInv = invoices.filter(invoice => invoice.status === "unpaid");
         return {
-            number : filteredUnPaidInvo.length,
-            precentage : Math.round(100 * filteredUnPaidInvo.length / invoices.length)
+            number : fInv.length,
+            precentage : Math.round(100 * fInv.length / invoices.length)
         }
     }
     const GetTotalInvoices = () => {
@@ -108,7 +108,6 @@ const InvoicesProvider = (props) => {
 
     const GetInvoiceDetails = (id)=>{
        const invoiceDe =  invoices.filter(invoice => (invoice['invoice-number'] === id))[0];
-    //    console.log(invoiceDe);
        return invoiceDe;
     }
     

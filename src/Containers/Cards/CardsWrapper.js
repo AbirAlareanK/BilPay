@@ -1,6 +1,6 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import Cards from '../../Assets/JSON/cards-data.json';
+import { UseCards } from '../../Utils/Context/CardsProvider';
 import AdminCard from "../../Components/UIs/AdminCard";
 // import Classes from './CardsWrapper.module.scss';
 const responsive = {
@@ -23,6 +23,8 @@ const responsive = {
   }
 };
 const CardsWrapper = () => {
+
+  const { Cards } =  UseCards();
 
     return (
         <Carousel responsive={responsive}

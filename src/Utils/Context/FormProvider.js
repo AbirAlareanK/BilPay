@@ -104,61 +104,7 @@ const FormProvider = (props) => {
     
     const GetFormElement = () => {
         return fieldElements;
-    }
-    // const GetNewInvoice = () => {
-    //     const newInvoice =  {
-    //         invoiceNumber : '',
-    //         invoiceDate: '',
-    //         client: '',
-    //         email:  '',
-    //         companyName: '',
-    //         companyAddress: '',
-    //         serviceName: '',
-    //         serviceDetails:'' ,
-    //         dueDate: '',
-    //         subtotal: '',
-    //         status:  'UnPaid',
-    //         discount:  0 ,
-    //         dicountAmount : 0   
-    //     }
-    //     fieldElements.forEach(field => {
-    //         switch(field['field_id']){
-    //             case 'invoice-number':
-    //                 newInvoice.invoiceNumber = CalculateInvoiceNumber
-    //             break;
-    //             case 'date':
-    //                 newInvoice.invoiceDate = DateToday
-    //             break;
-    //             case 'client-name':
-    //                 newInvoice.client = field['field_value']
-    //             break;
-    //             case 'client-email':
-    //                 newInvoice.email = field['field_value']
-    //             break;
-    //             case 'company-name':
-    //                 newInvoice.companyName = field['field_value']
-    //             break;
-    //             case 'company-address':
-    //                 newInvoice.companyAddress = field['field_value']
-    //             break;
-    //             case 'service-name':
-    //                 newInvoice.serviceName = field['field_value']
-    //             break;
-    //             case 'service-details':
-    //                 newInvoice.serviceDetails = field['field_value']
-    //             break;
-    //             case 'due-date':
-    //                 newInvoice.dueDate = field['field_value']
-    //             break;
-    //             case 'subtotal':
-    //                 newInvoice.subtotal = field['field_value']
-    //             break;
-    //             default:
-    //             return null;
-    //         }
-    //     });
-    //     return newInvoice ;
-    // }
+    }    
     
     return(
         <FormContext.Provider value = {{

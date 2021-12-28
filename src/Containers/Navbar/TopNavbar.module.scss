@@ -1,0 +1,36 @@
+@import '../../Assets/Scss/colors';
+
+.adminButtonActions{
+
+    display: flex;
+    justify-content: space-evenly;;
+    padding: 20px 0;
+    margin-bottom: 0px;
+
+    li{
+        background-color: $card-bg;
+        padding: 8px;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        color: $para-font;    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.adminProfile{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px 0;
+
+    h6{
+        font-size: 14px;
+    }
+    img{
+        width: 45px;
+        height: 45px;
+    }
+}

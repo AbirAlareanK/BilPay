@@ -1,4 +1,4 @@
-import React , {  useState} from 'react';
+import React , {  useEffect, useState} from 'react';
 import { Col , Row } from 'react-bootstrap';
 import { MDBDataTable } from 'mdbreact';
 import Classes from './DataTable.module.scss';
@@ -9,26 +9,28 @@ const DataTable = (props) => {
     const navigate = useNavigate();
     // console.log(navigate());
 
-    const { clickable , rows , cols , paging , sortable  , label , infoLabel} = props
- 
-    
+    const { clickable , rows , cols , paging , sortable  , label , infoLabel} = props;
+
     const ShowDetailPage = (id)=> {
         if(!clickable){
             return;
         }
-        console.log('itemPresses' + id )
         navigate('/invoice-details' , {replace : true})
     }
 
-    const [datatable ] = useState({
-        columns : cols,
-        rows : rows.map(row => ({
-              ...row,
-              clickEvent:(row)=>{
-                ShowDetailPage(row["id"]);
-              }
-            }))
-      });
+    const [ datatable , setDataTable ] = useState({});
+
+    useEffect(()=>{
+        setDataTable({
+            columns : cols,
+            rows : rows.map(row => ({
+                  ...row,
+                  clickEvent:(row)=>{
+                    ShowDetailPage(row["id"]);
+                  }
+                }))
+          })
+    },[rows , cols ])
 
     return (
         <Row>
@@ -38,7 +40,6 @@ const DataTable = (props) => {
                     <MDBDataTable
                         className={`${Classes.tableData} ${props.className} `}
                         responsiveMd={true}
-                        responsiveXL={true}
                         responsiveLg={true}
                         responsiveSm={true}
                         btn={true}

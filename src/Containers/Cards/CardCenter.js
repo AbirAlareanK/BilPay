@@ -14,7 +14,7 @@ const CardCenter = () => {
 
     const { GetFormElement , SetFormElements , ResetForm , FormIsValid } = UseFormElement();
     const { AddNewCard , CardsTableRows , CardsTableCols } =  UseCards();
-    console.log('CardsTableRows inside cards center  ' , CardsTableRows);
+    
     const [ fields ] = useState(FormJSON);
     useEffect(()=>{
         SetFormElements(fields);
@@ -29,7 +29,6 @@ const CardCenter = () => {
             return;
         }else{
             const obj = GetFormElement();
-            console.log('get element added  ' , obj)
             const cardform = {
                 "card-number" : '',
                 "card-bank" : '',
@@ -40,17 +39,16 @@ const CardCenter = () => {
                     case 'card-number':
                         cardform['card-number'] = field['field_value']
                     break;
-                    case 'card-bank':
+                    case 'bank':
                         cardform['card-bank'] = field['field_value']
                     break;
-                    case 'client-name':
+                    case 'namein-card':
                         cardform['namein-card'] = field['field_value']
                     break;
                     default:
                         return null;
                 }
             });
-            console.log('submitted !' +  cardform["card-bank"]);
             AddNewCard(cardform);
             ResetForm();
         }
