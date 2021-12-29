@@ -8,6 +8,7 @@ const InvoicesProvider = (props) => {
     const [invoices , setInvoices ] = useState(InvoicesData);
 
     const status = (st) => st ? st : 'unpaid' ;
+
     const filteredRows = invoices.map(invoice => (
         {
             id : invoice['invoice-number'],
@@ -20,6 +21,8 @@ const InvoicesProvider = (props) => {
             detailsPage : "..."
          } 
     ));
+
+    // const filteredMonthly = filteredRows.filter(row => row.date )
 
     const FindMissingNInArray = (array) => {
         const mnia = array.sort().reduce((acc, cur, ind, arr)=> {
@@ -52,14 +55,22 @@ const InvoicesProvider = (props) => {
             return CalculateInvoiceNumber;
         }
     }
-     
+
+    // const day = new Date().getDate().toString()
+    // const filteredDaily = filteredRows.filter(row => row.date.slice(6,8) === '20' );
+
+
+    const convertDate = (date) => {
+
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+                           "July", "August", "September", "October", "November", "December"];
+         const year = date.slice(0,4);
+         const month = monthNames[date.slice(5,7)];
+         const day = date.slice(8);
+         const newDate = (month+' '+day+', '+ year);
+         return newDate;
+ }
     const GetDateToday = () => {
-
-       // get month by name: => that will not work with Default value..
-
-       // const monthNames = ["January", "February", "March", "April", "May", "June",
-       //                     "July", "August", "September", "October", "November", "December"];
-       // const DateToday = (monthNames[today.getMonth()])+' '+today.getDate()+', '+today.getFullYear()
        const today = new Date()
        var DateDay = today.getDate()
        if(DateDay <= 9){
@@ -75,10 +86,10 @@ const InvoicesProvider = (props) => {
             ...invoices,
             {
                 ...newInvoice,
-                status : 'unpaid'
+                status : 'unpaid',
+                "invoice-date":convertDate(newInvoice['invoice-date'])
             }
         ]);
-        GetUnPaidInvoices();
     }
 
     const GetTableRows = () => {

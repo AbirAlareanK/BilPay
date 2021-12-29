@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import TopNavbar from '../../Containers/Navbar/TopNavbar';
 import Clients from '../../Containers/Clients/Clients';
+import Wallet from '../../Containers/Wallet/Wallet';
 
 const Layout = () => {
 
@@ -100,7 +101,7 @@ const Layout = () => {
                 <Row className="padding">
                     <Routes>
                         <Route path="/dashboard" element={<p>Dashboard</p>} />
-                        <Route path="/wallet" element={<p>Wallet page</p>} />
+                        <Route path="/wallet" element={<Wallet />} />
                         <Route path="/invoices" element={<Invoices />} />
                         <Route path="/invoices/:invoiceId" element={<InvoiceDetails />} />
                         <Route path="/invoice-form" element={<InvoiceForm />} />

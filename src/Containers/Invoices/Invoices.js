@@ -28,7 +28,7 @@ const Invoices = () => {
                             label={["<", ">"]}
                             infoLabel={["Showing", "to", "of", ""]} >
                     <section className={Classes.tableActionButtons}>
-                        <h5>Latest Invoives</h5>                  
+                        <h5>Latest Invoices</h5>                  
                         <ul>
                         <li>Monthly</li>
                         <li>Weekly</li>
