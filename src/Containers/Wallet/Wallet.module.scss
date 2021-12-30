@@ -6,14 +6,18 @@
     justify-content: space-between;
     height: 100%;
 
-    button{
-        height: 45%;
+    span{
+        height: 42%;
         border-radius: 13px;
+        font-size: 16px;
+        font-weight: 400;
+        cursor: pointer;
         color: #ffff;
         border: none;
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        padding-top: 0;
     }
 
     .icon{
@@ -35,11 +39,11 @@
         color: $yellow;
     }
 
-    button.transfer{
+    span.transfer{
         background-color: $main-theme;
     }
 
-    button.send{
+    span.send{
         background-color: $yellow;
     }
 }
@@ -52,3 +56,71 @@
     border-radius: 17px;
 }
 
+
+.sentSection {
+    .sentHeader{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        
+        h6.heading{
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        .details{
+            font-size: 22px !important;
+            font-weight: 800;
+            line-height: 0;
+        }
+        
+    }
+    img{
+        width: 35px;
+        height: 35px;
+        margin-right: 8px;
+    }
+
+    
+
+    li{
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        align-items: center;
+
+        div{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        div:nth-child(2){
+            flex-direction: column;
+            
+        }
+    }
+
+    h6{
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    p{
+        font-size: 11px;
+    }
+}
+
+.total{
+    color: $main-theme;
+    font-weight: 600;
+}
+
+@media (max-width:767px) {
+    .walletCard{
+        margin-bottom: 20px;
+        height: 167px;
+    }
+
+    .buttonsContainer{
+        height: 150px;
+    }
+}

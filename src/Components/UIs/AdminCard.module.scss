@@ -47,9 +47,14 @@
         height: 30px;
         border-radius: 50%;
         background-color: #e9e9e970;
-        top: 2%;
+        top: 0%;
         left: 69%;
     }
+}
+
+.walletCircles{
+    top: 43%;
+    right: 34px;
 }
 
 .validSection{
@@ -57,10 +62,30 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
+
+    .holder{
+        width: 57%;
+    }
+}   
 
 .balanceSection{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.walletBalanceSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    p{
+        font-size: 11px;
+        color: $card-bg;
+    }
+
+    .balanceIcon{
+        margin-left: 5px;
+    }
 }

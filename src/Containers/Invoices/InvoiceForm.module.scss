@@ -1,16 +1,11 @@
 @import '../../Assets/Scss/spacing';
 
 .createInvoiceActions {
-    margin-top: 20px;
     span{
         margin: $margin-heading;
         width: 50%;
     }
 } 
-
-.invoiceForm{
-    margin-top: 20px;
-}
 
 
 
@@ -38,11 +33,9 @@
         justify-content: space-around;
     }
 
-    @media (max-width:992px) {
-        .invoiceForm form div:nth-child(n+1){
-            width: 100% ;
-            padding-right: 0px;
-        }
+    .invoiceForm form div:nth-child(n+1){
+        width: 100% ;
+        padding-right: 0px;
     }
     
 }

@@ -19,9 +19,9 @@ const Wallet = () => {
 
     return (
         <>
-            <Col md={9}>
-                <Row>
-                    <Col md={8}>
+            <Col lg={9} md={12} sm={12}>
+                <Row style={{paddingBottom:'25px'}}>
+                    <Col lg={8} md={6} >
                         <div className={Styles.wallet}>
                             <AdminCard  className={Styles.walletCard}
                                     cardNum={card["card-number"]}
@@ -29,18 +29,18 @@ const Wallet = () => {
                                     validation={card["card-validation"]}/>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col lg={4} md={6} >
                         <div className={Styles.buttonsContainer}>
-                            <button className={Styles.transfer}>
+                            <span className={Styles.transfer}>
                                 <BiTransfer size={20} className={`${Styles.icon} ${Styles.trn}`}/>Transfer
-                            </button>
-                            <button className={Styles.send}>
+                            </span>
+                            <span className={Styles.send}>
                                 <BiReceipt  size={20} className={`${Styles.icon} ${Styles.sen}`}/>Send Invoice
-                            </button>
+                            </span>
                         </div>
                     </Col>
                 </Row>
-                <Row>
+                <Row style={{paddingBottom:'20px'}}>
                     <Col lg={12}>
                         <DataTable  className={`${Classes.InvoicesTable} ${Classes.invTable}`}
                                     rows={rows}
@@ -62,19 +62,21 @@ const Wallet = () => {
                     </Col>
                 </Row>
             </Col>   
-            <Col md={3}>
+            <Col lg={3} md={12}sm={12}>
                 <div className={`${Styles.sentSection} card-wrapper`}>
                     <div className={Styles.sentHeader}>
-                        <h6>Invoices sent</h6>
-                        <p className={Classes.details}>...</p>
+                        <h6 className={Styles.heading}>Invoices sent</h6>
+                        <p className={Styles.details}>...</p>
                     </div>
                     <ul>
                         {invoicesSent.map((row,i) => (
                             <li key={i} >
-                                <img alt="profile" src={user} />
                                 <div>
-                                    <h6>{row.name}</h6>
-                                    <p>{row.Time}</p>
+                                    <img alt="profile" src={user} />
+                                    <div>
+                                        <h6>{row.name}</h6>
+                                        <p>{row.Time}</p>
+                                    </div>
                                 </div>
                                 <p className={Styles.total}>
                                     {row.Total}
