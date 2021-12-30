@@ -6,6 +6,7 @@ export const UseInvoices = () => useContext(InvoicesContext) ;
 
 const InvoicesProvider = (props) => {
     const [invoices , setInvoices ] = useState(InvoicesData);
+    const [ ActiveFilter , setActiveFilter ] = useState('Monthly');
     const status = (st) => st ? st : 'unpaid' ;
 
     console.log('invoices got updated ' , invoices)
@@ -24,16 +25,19 @@ const InvoicesProvider = (props) => {
 
     const filteredMonthly = () => {
         const newInvoices = InvoicesData.filter(row => new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)) )
+        setActiveFilter('Monthly');
         setInvoices(newInvoices);
     }
 
     const filteredDaily = () => {
         const newInvoices = InvoicesData.filter(row => daysBack(1) <= parseInt(row['invoice-date'].slice(8)) && new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)))
+        setActiveFilter('Daily');
         setInvoices(newInvoices);
     }
 
     const filteredWeekly = () => {
         const newInvoices = InvoicesData.filter(row => daysBack(7) <= parseInt(row['invoice-date'].slice(8)) && new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)))
+        setActiveFilter('Weekly');
         setInvoices(newInvoices);
     }
 
@@ -153,7 +157,8 @@ const InvoicesProvider = (props) => {
                 GetDateToday,
                 filteredMonthly,
                 filteredDaily,
-                filteredWeekly
+                filteredWeekly,
+                ActiveFilter
             }}>
            {props.children}
         </InvoicesContext.Provider>
