@@ -6,23 +6,25 @@ export const UseInvoices = () => useContext(InvoicesContext) ;
 
 const InvoicesProvider = (props) => {
     const [invoices , setInvoices ] = useState(InvoicesData);
-
     const status = (st) => st ? st : 'unpaid' ;
 
     const filteredRows = invoices.map(invoice => (
         {
             id : invoice['invoice-number'],
             client : invoice['client'],
-            date : invoice['invoice-date'],
+            date : convertDate(invoice['invoice-date']),
             email: invoice['email'],
-            amount : invoice['subtotal'],
+            amount : `$${invoice['subtotal']}`,
             serviceType : invoice['service-details'],
             serviceStatus : status(invoice['status']),
             detailsPage : "..."
          } 
     ));
 
-    // const filteredMonthly = filteredRows.filter(row => row.date )
+    const filteredMonthly = () => {
+        const newInvoices = invoices.filter(row => new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)) )
+        setInvoices(newInvoices);
+    }
 
     const FindMissingNInArray = (array) => {
         const mnia = array.sort().reduce((acc, cur, ind, arr)=> {
@@ -56,11 +58,7 @@ const InvoicesProvider = (props) => {
         }
     }
 
-    // const day = new Date().getDate().toString()
-    // const filteredDaily = filteredRows.filter(row => row.date.slice(6,8) === '20' );
-
-
-    const convertDate = (date) => {
+    function convertDate(date){
 
         const monthNames = ["January", "February", "March", "April", "May", "June",
                            "July", "August", "September", "October", "November", "December"];
@@ -69,7 +67,15 @@ const InvoicesProvider = (props) => {
          const day = date.slice(8);
          const newDate = (month+' '+day+', '+ year);
          return newDate;
- }
+    }
+
+    function daysBack(days){
+        var date = new Date();
+        var last = new Date(date.getTime() - (days * 24 * 60 * 60 * 1000));
+        var daysBackToCom = last.getDate();
+        return daysBackToCom ;
+    }
+
     const GetDateToday = () => {
        const today = new Date()
        var DateDay = today.getDate()
@@ -82,12 +88,12 @@ const InvoicesProvider = (props) => {
    };
 
     const AddInvoice = (newInvoice) => {
+        console.log(newInvoice)
         setInvoices([
             ...invoices,
             {
                 ...newInvoice,
-                status : 'unpaid',
-                "invoice-date":convertDate(newInvoice['invoice-date'])
+                status : 'unpaid'
             }
         ]);
     }
@@ -133,7 +139,8 @@ const InvoicesProvider = (props) => {
                 GetTableRows,
                 GetInvoiceDetails,
                 CalculateInvoiceNumber,
-                GetDateToday
+                GetDateToday,
+                filteredMonthly
             }}>
            {props.children}
         </InvoicesContext.Provider>
