@@ -3,13 +3,13 @@ import DataTable from "../../Components/Table/DataTable";
 import { Col , Row } from "react-bootstrap";
 import colData from '../../Assets/JSON/invoices-col-table.json';
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
-import { useState } from "react";
 import Classes from './Invoices.module.scss';
+import InvoiceFilter from "../../Components/Invoices/invoices-filter/InvoiceFilter";
 
 const Invoices = () => {
     
     const { GetTableRows } = UseInvoices();
-    const [ rows ] = useState(GetTableRows());
+
     return(
         <>
             <Col lg={12}>
@@ -19,7 +19,7 @@ const Invoices = () => {
             </Col>
             <Col lg={12}>
                 <DataTable  className={Classes.InvoicesTable}
-                            rows={rows}
+                            rows={GetTableRows()}
                             cols={colData}
                             clickable={true}
                             paging={true}
@@ -27,14 +27,7 @@ const Invoices = () => {
                             small={true}
                             label={["<", ">"]}
                             infoLabel={["Showing", "to", "of", ""]} >
-                    <section className={Classes.tableActionButtons}>
-                        <h5>Latest Invoices</h5>                  
-                        <ul>
-                        <li>Monthly</li>
-                        <li>Weekly</li>
-                        <li>Today</li>
-                        </ul>
-                    </section>
+                    <InvoiceFilter />
                 </DataTable>
             </Col>
         </>

@@ -5,50 +5,6 @@
     margin-bottom: 0;
   }
 
-  .tableActionButtons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-
-    h5{
-        margin-left: 10px;
-    }
-    ul{
-        margin-right: 10px;
-    }
-
-}
-
-
-
-.tableActionButtons ul {
-    list-style: none;
-    display: inline-flex;
-    padding: 0px;
-    justify-content: space-between;
-    background-color:  $card-bg-dark;
-    border-radius: 30px;
-}
-
-.tableActionButtons ul li{
-    font-size: 12px;
-    font-weight: 400;
-    padding: 8px 10px;
-    border-radius: 30px;
-    font-size: 13px;
-    width: 75px;
-    text-align: center;
-    color:$para-font;
-    cursor: pointer;
-}
-
-.tableActionButtons ul li:hover{
-    background-color : $main-icon;
-    color:$hover-font;
-}
-
-
 .InvoicesTable {
     td{
         padding-top: 5px !important;

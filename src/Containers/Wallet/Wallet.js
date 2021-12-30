@@ -10,11 +10,12 @@ import colData from '../../Assets/JSON/invoices-col-table.json';
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 import { useState } from 'react';
 import invoicesSent from '../../Assets/JSON/invoices-sent.json';
+import InvoiceFilter from '../../Components/Invoices/invoices-filter/InvoiceFilter';
 
 const Wallet = () => {
 
     const [card ] = useState(cardData[0]);
-    const { GetTableRows , filteredMonthly , filteredWeekly , filteredDaily} = UseInvoices();
+    const { GetTableRows} = UseInvoices();
 
     return (
         <>
@@ -49,14 +50,7 @@ const Wallet = () => {
                                     paging={false}
                                     sortable={false}
                                     small={true} >
-                            <section className={Classes.tableActionButtons}>
-                                <h5>Latest Invoices</h5>                  
-                                <ul>
-                                <li onClick={()=> filteredMonthly()}>Monthly</li>
-                                <li onClick={()=> filteredWeekly()}>Weekly</li>
-                                <li onClick={()=> filteredDaily()}>Today</li>
-                                </ul>
-                            </section>
+                            <InvoiceFilter />
                         </DataTable>
                     </Col>
                 </Row>
