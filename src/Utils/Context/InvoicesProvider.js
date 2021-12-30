@@ -26,6 +26,11 @@ const InvoicesProvider = (props) => {
         setInvoices(newInvoices);
     }
 
+    const filteredDaily = () => {
+        const newInvoices = invoices.filter(row => daysBack(1) <= parseInt(row['invoice-date'].slice(8)) && new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)))
+        setInvoices(newInvoices);
+    }
+
     const FindMissingNInArray = (array) => {
         const mnia = array.sort().reduce((acc, cur, ind, arr)=> {
             var diff = cur - arr[ind-1];
@@ -140,7 +145,8 @@ const InvoicesProvider = (props) => {
                 GetInvoiceDetails,
                 CalculateInvoiceNumber,
                 GetDateToday,
-                filteredMonthly
+                filteredMonthly,
+                filteredDaily
             }}>
            {props.children}
         </InvoicesContext.Provider>

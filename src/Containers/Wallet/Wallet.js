@@ -14,11 +14,7 @@ import invoicesSent from '../../Assets/JSON/invoices-sent.json';
 const Wallet = () => {
 
     const [card ] = useState(cardData[0]);
-    const { GetTableRows , filteredMonthly} = UseInvoices();
-
-    const filterMonthlyHandler =()=> {
-        filteredMonthly();
-    }
+    const { GetTableRows , filteredMonthly , filteredDaily} = UseInvoices();
 
     return (
         <>
@@ -56,9 +52,9 @@ const Wallet = () => {
                             <section className={Classes.tableActionButtons}>
                                 <h5>Latest Invoices</h5>                  
                                 <ul>
-                                <li onClick={filterMonthlyHandler}>Monthly</li>
-                                <li>Weekly</li>
-                                <li>Today</li>
+                                <li onClick={()=> filteredMonthly()}>Monthly</li>
+                                <li >Weekly</li>
+                                <li onClick={()=> filteredDaily()}>Today</li>
                                 </ul>
                             </section>
                         </DataTable>
