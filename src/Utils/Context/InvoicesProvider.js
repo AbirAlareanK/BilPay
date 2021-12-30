@@ -1,4 +1,4 @@
-import { createContext, useContext , useState } from "react";
+import { createContext, useContext, useState } from "react";
 import InvoicesData from '../../Assets/JSON/invoices-data.json';
 
 export const InvoicesContext =  createContext();
@@ -8,6 +8,7 @@ const InvoicesProvider = (props) => {
     const [invoices , setInvoices ] = useState(InvoicesData);
     const status = (st) => st ? st : 'unpaid' ;
 
+    console.log('invoices got updated ' , invoices)
     const filteredRows = invoices.map(invoice => (
         {
             id : invoice['invoice-number'],
@@ -22,12 +23,17 @@ const InvoicesProvider = (props) => {
     ));
 
     const filteredMonthly = () => {
-        const newInvoices = invoices.filter(row => new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)) )
+        const newInvoices = InvoicesData.filter(row => new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)) )
         setInvoices(newInvoices);
     }
 
     const filteredDaily = () => {
-        const newInvoices = invoices.filter(row => daysBack(1) <= parseInt(row['invoice-date'].slice(8)) && new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)))
+        const newInvoices = InvoicesData.filter(row => daysBack(1) <= parseInt(row['invoice-date'].slice(8)) && new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)))
+        setInvoices(newInvoices);
+    }
+
+    const filteredWeekly = () => {
+        const newInvoices = InvoicesData.filter(row => daysBack(7) <= parseInt(row['invoice-date'].slice(8)) && new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)))
         setInvoices(newInvoices);
     }
 
@@ -146,7 +152,8 @@ const InvoicesProvider = (props) => {
                 CalculateInvoiceNumber,
                 GetDateToday,
                 filteredMonthly,
-                filteredDaily
+                filteredDaily,
+                filteredWeekly
             }}>
            {props.children}
         </InvoicesContext.Provider>
