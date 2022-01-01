@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext , useState } from "react";
 import InvoicesData from '../../Assets/JSON/invoices-data.json';
 
 export const InvoicesContext =  createContext();
@@ -6,10 +6,9 @@ export const UseInvoices = () => useContext(InvoicesContext) ;
 
 const InvoicesProvider = (props) => {
     const [invoices , setInvoices ] = useState(InvoicesData);
-    const [ ActiveFilter , setActiveFilter ] = useState('Monthly');
+    const [ ActiveFilter , setActiveFilter ] = useState('');
     const status = (st) => st ? st : 'unpaid' ;
 
-    console.log('invoices got updated ' , invoices)
     const filteredRows = invoices.map(invoice => (
         {
             id : invoice['invoice-number'],
@@ -23,8 +22,8 @@ const InvoicesProvider = (props) => {
          } 
     ));
 
-    const filteredMonthly = () => {
-        const newInvoices = InvoicesData.filter(row => new Date().getMonth() === parseInt(row['invoice-date'].slice(5,7)) )
+    function filteredMonthly(){
+        const newInvoices = InvoicesData.filter(row => daysBack(30) === parseInt(row['invoice-date'].slice(5,7)) )
         setActiveFilter('Monthly');
         setInvoices(newInvoices);
     }
@@ -75,7 +74,7 @@ const InvoicesProvider = (props) => {
 
     function convertDate(date){
 
-        const monthNames = ["January", "February", "March", "April", "May", "June",
+        const monthNames = ["start" ,"January", "February", "March", "April", "May", "June",
                            "July", "August", "September", "October", "November", "December"];
          const year = date.slice(0,4);
          const month = monthNames[date.slice(5,7)];
@@ -87,7 +86,7 @@ const InvoicesProvider = (props) => {
     function daysBack(days){
         var date = new Date();
         var last = new Date(date.getTime() - (days * 24 * 60 * 60 * 1000));
-        var daysBackToCom = last.getDate();
+        var daysBackToCom = last.getMonth() + 1;
         return daysBackToCom ;
     }
 
@@ -97,7 +96,11 @@ const InvoicesProvider = (props) => {
        if(DateDay <= 9){
            DateDay = `0${DateDay}`
        }
-       const DateToday = (today.getFullYear()+'-'+today.getMonth()+'-'+DateDay);
+       var month = today.getMonth() + 1;
+       if(month <= 9){
+            month = `0${month}`
+       }
+       const DateToday = (today.getFullYear()+'-'+month+'-'+DateDay);
        return DateToday;
    
    };
@@ -118,22 +121,22 @@ const InvoicesProvider = (props) => {
     }
 
     const  GetPaidInvoices = () => {
-        const fInv = invoices.filter(invoice =>  invoice.status === "paid");
+        const fInv = InvoicesData.filter(invoice =>  invoice.status === "paid");
         return {
             number : fInv.length,
-            precentage : Math.round(100 * fInv.length / invoices.length)
+            precentage : Math.round(100 * fInv.length / InvoicesData.length)
         }
     }
     const GetUnPaidInvoices = () => {
-        const fInv = invoices.filter(invoice => invoice.status === "unpaid");
+        const fInv = InvoicesData.filter(invoice => invoice.status === "unpaid");
         return {
             number : fInv.length,
-            precentage : Math.round(100 * fInv.length / invoices.length)
+            precentage : Math.round(100 * fInv.length / InvoicesData.length)
         }
     }
     const GetTotalInvoices = () => {
         return {
-            number : invoices.length,
+            number : InvoicesData.length,
             precentage : 100
         }
     }

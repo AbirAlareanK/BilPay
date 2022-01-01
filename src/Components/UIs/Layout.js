@@ -24,6 +24,7 @@ const Layout = () => {
 
     useEffect(()=>{
         const pathName = location.pathname.slice(1);
+        console.log('pathname' , pathName)
         switch(pathName){
             case'dashboard' : 
                 setPageTitle('Dashboard');
@@ -34,7 +35,7 @@ const Layout = () => {
             case'invoices' : 
                 setPageTitle('Invoices');
             break;
-            case'invoice-details' : 
+            case'invoices/:*' : 
                 setPageTitle('Invoice Details');
             break;
             case'card-center' : 

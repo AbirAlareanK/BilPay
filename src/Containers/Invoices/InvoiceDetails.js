@@ -48,23 +48,30 @@ const InvoiceDetails = () => {
         {Object.keys(invoiceDetails).length === 0
             ?   <p>The invoice with {params.invoiceId} id is not exist</p>
             :   (<>
-                    <Col lg={8} xs={12}>
-                        <InvoiceDetailsInfo 
-                            discount={discount}
-                            subTotal={SubTotal}
-                            invoiceDetails={invoiceDetails}
-                            icon={statusIcon}
-                            services={services}/>
-                    </Col>
-                    <Col lg={4} xs={12}>
-                        <PaymentCard />
-                        <section className={Classes.invoiceDetailsActions}>
-                            <Button><BsCheckCircle  size={15}  />Mark Paid</Button>
-                            <Button><BsDownload  size={15} />Download</Button>
-                            <Button><BsPrinter  size={15} />Print</Button>
-                            <Button><IoSendOutline  size={15} />Send</Button>
-                        </section>
-                    </Col>
+                        <Col lg={12}>
+                            <div className={Classes.heading}>
+                                <h6>Invoice</h6>
+                                <p>/{invoiceDetails['invoice-number']}</p>
+                            </div>
+                        </Col>
+                        <Col lg={8} xs={12}>
+                            <InvoiceDetailsInfo 
+                                discount={discount}
+                                subTotal={SubTotal}
+                                invoiceDetails={invoiceDetails}
+                                icon={statusIcon}
+                                services={services}/>
+                        </Col>
+                        <Col lg={4} xs={12}>
+                            <PaymentCard />
+                            <section className={Classes.invoiceDetailsActions}>
+                                <Button><BsCheckCircle  size={15}  />Mark Paid</Button>
+                                <Button><BsDownload  size={15} />Download</Button>
+                                <Button><BsPrinter  size={15} />Print</Button>
+                                <Button><IoSendOutline  size={15} />Send</Button>
+                            </section>
+                        </Col>
+                    
                 </>)}
         </>
     );

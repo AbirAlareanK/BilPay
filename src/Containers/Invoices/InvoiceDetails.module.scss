@@ -33,3 +33,17 @@
         font-size: 12px;
     }
 }
+
+.heading {
+    display: flex;
+    padding-left: 15px;
+    p {
+        color: $para-font;
+        font-weight: 400;
+    }
+
+    h6{
+        color: $main-theme;
+        padding-right: 5px;
+    }
+}
