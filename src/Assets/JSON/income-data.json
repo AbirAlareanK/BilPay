@@ -1,0 +1,54 @@
+{
+    "series": 
+    [{
+        "name": "Income",
+        "data": [0,2,1,3,2,4]
+    }],
+    "options": {
+            "chart": {
+                "height": "10%",
+                "type": "area",
+                "toolbar": {
+                    "show": false
+                }
+            },
+            "dataLabels": {
+                "enabled": false
+            },
+            "stroke": {
+                "curve": "smooth",
+                "width": 2,
+                "colors":"#428777"
+            },
+            "xaxis": {
+                "labels":{
+                    "show":false
+                },
+                "tickAmount":"dataPoints"
+            },
+            "yaxis": {
+                "labels":{
+                    "show":false
+                },
+                "tickAmount": "dataPoints"
+            },
+            "tooltip": {
+                "enabled":false,
+                "x": {
+                "format": "dd/MM/yy HH:mm"
+                }
+            },
+            "grid": {
+                "show": false
+            },
+            "plotOptions": {
+                "area": {
+                    "fillTo": "origin"
+                }
+            },
+            "fill": {
+                "colors":"#428777",
+                "opacity": 100
+            }
+    }
+}
