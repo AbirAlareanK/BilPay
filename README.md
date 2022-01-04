@@ -37,14 +37,16 @@ https://bestofreactjs.com/repo/YIZHUANG-react-multi-carousel-react-image-gallery
 
 
     
-    
-
 
 
 ## project structur :
 https://abiralareank.github.io/React-Project-Structure/
 
-Container folder : Conatins all stateful components, which interact with the data 
-Components folder : Contains all stateless components, which get all its data from the statefull components (Parents)
-(presentational components).
+Container folder : 
+
+Conatins all stateful components, which interact with the data 
+
+Components folder : 
+
+Contains all stateless components, which get all its data from the statefull components (presentational components).
 
