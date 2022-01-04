@@ -6,13 +6,11 @@ Used functional based components
 
 ## Installations
 
--MDB React for the dataTable:
+-MDB React for the dataTable: -Link:
+
+https://mdbootstrap.com/docs/react/tables/pagination/#docsTabsAPI
 
     npm install --save mdbreact
-    
-    -link:
-
-    https://mdbootstrap.com/docs/react/tables/pagination/#docsTabsAPI
 
 -React Bootstrap 
 
@@ -31,13 +29,15 @@ Used functional based components
 
     npm i react-responsive-carousel
 
--Carousel for cards center
+-Carousel for cards center: APIs:
+
+https://bestofreactjs.com/repo/YIZHUANG-react-multi-carousel-react-image-gallery
 
     npm install react-multi-carousel --save
 
-    -APIs : 
+
     
-    https://bestofreactjs.com/repo/YIZHUANG-react-multi-carousel-react-image-gallery
+    
 
 
 
