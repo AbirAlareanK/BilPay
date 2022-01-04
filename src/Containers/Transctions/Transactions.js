@@ -2,8 +2,8 @@ import Transaction from "../../Components/Transactions/Transaction";
 import { Col , Row , Container } from "react-bootstrap";
 import Classes from './Transactions.module.scss';
 import AdminCard from "../../Components/UIs/AdminCard";
-import Cards from '../../Assets/JSON/cards-data.json';
-import Invoices from '../../Assets/JSON/invoices-data.json';
+import Cards from '../../Assets/JSON/Cards/cards-data.json';
+import Invoices from '../../Assets/JSON/Invoices/invoices-data.json';
 import { useState } from "react";
 
 const Transactions = () => {

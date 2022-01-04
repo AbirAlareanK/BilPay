@@ -1,5 +1,5 @@
 import { createContext, useContext , useState } from "react";
-import InvoicesData from '../../Assets/JSON/invoices-data.json';
+import InvoicesData from '../../Assets/JSON/Invoices/invoices-data.json';
 
 export const InvoicesContext =  createContext();
 export const UseInvoices = () => useContext(InvoicesContext) ;

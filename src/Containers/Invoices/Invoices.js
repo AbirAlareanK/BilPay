@@ -1,7 +1,7 @@
 import InvoiceBriefArray from "./InvoiceBriefArray";
 import DataTable from "../../Components/Table/DataTable";
 import { Col , Row } from "react-bootstrap";
-import colData from '../../Assets/JSON/invoices-col-table.json';
+import colData from '../../Assets/JSON/Invoices/invoices-col-table.json';
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 import Classes from './Invoices.module.scss';
 import InvoiceFilter from "../../Components/Invoices/invoices-filter/InvoiceFilter";

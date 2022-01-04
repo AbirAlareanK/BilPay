@@ -9,7 +9,7 @@ import FormElement from '../../Components/Invoices/invoice-form/FormElement';
 import { UseFormElement } from '../../Utils/Context/FormProvider';
 import { UseInvoices } from '../../Utils/Context/InvoicesProvider';
 import { useEffect, useState } from 'react';
-import formJSON from '../../Assets/JSON/InvoiceFormElement.json';
+import formJSON from '../../Assets/JSON/Invoices/InvoiceFormElement.json';
 
 const InvoiceForm = () => {
     const  { ResetForm , SetFormElements , GetFormElement , FormIsValid }  =  UseFormElement();

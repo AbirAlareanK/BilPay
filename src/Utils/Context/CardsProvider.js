@@ -1,6 +1,6 @@
 import { createContext, useContext , useMemo, useState } from "react";
-import CardsData from '../../Assets/JSON/cards-data.json';
-import CardsCols from '../../Assets/JSON/cards-col-table.json';
+import CardsData from '../../Assets/JSON/Cards/cards-data.json';
+import CardsCols from '../../Assets/JSON/Cards/cards-col-table.json';
 import greenBg from '../../Assets/CardsBg/bg-green.svg';
 import yellowBg from '../../Assets/CardsBg/bg-yellow.svg';
 import redBg from '../../Assets/CardsBg/bg-red.svg';

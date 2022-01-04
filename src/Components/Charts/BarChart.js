@@ -43,9 +43,9 @@ const BarChart = ({options , series}) => {
         <div className={Classes.barChartWrapper}>
             <select onChange={event => HandleSelectChange(event)}
                     defaultValue="week">
+                <option value="month">This Month</option>
                 <option value="week">This Week</option>
                 <option value="day">This Day</option>
-                <option value="month">This Month</option>
             </select>
             <Chart  className={Classes.barChart}
                     options={options}

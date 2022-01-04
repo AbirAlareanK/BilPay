@@ -5,18 +5,18 @@ import Classes from './Dashboard.module.scss';
 import arrowUp from '../../Assets/Icons/arrow-up.svg';
 import arrowDn from '../../Assets/Icons/arrow-dn.svg';
 import DataTable from '../../Components/Table/DataTable';
-import IncomeData from '../../Assets/JSON/income-data.json';
-import colData from '../../Assets/JSON/short-invoices-col-table.json';
+import IncomeData from '../../Assets/JSON/Charts/income-data.json';
+import colData from '../../Assets/JSON/Invoices/short-invoices-col-table.json';
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
-import OutcomeData from '../../Assets/JSON/outcome-data.json';
-import LimitData from '../../Assets/JSON/limit-data.json';
+import OutcomeData from '../../Assets/JSON/Charts/outcome-data.json';
+import LimitData from '../../Assets/JSON/Charts/limit-data.json';
 import LineChart from '../../Components/Charts/LineChart';
 import RadialBarChart from '../../Components/Charts/RadialBarChart';
-import spendingData from '../../Assets/JSON/spendings.json';
+import spendingData from '../../Assets/JSON/Charts/spendings.json';
 import SpendingChartWrapper from '../../Components/Charts/SpendingChartWrapper';
 import TransData from '../../Assets/JSON/transaction-data.json';
 import BarChart from '../../Components/Charts/BarChart';
-import tranChartData from '../../Assets/JSON/transaction-chart.json';
+import tranChartData from '../../Assets/JSON/Charts/transaction-chart.json';
 import TransactionRow from '../../Components/Transactions/TransactionRow';
 
 

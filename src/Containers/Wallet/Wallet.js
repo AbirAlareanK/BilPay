@@ -5,11 +5,11 @@ import AdminCard from '../../Components/UIs/AdminCard';
 import user from '../../Assets/imgs/user.png';
 import { BiTransfer , BiReceipt } from 'react-icons/bi';
 import DataTable from '../../Components/Table/DataTable';
-import cardData from '../../Assets/JSON/cards-data.json';
-import colData from '../../Assets/JSON/invoices-col-table.json';
+import cardData from '../../Assets/JSON/Cards/cards-data.json';
+import colData from '../../Assets/JSON/Invoices/invoices-col-table.json';
 import { UseInvoices } from "../../Utils/Context/InvoicesProvider";
 import { useState } from 'react';
-import invoicesSent from '../../Assets/JSON/invoices-sent.json';
+import invoicesSent from '../../Assets/JSON/Invoices/invoices-sent.json';
 import InvoiceFilter from '../../Components/Invoices/invoices-filter/InvoiceFilter';
 
 const Wallet = () => {

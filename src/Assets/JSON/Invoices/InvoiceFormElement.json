@@ -17,7 +17,7 @@
         "field_id": "date",
         "field_label": "Date",
         "field_mandatory": "yes",
-        "field_placeholder": "",
+        "field_placeholder": "mm/dd/yyyy",
         "field_element":"input",
         "field_type": "date",
         "field_size" : "half",

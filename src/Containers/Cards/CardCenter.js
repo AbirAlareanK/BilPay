@@ -2,7 +2,7 @@ import { Col } from "react-bootstrap";
 import {useEffect, useState} from 'react';
 import CardsWrapper from "./CardsWrapper";
 import Classes from './CardCenter.module.scss';
-import FormJSON from '../../Assets/JSON/cards-form-elements.json';
+import FormJSON from '../../Assets/JSON/Cards/cards-form-elements.json';
 import FormElement from "../../Components/Invoices/invoice-form/FormElement";
 import { UseFormElement } from "../../Utils/Context/FormProvider";
 import Button from '../../Components/UIs/Button';

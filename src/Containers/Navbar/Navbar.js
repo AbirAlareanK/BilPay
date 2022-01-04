@@ -25,7 +25,7 @@ const Navbar = () => {
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/dashboard">
                             <MdOutlineDashboard size={26} />
-                            <span> Dashboard</span>
+                            <span>Dashboard</span>
                     </NavLink>
                 </li>
                 <li>
@@ -36,19 +36,19 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/invoices">
-                        <IoReceiptOutline size={24} />
+                        <IoReceiptOutline size={26} />
                         <span>Invoices</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/invoice-form">
-                        <GoDiffAdded size={24} />
-                        <span> Create Invoice</span>
+                        <GoDiffAdded size={26} />
+                        <span>Create Invoice</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className={(navData) => navData.isActive ? Classes.navItemisActive : ''} to="/card-center">
-                        <BsCardText size={24} />
+                        <BsCardText size={26} />
                         <span>Cards</span>
                     </NavLink>
                 </li>
