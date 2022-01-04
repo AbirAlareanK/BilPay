@@ -4,8 +4,7 @@ Invoicing Admin Dashboard
 This project was bootstrapped with [Create React App].
 Used functional based components
 
-## Installations
-
+## Prerequisites
 -MDB React for the dataTable: -Link:
 
 https://mdbootstrap.com/docs/react/tables/pagination/#docsTabsAPI
