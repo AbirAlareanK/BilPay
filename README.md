@@ -9,6 +9,8 @@ Used functional based components
 -MDB React for the dataTable:
 
     npm install --save mdbreact
+    
+    -link:
 
     https://mdbootstrap.com/docs/react/tables/pagination/#docsTabsAPI
 
@@ -33,7 +35,8 @@ Used functional based components
 
     npm install react-multi-carousel --save
 
-    APIs : 
+    -APIs : 
+    
     https://bestofreactjs.com/repo/YIZHUANG-react-multi-carousel-react-image-gallery
 
 
