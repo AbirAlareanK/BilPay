@@ -116,14 +116,16 @@ const Dashboard = () => {
                         <p className={Classes.details}>...</p>
                     </div>
                     <table>
-                        {TransData.map((tran,i)=>(
-                        <TransactionRow  key={i}
-                                            name={tran.name}
-                                            amount={tran.amount}
-                                            date={tran.date}
-                                            transaction={tran.transaction}
-                                            status={tran.status} />
-                        ))}
+                        <tbody>
+                            {TransData.map((tran,i)=>(
+                            <TransactionRow  key={i}
+                                                name={tran.name}
+                                                amount={tran.amount}
+                                                date={tran.date}
+                                                transaction={tran.transaction}
+                                                status={tran.status} />
+                            ))}
+                        </tbody>
                     </table>
                 </div>
             </Col>

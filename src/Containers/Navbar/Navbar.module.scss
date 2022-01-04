@@ -58,6 +58,9 @@
     }
 
     a:hover{
+        span{
+            color: $main-theme;
+        }
         color: $main-theme;
         border-right: 3px solid $main-theme;
     }

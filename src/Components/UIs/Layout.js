@@ -1,7 +1,7 @@
 import { Row , Col , Container} from 'react-bootstrap'
 import Navbar from '../../Containers/Navbar/Navbar';
 import Classes from './Layout.module.scss'
-import { Routes , Route} from "react-router-dom";
+import { Routes , Route, Navigate} from "react-router-dom";
 import CardCenter from "../../Containers/Cards/CardCenter";
 import InvoiceDetails from "../../Containers/Invoices/InvoiceDetails";
 import InvoiceForm from "../../Containers/Invoices/InvoiceForm";
@@ -17,15 +17,17 @@ import Dashboard from '../../Containers/Dashboard/Dashboard';
 
 const Layout = () => {
 
-    
     const location = useLocation();
     const [ pageTitle , setPageTitle ] = useState();
     const [ ClientPage , setClientPage ] = useState(false);
     const [ ClientsDisplay , setClientDisplay ] = useState('grid');
-
+    
     useEffect(()=>{
         const pathName = location.pathname.slice(1);
-        console.log('pathname' , pathName)
+        if(pathName.slice(10,13) === 'INV'){
+            setPageTitle('Invoice Details');
+            return
+        }
         switch(pathName){
             case'dashboard' : 
                 setPageTitle('Dashboard');
@@ -33,11 +35,11 @@ const Layout = () => {
             case'wallet' : 
                 setPageTitle('Wallet');
             break;
+            case'^invoices' : 
+                setPageTitle('Invoice Details');
+            break;
             case'invoices' : 
                 setPageTitle('Invoices');
-            break;
-            case'invoices/:*' : 
-                setPageTitle('Invoice Details');
             break;
             case'card-center' : 
                 setPageTitle('Cards Center');
@@ -52,7 +54,7 @@ const Layout = () => {
                 setPageTitle('Clients');
             break;
             default:
-                return
+            return null;
         }
         if(pathName === 'clients'){
             setClientPage(true);
@@ -102,10 +104,12 @@ const Layout = () => {
                 </Row>
                 <Row className="padding">
                     <Routes>
+                        <Route path="/" element={<Navigate replace to="/dashboard" />} />
+                        <Route path="/BilPay" element={<Navigate replace to="/dashboard" />} />
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/wallet" element={<Wallet />} />
                         <Route path="/invoices" element={<Invoices />} />
-                        <Route path="/invoices/:invoiceId" element={<InvoiceDetails />} />
+                        <Route path="/invoices/:invoiceId" element={<InvoiceDetails/>} />
                         <Route path="/invoice-form" element={<InvoiceForm />} />
                         <Route path="/card-center" element={<CardCenter />} />
                         <Route path="/transaction" element={<Transactions />} />

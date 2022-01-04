@@ -30,7 +30,6 @@ const CardsWrapper = () => {
         <Carousel responsive={responsive}
                   arrows={false}
                   infinite={true}
-                  // ref={el => (this.Carousel = el)}additionalTransfrom={-20 * 5}
                   partialVisible={false}>
                 {Cards.map(card => {
                     return (<AdminCard  key={card['card-id']}  cardNum={card["card-number"]}
