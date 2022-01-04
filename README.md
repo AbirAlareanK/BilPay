@@ -7,23 +7,30 @@ Used functional based components
 ## Installations
 
 -MDB React for the dataTable:
+
     npm install --save mdbreact
 
     https://mdbootstrap.com/docs/react/tables/pagination/#docsTabsAPI
 
 -React Bootstrap 
+
     npm install --save mdbreact
 
+
 -React Icons
+
     npm install react-icons --save
 
 -GitHub page 
+
     npm install gh-pages
 
 -Carousel
+
     npm i react-responsive-carousel
 
 -Carousel for cards center
+
     npm install react-multi-carousel --save
 
     APIs : 
