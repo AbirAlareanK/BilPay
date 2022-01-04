@@ -1,25 +1,33 @@
 {
   "files": {
-    "main.css": "/BilPay/static/css/main.a08ec5d6.chunk.css",
-    "main.js": "/BilPay/static/js/main.9f5f9db1.chunk.js",
-    "main.js.map": "/BilPay/static/js/main.9f5f9db1.chunk.js.map",
+    "main.css": "/BilPay/static/css/main.d27580f5.chunk.css",
+    "main.js": "/BilPay/static/js/main.c58c5a2d.chunk.js",
+    "main.js.map": "/BilPay/static/js/main.c58c5a2d.chunk.js.map",
     "runtime-main.js": "/BilPay/static/js/runtime-main.c4f503a4.js",
     "runtime-main.js.map": "/BilPay/static/js/runtime-main.c4f503a4.js.map",
-    "static/css/2.ce999395.chunk.css": "/BilPay/static/css/2.ce999395.chunk.css",
-    "static/js/2.aecc5ea4.chunk.js": "/BilPay/static/js/2.aecc5ea4.chunk.js",
-    "static/js/2.aecc5ea4.chunk.js.map": "/BilPay/static/js/2.aecc5ea4.chunk.js.map",
+    "static/css/2.e7684827.chunk.css": "/BilPay/static/css/2.e7684827.chunk.css",
+    "static/js/2.6e7b7daa.chunk.js": "/BilPay/static/js/2.6e7b7daa.chunk.js",
+    "static/js/2.6e7b7daa.chunk.js.map": "/BilPay/static/js/2.6e7b7daa.chunk.js.map",
     "index.html": "/BilPay/index.html",
-    "static/css/2.ce999395.chunk.css.map": "/BilPay/static/css/2.ce999395.chunk.css.map",
-    "static/css/main.a08ec5d6.chunk.css.map": "/BilPay/static/css/main.a08ec5d6.chunk.css.map",
-    "static/js/2.aecc5ea4.chunk.js.LICENSE.txt": "/BilPay/static/js/2.aecc5ea4.chunk.js.LICENSE.txt",
+    "static/css/2.e7684827.chunk.css.map": "/BilPay/static/css/2.e7684827.chunk.css.map",
+    "static/css/main.d27580f5.chunk.css.map": "/BilPay/static/css/main.d27580f5.chunk.css.map",
+    "static/js/2.6e7b7daa.chunk.js.LICENSE.txt": "/BilPay/static/js/2.6e7b7daa.chunk.js.LICENSE.txt",
+    "static/media/arrow-dn-w.f421b6a5.svg": "/BilPay/static/media/arrow-dn-w.f421b6a5.svg",
+    "static/media/arrow-dn.c643f496.svg": "/BilPay/static/media/arrow-dn.c643f496.svg",
+    "static/media/arrow-up-w.19c8be3e.svg": "/BilPay/static/media/arrow-up-w.19c8be3e.svg",
+    "static/media/arrow-up.6c42dd6c.svg": "/BilPay/static/media/arrow-up.6c42dd6c.svg",
     "static/media/mdb.css": "/BilPay/static/media/arrow_right.f7c6ac6d.svg",
-    "static/media/all.min.css": "/BilPay/static/media/fa-solid-900.eeccf4f6.woff"
+    "static/media/bell.be753c36.png": "/BilPay/static/media/bell.be753c36.png",
+    "static/media/index.scss": "/BilPay/static/media/bg-yellow.2d661c13.svg",
+    "static/media/all.min.css": "/BilPay/static/media/fa-solid-900.eeccf4f6.woff",
+    "static/media/styles.css": "/BilPay/static/media/revicons.e8746a62.woff",
+    "static/media/user.1628ee21.png": "/BilPay/static/media/user.1628ee21.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c4f503a4.js",
-    "static/css/2.ce999395.chunk.css",
-    "static/js/2.aecc5ea4.chunk.js",
-    "static/css/main.a08ec5d6.chunk.css",
-    "static/js/main.9f5f9db1.chunk.js"
+    "static/css/2.e7684827.chunk.css",
+    "static/js/2.6e7b7daa.chunk.js",
+    "static/css/main.d27580f5.chunk.css",
+    "static/js/main.c58c5a2d.chunk.js"
   ]
 }
