@@ -38,7 +38,7 @@ https://bestofreactjs.com/repo/YIZHUANG-react-multi-carousel-react-image-gallery
     
 
 
-## project structur :
+## project structure :
 https://abiralareank.github.io/React-Project-Structure/
 
 Container folder : 
