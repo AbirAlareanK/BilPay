@@ -1,0 +1,80 @@
+{
+    "options" : {
+        "series": 
+        [   
+            {
+            "name": "Income",
+            "data": [650,1200,350,250,700,400,1350]
+            },
+            {
+            "name": "Outcome",
+            "data": [400,900,550,200,600,250,1030] 
+            }
+        ],
+        "fill":{
+            "colors":["#428777" , "#f0ca43"]
+    },
+    "grid":{
+        "show": true,
+        "strokeDashArray": 5
+    },
+    "chart": {
+        "type": "bar",
+        "height": 350,
+        "toolbar": {
+            "show": false
+        }
+      },
+      "legend":{
+            "show":true,
+            "position": "top",
+            "horizontalAlign": "right",
+            "fontSize": "11px",
+            "labels":{
+                "colors":["#cccccc"]
+            },
+            "markers":{
+                "width":5,
+                "height":5,
+                "fillColors":["#428777" , "#f0ca43"],
+                "offsetY": -2
+            }
+      },
+      "plotOptions": {
+        "bar": {
+          "horizontal": false,
+          "columnWidth": "55%",
+          "endingShape": "rounded"
+        }
+      },
+      "dataLabels": {
+        "enabled": false
+      },
+      "stroke": {
+        "show": false
+      },
+      "xaxis": {
+        "categories": ["M","T","W","T","F","S","S"],
+        "labels":{
+            "style":{
+                "colors":"#cccccc",
+                "fontSize":"11px"
+            }
+        }
+      },
+      "yaxis": {
+        "max":2000,
+        "min":0,
+        "tickAmount":4,
+        "labels":{
+            "style":{
+                "colors":"#cccccc",
+                "fontSize":"11px"
+            }
+        }
+      },
+        "tooltip": {
+            "enabled":false
+        }
+    }
+}

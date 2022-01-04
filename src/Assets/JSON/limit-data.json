@@ -1,0 +1,47 @@
+{
+    
+    "options": {
+        "series": [75],
+        "chart": {
+        "height":"100%",
+        "type": "radialBar"
+      },
+      "plotOptions": {
+        "radialBar": {
+          "hollow": {
+            "size": "40%"
+          },
+          "dataLabels": {
+              "value":{
+                "offsetY": -10,
+                "color": "#428777",
+              "startAngle": 180
+              }
+          },
+          "track":{
+            "strokeWidth":"100%",
+            "opacity":0.6
+          }
+        }
+      },
+      "labels": [""],
+      "fill": {
+          "colors": ["#428777" ]
+      },
+        "responsive": [{
+            "breakpoint": 2000,
+            "options": {
+              "chart": {
+                "width": "100%",
+                "height":"100%"
+              },
+              "legend": {
+                "show": false
+              }
+            }
+          }],
+        "tooltip": {
+            "enabled":false
+        }
+    }
+}

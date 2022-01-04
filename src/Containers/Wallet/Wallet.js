@@ -26,7 +26,8 @@ const Wallet = () => {
                             <AdminCard  className={Styles.walletCard}
                                     cardNum={card["card-number"]}
                                     balance={card["card-balance"]}
-                                    validation={card["card-validation"]}/>
+                                    validation={card["card-validation"]}
+                                    color={"greenWBg"}/>
                         </div>
                     </Col>
                     <Col lg={4} md={6} >

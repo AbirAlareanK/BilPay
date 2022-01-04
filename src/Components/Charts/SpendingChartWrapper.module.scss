@@ -1,0 +1,29 @@
+@import '../../Assets/Scss/colors';
+
+
+.Spending{
+    border-radius: 17px;
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.spendingDeatils{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 34%;
+
+    h6{
+        color: #ffffff;
+        font-size: 14px;
+    }
+    span{
+        font-size: 9px;
+        color: #ffffff;
+        font-weight: 400;
+    }
+}

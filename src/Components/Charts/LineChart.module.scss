@@ -1,0 +1,36 @@
+@import '../../Assets/Scss/colors';
+
+.Chart{
+    position: absolute;
+    bottom: 0;
+    right: 18px;
+}
+
+.chartHeading{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 17px;
+    align-items: flex-start;
+
+    img{
+        width: 35px;
+    }
+
+    h6{
+        font-size: 11px;
+        margin-bottom: 2px;
+    }
+    p{
+        color: #000000;
+        font-weight: 600;
+        font-size: 15px;
+    }
+}
+
+// @media(max-width:"992px"){
+//     .chartHeading{
+//     //    justify-content: space-around;
+       
+//     }
+
+// }

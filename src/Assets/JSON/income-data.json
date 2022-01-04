@@ -17,14 +17,17 @@
             },
             "stroke": {
                 "curve": "smooth",
-                "width": 2,
-                "colors":"#428777"
+                "colors":["#428777"],
+                "width": 1.5
             },
             "xaxis": {
                 "labels":{
                     "show":false
                 },
-                "tickAmount":"dataPoints"
+                "tickAmount":"dataPoints",
+                "axisTicks": {
+                    "show": false
+                }
             },
             "yaxis": {
                 "labels":{
@@ -48,7 +51,21 @@
             },
             "fill": {
                 "colors":"#428777",
-                "opacity": 100
+                "opacity": 1
+            },
+            "markers": {
+                "size":0.1,
+                "color":"##428777",
+                "strokeColors":"##428777",
+                "strokeWidth":1,
+                "discrete": [{
+                    "seriesIndex": 0,
+                    "dataPointIndex": 3,
+                    "fillColor": "#428777",
+                    "strokeColor": "#ffffff",
+                    "size": 4,
+                    "shape": "circle" 
+                  }]
             }
     }
 }

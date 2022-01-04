@@ -1,0 +1,11 @@
+
+@import '../../Assets/Scss/colors';
+
+.barChartWrapper{
+    select{
+        cursor: pointer;
+        z-index: 444;
+        border: none;
+        font-size: 12px !important;
+    }
+}

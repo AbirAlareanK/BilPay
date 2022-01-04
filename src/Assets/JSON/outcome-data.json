@@ -2,7 +2,7 @@
     "series": 
     [{
         "name": "Outcome",
-        "data": [4,2,3,1,2,0]
+        "data": [2,4,2.5,3.2,0.7,2,0]
     }],
     "options": {
             "chart": {
@@ -18,13 +18,16 @@
             "stroke": {
                 "curve": "smooth",
                 "width": 1.5,
-                "colors":"#ee4444"
+                "colors":["#ee4444"]
             },
             "xaxis": {
                 "labels":{
                     "show":false
                 },
-                "tickAmount":"dataPoints"
+                "tickAmount":"dataPoints",
+                "axisTicks": {
+                    "show": false
+                }
             },
             "yaxis": {
                 "labels":{
@@ -33,10 +36,7 @@
                 "tickAmount": "dataPoints"
             },
             "tooltip": {
-                "enabled":false,
-                "x": {
-                "format": "dd/MM/yy HH:mm"
-                }
+                "enabled":false
             },
             "grid": {
                 "show": false
@@ -47,7 +47,22 @@
                 }
             },
             "fill": {
-                "colors":"#ee4444"
+                "colors":"#ee4444",
+                "opacity": 1
+            },
+            "markers": {
+                "size":0.1,
+                "color":"#ee4444",
+                "strokeColors":"#ee4444",
+                "strokeWidth":1,
+                "discrete": [{
+                    "seriesIndex": 0,
+                    "dataPointIndex": 5,
+                    "fillColor": "#ee4444",
+                    "strokeColor": "#ffffff",
+                    "size": 4,
+                    "shape": "circle" 
+                  }]
             }
     }
 }

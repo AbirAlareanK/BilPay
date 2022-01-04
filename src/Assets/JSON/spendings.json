@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Subscription",
+        "spending":"$500",
+        "total":"$2000",
+        "percentage": [25]
+    },
+    {
+        "name":"Groceries",
+        "spending":"$1000",
+        "total":"$2000",
+        "percentage":[50]
+    },
+    {
+        "name":"Investment",
+        "spending":"$50",
+        "total":"$2000",
+        "percentage":[10]
+    },
+    {
+        "name":"Others",
+        "spending":"$1500",
+        "total":"$2000",
+        "percentage":[75]
+    }
+]

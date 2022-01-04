@@ -22,6 +22,15 @@ const InvoicesProvider = (props) => {
          } 
     ));
 
+    const filteredShortRows = invoices.slice(0,5).map(invoice => (
+        {
+            id : invoice['invoice-number'],
+            recipient : invoice['client'],
+            date : convertDate(invoice['invoice-date']),
+            status : status(invoice['status'])
+         } 
+    ));
+
     function filteredMonthly(){
         const newInvoices = InvoicesData.filter(row => daysBack(30) === parseInt(row['invoice-date'].slice(5,7)) )
         setActiveFilter('Monthly');
@@ -120,6 +129,10 @@ const InvoicesProvider = (props) => {
         return filteredRows ;
     }
 
+    const GetShortTableRows = () => {
+        return filteredShortRows ;
+    }
+
     const  GetPaidInvoices = () => {
         const fInv = InvoicesData.filter(invoice =>  invoice.status === "paid");
         return {
@@ -155,6 +168,7 @@ const InvoicesProvider = (props) => {
                 GetUnPaidInvoices,
                 GetTotalInvoices ,
                 GetTableRows,
+                GetShortTableRows,
                 GetInvoiceDetails,
                 CalculateInvoiceNumber,
                 GetDateToday,

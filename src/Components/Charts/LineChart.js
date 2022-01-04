@@ -11,12 +11,13 @@ const LineChart = (props) => {
                     <h6>{title}</h6>
                     <p>{balance}</p>
                 </div>
-                {icon}
+               <img src={icon} alt="arrow"></img>
             </div>
-            <Chart options={options}
-                series={series}
-                toolbar={toolbar}
-                type="area" />
+            <Chart  className={Classes.Chart}
+                    options={options}
+                    series={series}
+                    toolbar={toolbar}
+                    type="area" />
         </>
        
     );

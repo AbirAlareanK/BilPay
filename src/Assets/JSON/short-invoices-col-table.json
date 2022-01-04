@@ -1,0 +1,22 @@
+ [
+    {
+      "label": "ID Invoice",
+      "field": "id",
+      "width": 50
+    },
+    {
+      "label": "Recipient",
+      "field": "recipient",
+      "width": 170
+    },
+    {
+      "label": "Date" ,
+      "field": "date",
+      "width": 260
+    },
+    {
+      "label": "Status" ,
+      "field": "status",
+      "width": 100
+    }
+]

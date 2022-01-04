@@ -26,7 +26,6 @@ code {
 
 .card-wrapper{
   border-radius: 15px;
-  //margin: 20px 0px;
   padding: 20px;
   background-color: $card-bg;
 }
@@ -61,6 +60,11 @@ code {
   background-image: url('../src/Assets/CardsBg/bg-green.svg');
 }
 
+.greenWBg {
+  background-image: url('../src/Assets/CardsBg/bg-w-green.svg');
+}
+
+
 .blueBg{
   background-image: url('../src/Assets/CardsBg/bg-blue.svg');
 }
@@ -71,6 +75,22 @@ code {
 
 .yellowBg{
   background-image: url('../src/Assets/CardsBg/bg-yellow.svg');
+}
+
+.greenbackg{
+  background-color: $main-theme;
+}
+
+.yellowbackg{
+  background-color: $yellow;
+}
+
+.bluebackg{
+  background-color: $para-font;
+}
+
+.redbackg{
+  background-color: $danger-theme;
 }
 
 .unselectable {

@@ -1,9 +1,61 @@
 .adminCardDash{
     height: 170px;
+    margin: 0;
+    width: 100%;
+    
 }
 
 .ChartSection{
     height: 170px;
-    padding: 20px;
+    padding: 17px;
+    position: relative;
+    margin-bottom: 20px;
+}
 
+.LimitChart{
+    height: 170px;
+}
+
+@media(max-width:"992px"){
+    .ChartSection{
+        margin-bottom: 20px;
+        padding: 22px;
+        height: 230px;
+    }
+    .adminCardDash{
+        margin-bottom: 20px;
+        height: 230px;
+    }
+    .LimitChart{
+        height: 230px;
+    }
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    
+    h6.heading{
+        font-size: 15px;
+        margin-bottom: 0;
+    }
+
+    .details{
+        font-size: 22px !important;
+        font-weight: 800;
+        line-height: 0;
+    }
+    
+}
+
+.spendingChart , .transactionChart , .invoicesTable{
+    margin-bottom: 20px;
+}
+
+
+.transaction {
+    table{
+        width: 100%;
+    }
 }
