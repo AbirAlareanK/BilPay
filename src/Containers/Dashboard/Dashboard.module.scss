@@ -1,34 +1,6 @@
 .adminCardDash{
-    height: 170px;
     margin: 0;
     width: 100%;
-    
-}
-
-.ChartSection{
-    height: 170px;
-    padding: 17px;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.LimitChart{
-    height: 170px;
-}
-
-@media(max-width:"992px"){
-    .ChartSection{
-        margin-bottom: 20px;
-        padding: 22px;
-        height: 230px;
-    }
-    .adminCardDash{
-        margin-bottom: 20px;
-        height: 230px;
-    }
-    .LimitChart{
-        height: 230px;
-    }
 }
 
 .Header{
@@ -49,13 +21,120 @@
     
 }
 
-.spendingChart , .transactionChart , .invoicesTable{
-    margin-bottom: 20px;
-}
-
-
 .transaction {
     table{
         width: 100%;
     }
 }
+
+.invoicesTable , .invTable , .transaction, .transactionChart , .spendingChart{
+    height:  -webkit-fill-available;
+}
+
+.gridContainer{
+    display: grid;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    
+}
+
+.gridItem{
+    margin: 15px;
+    height: 390px;
+}
+
+.childGrid{
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+    align-items: center;
+}
+
+
+.flexContainer{
+    display: flex;
+    width: 100%;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexItem{
+    margin: 0px 15px 15px 15px;
+    // line-height: 170px;
+    height: 170px;
+    flex-basis: 120px;
+}
+
+
+.flexContainer :nth-child(1){
+    flex-grow: 2;
+    order: 1;
+}
+
+.flexContainer :nth-child(2){
+    flex-grow: 1;
+    order: 2;
+}
+
+.flexContainer :nth-child(3){
+    flex-grow: 1;
+    order: 3;
+}
+
+.flexContainer :nth-child(4){
+    flex-grow: 0;
+    order: 4;
+}
+
+@media (max-width:992px) {
+
+    .flexItem{
+        flex-basis: 200px;
+    }
+    
+    .flexContainer :nth-child(1){
+        order: 1;
+    }
+    
+    .flexContainer :nth-child(2){
+       order: 3;
+       flex-grow: 1;
+    }
+    
+    .flexContainer :nth-child(3){
+        order: 4;
+        flex-grow: 1;
+    }
+    
+    .flexContainer :nth-child(4){
+        order: 2;
+    }
+
+    .parentGrid{
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+    }
+
+}
+
+@media (max-width:576px) {
+    
+    .flexItem{
+        flex-basis: 140px;
+    }
+    .flexContainer :nth-child(1){
+        flex-grow: 1;
+    }
+    .flexContainer :nth-child(4){
+        flex-grow: 1;
+    }
+}
+
+
+

@@ -5,20 +5,21 @@ import Classes from './LineChart.module.scss';
 const LineChart = (props) => {
     const { icon , title , balance , options , series , toolbar } = props;
     return (
-        <>
+        <div className={Classes.LineChart}>
             <div className={Classes.chartHeading}>
-                <div>
-                    <h6>{title}</h6>
-                    <p>{balance}</p>
-                </div>
-               <img src={icon} alt="arrow"></img>
+                <h6>{title}</h6>
+                <p>{balance}</p>
             </div>
-            <Chart  className={Classes.Chart}
+            <div className={Classes.imgContainer}>
+                <img src={icon} alt="arrow" />
+            </div>
+            <Chart
+                    className={Classes.Chart}
                     options={options}
                     series={series}
                     toolbar={toolbar}
-                    type="area" />
-        </>
+                    type="area"/>
+        </div>
        
     );
 };

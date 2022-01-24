@@ -1,20 +1,24 @@
 @import '../../Assets/Scss/colors';
 
+.LineChart{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 40px 90px;
+
+}
+
 .Chart{
-    position: absolute;
-    bottom: 0;
-    right: 18px;
+    grid-column: 1/ span 2;
+}
+
+
+img{
+    width:35px;
+    height: 35px;
+    float: right;
 }
 
 .chartHeading{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 17px;
-    align-items: flex-start;
-
-    img{
-        width: 35px;
-    }
 
     h6{
         font-size: 11px;
@@ -26,11 +30,3 @@
         font-size: 15px;
     }
 }
-
-// @media(max-width:"992px"){
-//     .chartHeading{
-//     //    justify-content: space-around;
-       
-//     }
-
-// }

@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import {Col} from 'react-bootstrap';
 import RadialBarChart from './RadialBarChart';
 import Classes from './SpendingChartWrapper.module.scss';
 
@@ -32,7 +31,7 @@ const SpendingChartWrapper = ({color,name,spending,total,percentage,chartOptions
     },[chartOptions]) 
 
     return (
-        <Col sm={6} style={{paddingLeft:"8px",paddingRight:"8px"}}>
+        <div className={Classes.gridItem}>
             <div className={`${Classes.Spending} ${color}`}>
                 <div className={Classes.spendingDeatils}>
                     <h6>{name}</h6>
@@ -42,7 +41,7 @@ const SpendingChartWrapper = ({color,name,spending,total,percentage,chartOptions
                             options={newOptions}
                             series={percentage} />
             </div>
-        </Col>
+        </div>
     );
 };
 

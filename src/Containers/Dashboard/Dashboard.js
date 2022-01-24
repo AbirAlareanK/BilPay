@@ -1,4 +1,3 @@
-import { Col , Row } from 'react-bootstrap';
 import { UseCards } from '../../Utils/Context/CardsProvider';
 import AdminCard from '../../Components/UIs/AdminCard';
 import Classes from './Dashboard.module.scss';
@@ -28,15 +27,16 @@ const Dashboard = () => {
     
     return (
         <>
-            <Col lg={4} md={6} sm={6}>
-                <AdminCard  className={Classes.adminCardDash}
-                            balance={Cards[0]["card-balance"]}
-                            cardNum={Cards[0]["card-number"]}
-                            validation={Cards[0]["card-validation"]}
-                            color={Cards[0]['card-color']}/>
-            </Col>
-            <Col lg={3} md={6} sm={6}>
-                <div className={`${Classes.ChartSection} card-wrapper`}>
+           
+            <div className={Classes.flexContainer}>
+                <div className={Classes.flexItem}>
+                    <AdminCard  className={Classes.adminCardDash}
+                                balance={Cards[0]["card-balance"]}
+                                cardNum={Cards[0]["card-number"]}
+                                validation={Cards[0]["card-validation"]}
+                                color={Cards[0]['card-color']}/>
+                </div>
+                <div className={`${ Classes.flexItem} card-wrapper`}>
                     <LineChart  options={IncomeData.options}
                                 series={IncomeData.series}
                                 toolbar={IncomeData.toolbar}
@@ -45,9 +45,7 @@ const Dashboard = () => {
                                 balance={'$48,21'}
                                 type={"area"}/>
                 </div>
-            </Col>
-            <Col lg={3} md={6} sm={6}>
-                <div className={`${Classes.ChartSection} card-wrapper`}>
+                <div className={`${Classes.flexItem} card-wrapper`}>
                     <LineChart  options={OutcomeData.options}
                                 series={OutcomeData.series}
                                 toolbar={OutcomeData.toolbar}
@@ -55,78 +53,100 @@ const Dashboard = () => {
                                 title={'Outcome'}
                                 balance={'$4821,11'}/>
                 </div>
-            </Col>
-            <Col lg={2} md={6} sm={6}>
-                <div className={`${Classes.LimitChart} card-wrapper`}>
+                <div className={` ${Classes.flexItem} card-wrapper`}>
                     <RadialBarChart  options={LimitData.options}
                                     series={LimitData.options.series}
                                     title={'Limit'}/>
                 </div>
-            </Col>
-            <Col lg={6} md={12} sm={12}>
-                <div className={`${Classes.transactionChart} card-wrapper`}>
-                    <div className={Classes.Header}>
-                        <h6 className={Classes.heading}>Transaction OverView</h6>
-                        <p className={Classes.details}>...</p>
-                    </div>
-                    <BarChart options={tranChartData.options}
-                                series={tranChartData.options.series}/>
+            </div>
+             {/* <div className={Classes.gridContainer}>
+                <div className={Classes.gridItem} style={{
+                                                            backgroundColor:'red'
+                                                        }}>
+                                                        djhgfhgdjh    
                 </div>
-            </Col>
-            <Col lg={6} md={12} sm={12}>
-                <div className={`${Classes.spendingChart} card-wrapper`}>
-                    <div className={Classes.Header}>
-                        <h6 className={Classes.heading}>Spending</h6>
-                        <p className={Classes.details}>...</p>
-                    </div>
-                    <Row style={{paddingLeft:"7.5px",paddingRight:"7.5px"}}>
-                        {spendingData.map((spen,i) =>(
-                            <SpendingChartWrapper   key={i}
-                                                    color={Spendingbgs[i]}
-                                                    name={spen.name} 
-                                                    spending={spen.spending}
-                                                    total={spen.total}
-                                                    percentage={spen.percentage}
-                                                    chartOptions={LimitData.options}/>
-                        ))}
-                    </Row>
+                <div className={Classes.gridItem} style={{
+                                                            backgroundColor:'blue'
+                                                        }}>
+                      djhgfhgdjh                                      
                 </div>
-            </Col>
-            <Col lg={6} md={12}>
-                <div className={Classes.invoicesTable}>
-                    <DataTable  className={Classes.invTable}
-                                rows={GetShortTableRows()}
-                                entries={2}
-                                cols={colData}
-                                clickable={true}
-                                paging={false}
-                                sortable={false}
-                                small={true} >
+                <div className={Classes.gridItem} style={{
+                                                            backgroundColor:'green'
+                                                        }}>
+                                                        djhgfhgdjh    
+                </div>
+                <div className={Classes.gridItem} style={{
+                                                            backgroundColor:'yellow'
+                                                        }}>
+                                                        djhgfhgdjh    
+                </div>
+            </div> */}
+            <div className={`${Classes.parentGrid} ${Classes.gridContainer}`}>
+                <div className={Classes.gridItem}>
+                    <div className={`${Classes.transactionChart} card-wrapper`}>
                         <div className={Classes.Header}>
-                            <h6 className={Classes.heading}>Latest Invoices</h6>
+                            <h6 className={Classes.heading}>Transaction OverView</h6>
                             <p className={Classes.details}>...</p>
-                        </div>   
-                    </DataTable>
-                </div>
-            </Col>
-            <Col lg={6} md={12}>
-                <div className={` ${Classes.transaction} card-wrapper`}>
-                    <div className={Classes.Header}>
-                        <h6 className={Classes.heading}>Previous Transaction</h6>
-                        <p className={Classes.details}>...</p>
+                        </div>
+                        <BarChart options={tranChartData.options}
+                                    series={tranChartData.options.series}/>
                     </div>
-                    <table>
-                        {TransData.map((tran,i)=>(
-                        <TransactionRow  key={i}
-                                            name={tran.name}
-                                            amount={tran.amount}
-                                            date={tran.date}
-                                            transaction={tran.transaction}
-                                            status={tran.status} />
-                        ))}
-                    </table>
                 </div>
-            </Col>
+                <div className={Classes.gridItem}>
+                    <div className={`${Classes.spendingChart} card-wrapper`}>
+                        <div className={Classes.Header}>
+                            <h6 className={Classes.heading}>Spending</h6>
+                            <p className={Classes.details}>...</p>
+                        </div>
+                        <div className={`${Classes.childGrid} ${Classes.gridContainer}`}>
+                            {spendingData.map((spen,i) =>(
+                                <SpendingChartWrapper   key={i}
+                                                        color={Spendingbgs[i]}
+                                                        name={spen.name} 
+                                                        spending={spen.spending}
+                                                        total={spen.total}
+                                                        percentage={spen.percentage}
+                                                        chartOptions={LimitData.options}/>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className={Classes.gridItem}>
+                    <div className={Classes.invoicesTable}>
+                        <DataTable  className={Classes.invTable}
+                                    rows={GetShortTableRows()}
+                                    entries={2}
+                                    cols={colData}
+                                    clickable={true}
+                                    paging={false}
+                                    sortable={false}
+                                    small={true} >
+                            <div className={Classes.Header}>
+                                <h6 className={Classes.heading}>Latest Invoices</h6>
+                                <p className={Classes.details}>...</p>
+                            </div>   
+                        </DataTable>
+                    </div>
+                </div>
+                <div className={Classes.gridItem}>
+                    <div className={` ${Classes.transaction} card-wrapper`}>
+                        <div className={Classes.Header}>
+                            <h6 className={Classes.heading}>Previous Transaction</h6>
+                            <p className={Classes.details}>...</p>
+                        </div>
+                        <table>
+                            {TransData.map((tran,i)=>(
+                            <TransactionRow  key={i}
+                                                name={tran.name}
+                                                amount={tran.amount}
+                                                date={tran.date}
+                                                transaction={tran.transaction}
+                                                status={tran.status} />
+                            ))}
+                        </table>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };
